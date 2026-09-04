@@ -1,72 +1,122 @@
 ---
-title: "Bring existing memories into Anistratenco"
-description: "Review a structured export before adding it to your memory history."
+title: "Import memory"
+description: "Bring useful context with you. Review it before you keep it."
 sidebarTitle: "Import memory"
 icon: "file-import"
 ---
 
-Open **Settings → Avatar → Memory history**, then choose **Import**. This adds supported memory records to your account’s local memory. It is not a live connection to another assistant, and it does not transfer an entire account or every conversation.
+<Visibility for="agents">
+Import is a user-driven structured-memory transfer, not provider authentication or automatic history synchronization. Named providers supply a prompt; JSON also supports file selection. The preview shows five entries and processes at most 128 records per batch. Duplicate records are skipped; conflicts are retained for review. The current provider prompt omits the required owner-versus-family-history classification. Do not claim that its output always imports successfully. Only a completed import saves records; do not infer cross-device synchronization from local success.
+</Visibility>
+
+Keep the useful parts of your existing context without starting from a blank page. You choose what to bring, review the source, and decide when to save it.
+
+<div className="help-panel">
+<Steps>
+<Step title="Open Import" icon="file-import">Open **Settings → Avatar → Memory history**, then choose **Import**.</Step>
+<Step title="Prepare your memories" icon="file-code">Choose a source and prepare a supported JSON export. Review the complete export before you paste it.</Step>
+<Step title="Check, then save" icon="check">Read the preview and its counts. Choose **Import memories** only when you are ready to keep the records.</Step>
+</Steps>
+</div>
+
+Import adds supported records to your account's local memory. It does not transfer an entire account or every conversation.
 
 ## Choose a source
 
-The picker includes ChatGPT, Claude, Claude Code, Codex, OpenClaw, Hermes Agent, Perplexity, Gemini, and **JSON**. The named options provide an export prompt to copy into that service yourself. They do not sign in or fetch your information automatically.
+<div className="help-panel">
+<Tabs>
+<Tab title="Another assistant" icon="messages-square">
+The picker includes **ChatGPT, Gemini, Claude, Perplexity, Claude Code, Codex, OpenClaw, and Hermes Agent**.
 
-Use **JSON** for a supported structured export, including an Anistratenco memory JSON export. A Markdown memory export is for reading; it is not accepted by this importer.
+These options give you a prompt to copy into that service yourself. Choosing one does **not** sign you in, connect the accounts, or fetch your history.
+</Tab>
+<Tab title="A JSON export" icon="file-code">
+Choose **JSON** to paste supported structured data or use **Choose file** to load a `.json` file. This includes an Anistratenco memory JSON export.
+
+A Markdown export is useful for reading, but this importer does not accept it. Plain text, PDFs, and complete account-export archives are not memory imports here.
+</Tab>
+</Tabs>
+</div>
+
+For a short note, [add a memory manually](/memory#add-something-to-remember) instead.
 
 ## Prepare the export
 
-For a named source, use **Preview prompt** to inspect the request and copy it into the service where your information already exists. Review its reply before bringing it back. Another assistant may omit information or summarize it incorrectly.
+For a named source, open **Preview prompt** to inspect the request. Choose **Copy**, paste the prompt into the service where your information already exists, and review its reply. Another assistant may leave things out or summarize them incorrectly.
 
 <Warning>
-  The current built-in provider prompt is incomplete: the importer also needs records to identify whether information is about you or family history. A reply that follows the prompt can still be rejected. If you see that error, do not repeatedly import the same reply. Use a compatible Anistratenco JSON export, add a few memories manually, or contact support for help.
+The current built-in provider prompt is incomplete: the importer also needs records to identify whether information is about you or family history. A reply that follows the prompt can still be rejected. If that happens, use a compatible Anistratenco JSON export, add a few memories manually, or contact support. Repeatedly submitting the same reply will not correct it.
 </Warning>
 
-Do not include passwords, recovery keys, unrelated third-party details, or information you do not want retained in Anistratenco.
-
-## Paste or load JSON
-
-Paste the structured JSON into the import field, or load a JSON file where the source screen offers that option. The app checks the content and shows a preview or an error. Pasting content does not complete the import.
-
-Plain text, Markdown, PDF files, and complete account-export archives are not accepted as memory imports here. Use [Add memory](/memory#add-something-to-remember) for a short note you want to enter yourself.
+Do not include passwords, recovery keys, unrelated third-party details, or information you do not want retained.
 
 ## Read the preview
 
-Check the counts before you continue:
+Paste the JSON reply into the import field, or choose a file in the **JSON** source screen. The app shows a preview or an error. **A preview is not a completed import.**
 
-- **New** records are candidates to add.
-- **Duplicate** records are skipped.
-- **Needs review** means a record conflicts with existing memory and will be imported with that conflict preserved. It is not automatically corrected.
-- The import button’s count is the number that will be added after duplicate handling.
+<div className="help-panel">
+### What each state means
 
-Only the first **five entries** are shown in the preview. The importer processes at most **128 memories per batch**. Review the complete source export before proceeding; the preview is not a full checklist of every item.
+<Tabs>
+<Tab title="New" icon="plus">
+The record is ready to add. Check that it describes something you want the assistant to remember—not a guess you want treated as a fact.
+</Tab>
+<Tab title="Duplicate" icon="copy">
+The record is already represented in your memory and will be skipped. You do not need to add it again.
+</Tab>
+<Tab title="Needs review" icon="triangle-exclamation">
+The record conflicts with existing memory. It will be imported with the conflict preserved, not silently corrected. Review it afterward using the **Conflicts** filter.
+</Tab>
+</Tabs>
+</div>
 
-There is no per-entry selection control in this import preview. If it contains something you do not want to add, change the source export or use a smaller, reviewed batch before importing.
+| Check | What to look for |
+| --- | --- |
+| Preview | Only the first **five entries** are shown. Review the full source export too. |
+| Batch size | At most **128 memories** are processed per batch. Use smaller reviewed batches when needed. |
+| Import count | The button shows how many records will be added after duplicate handling. |
+| Unwanted information | There is no per-entry selection in this preview. Edit the source export before importing. |
 
-## Import and check the result
+## Save and review
 
-Choose **Import memories** or the button showing the number ready to import. Wait for the result. The button is unavailable when there is no valid preview or nothing new to commit.
+<div className="help-panel">
+<Steps>
+<Step title="Import" icon="download">Choose **Import memories**, or the button showing the number ready to import. It is unavailable if the preview is invalid or nothing new can be added.</Step>
+<Step title="Wait for the result" icon="clock">An **Importing…** state means the save is still in progress. Keep your original export if the operation fails.</Step>
+<Step title="Review what you kept" icon="brain">After success, return to **What Chat remembers**. Inspect the new information and use **Conflicts** for anything needing attention.</Step>
+</Steps>
+</div>
 
-After success, return to **What Chat remembers** and inspect the added information. Use the **Conflicts** filter and [memory review controls](/memory#review-memories-together) for anything that needs attention.
+Use the [memory review controls](/memory#review-memories-together) to manage what was added. Import does not certify that a record is accurate. Local success also does not guarantee that all devices have synchronized; check [Devices & sync](/devices).
 
-An import saves memory records; it does not certify them as accurate or guarantee that all devices have synchronized immediately. Check [Devices & sync](/devices) for cross-device status.
+## If something needs attention
 
-## If an import does not work
+<div className="help-panel">
+<Accordion title="The JSON cannot be read">
+Use raw structured JSON without surrounding prose or a Markdown code fence. A valid JSON file can still contain no supported memory records; it needs to be a compatible memory export.
+</Accordion>
+<Accordion title="The app asks whose information this is">
+The records need to distinguish your information from family history. The built-in prompt currently omits this requirement. Use a compatible Anistratenco export, add the memories manually, or ask support for help.
+</Accordion>
+<Accordion title="It says Already imported">
+There are no new records to add. Check your existing memory rather than submitting the same export repeatedly.
+</Accordion>
+<Accordion title="The memories could not be saved">
+Keep your original export. Use the displayed error or support reference when contacting us. Do not send the full export by default—it may contain sensitive health and personal information.
+</Accordion>
+</div>
 
-- **Cannot parse JSON:** the content is not in a format the importer can read. Use the raw structured export, without surrounding prose.
-- **No importable entries:** the file may be valid JSON but not a supported memory export.
-- **Whose information is missing:** the records do not distinguish your information from family history. The source export needs correction.
-- **Already imported:** no new records were added.
-- **Could not be saved:** keep your original export and use the displayed error or support reference when [contacting us](https://anistratenco.com/contact).
-
-Do not send the full export to support by default. It may contain sensitive health and personal information.
+[Contact us](https://anistratenco.com/contact) if you cannot complete the import.
 
 <section className="help-faq" aria-labelledby="page-questions">
 <h2 id="page-questions">Questions? Answers.</h2>
 <Accordion title="Does choosing a provider connect my account?">
-<div>No. The import flow works with a supported file or structured export. Choosing a provider does not sign in to that provider or automatically fetch your history.</div>
+<div>No. You copy a prompt and bring back a supported structured export. The picker does not sign in to the provider or automatically fetch your history.</div>
 </Accordion>
-
 <Accordion title="Is everything saved as soon as I upload?">
-<div>No. Review the preview and any duplicates or items needing attention, then choose Import memories. An upload or preview alone is not a completed import.</div>
+<div>No. Review the preview first, then choose Import memories. An upload or preview alone does not save the records.</div>
+</Accordion>
+<Accordion title="Can I choose individual records in the preview?">
+<div>No. Edit the source export or prepare a smaller batch if you do not want to import every eligible record. The preview shows only the first five entries, so review the complete source before saving.</div>
 </Accordion>
 </section>
