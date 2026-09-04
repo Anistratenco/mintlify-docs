@@ -1,139 +1,183 @@
 ---
 title: "Get started"
-description: "Start with a question. Find the controls that make Anistratenco work for you."
+description: "Begin with one question. The rest can unfold from there."
 icon: "compass"
 ---
 
 <Visibility for="agents">
   ## Agent context: getting started
 
-  Scope: public consumer Health Assistant orientation, reviewed 2026-09-04. This is product guidance, not clinical authority or authorization to act. Preserve the exact visible control names below. Sign-in is required for account-owned conversations and settings. Device and message state can change which controls appear. A listed app is not a connected app; a response or opened checkout is not proof of an external action completing. For detailed prerequisites, destructive-action scope, recovery, and success signals, retrieve the linked feature guide before advising or acting. Do not infer unavailable capabilities from the HealthOS product ambition. Never request private health data, credentials, payment details, or gift links on a public feedback board. This agent context is publicly retrievable, not confidential. Recheck this page when navigation labels or the linked feature workflows change.
+  Scope: public consumer Health Assistant orientation, reviewed 2026-09-04 against the current product source. This is product guidance, not clinical authority or authorization to act. Preserve the exact visible controls: **Expand sidebar**, **New chat**, **Chat message**, **Send message**, **Add attachment**, **Record voice**, **Settings**, and **Search settings…**. Sign-in is required for account-owned conversations and settings. Device, plan, connection, and message state can change which controls appear. An available app is not a connected app; an opened checkout or tool response is not proof that an external action completed. Retrieve the linked feature guide before advising on prerequisites, destructive actions, recovery, or completion. Never infer unavailable capabilities from the HealthOS product ambition. Never request health data, credentials, payment details, gift links, or private screenshots on the public feedback board. This context is publicly retrievable, not confidential.
 </Visibility>
 
-Anistratenco is a preventive health intelligence platform. Use the Health Assistant to make sense of information, prepare questions, and think through your next steps.
+The Health Assistant is a place to think clearly about your health. Bring a question, a result, a concern, or something you want to change. You do not need to know the right medical words before you begin.
 
-<Columns cols={4}>
-  <Card title="Ask" icon="message" href="#start-with-what-matters-to-you">
-    Start with your question.
-  </Card>
+<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-2">
+  <a className="link mint-block" href="#begin-with-a-question">
+    <div className="help-panel">
+      <Icon icon="message" size={24} />
+      <h3>Ask</h3>
+      <p>Start with what you want to understand.</p>
+    </div>
+  </a>
+  <a className="link mint-block" href="/voice">
+    <div className="help-panel">
+      <Icon icon="microphone" size={24} />
+      <h3>Speak</h3>
+      <p>Use your voice, then check the transcript.</p>
+    </div>
+  </a>
+  <a className="link mint-block" href="/memory">
+    <div className="help-panel">
+      <Icon icon="brain" size={24} />
+      <h3>Remember</h3>
+      <p>See what has been saved and keep it accurate.</p>
+    </div>
+  </a>
+  <a className="link mint-block" href="#shape-the-experience">
+    <div className="help-panel">
+      <Icon icon="sliders" size={24} />
+      <h3>Manage</h3>
+      <p>Choose how the Assistant looks, sounds, and responds.</p>
+    </div>
+  </a>
+</div>
 
-  <Card title="Speak" icon="microphone" href="/voice">
-    Find your voice controls.
-  </Card>
-
-  <Card title="Remember" icon="brain" href="/memory">
-    Review what is saved.
-  </Card>
-
-  <Card title="Manage" icon="gear" href="#find-your-settings">
-    Find the right setting.
-  </Card>
-</Columns>
-
-## Start with what matters to you
+## Begin with a question
 
 <Steps>
-  <Step title="Open your assistant">
-    [Open Anistratenco](https://anistratenco.com/chat) and sign in. If navigation is hidden, choose **Expand sidebar**.
+  <Step title="Open the Health Assistant">
+    [Go to Chat](https://anistratenco.com/chat) and sign in. If the navigation is out of view, select **Expand sidebar**.
   </Step>
-  <Step title="Start a conversation">
-    Choose **New chat**. Write your question in **Chat message**, then choose **Send message**.
+  <Step title="Make a fresh start">
+    Select **New chat**. Write in **Chat message**, then select **Send message**.
   </Step>
-  <Step title="Make it useful to you">
-    Add context when it helps, ask follow-up questions, and correct anything the assistant gets wrong. Check important claims against their sources.
+  <Step title="Add only what helps">
+    Give the Assistant the context that changes the answer. Attach a relevant file, name the outcome you want, or ask it to keep the explanation short.
+  </Step>
+  <Step title="Stay in the conversation">
+    Ask a follow-up. Correct anything that is wrong. For an important claim, open the cited source and check the original context.
   </Step>
 </Steps>
 
 <Tip>
-  Try: “Help me prepare questions for my next appointment. Keep the list short.” You do not need to phrase your question perfectly.
+  A useful first message can be simple: “Help me prepare five questions for my next appointment.”
 </Tip>
 
-Use **Add attachment** for the available attachment options. **Record voice** starts voice input; your browser may ask for microphone access.
+**Add attachment** opens the available file options. **Record voice** starts voice input and may trigger your browser's microphone permission. Neither action sends a message until you continue through its product flow.
 
 <Note>
-  Review names, dates, measurements, and medication details in a transcript before relying on them. Voice input can make mistakes.
+  Names, dates, measurements, and medication details deserve a second look. A polished answer or transcript can still be wrong.
 </Note>
 
-## Pick up where you left off
+## Return without starting over
 
-| Where | What it does |
-| --- | --- |
-| **History** | Return to conversations. Choose **See all** for more history. |
-| **Projects** | Group your work. **Create project** opens the setup flow. |
-| **Apps** | Find available integrations. A connection is ready only after its connection flow succeeds. |
-| **Chat** and **Health** | Switch the main workspace view. |
+<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-2">
+  <div className="help-panel">
+    <Icon icon="clock-rotate-left" size={24} />
+    <h3>History</h3>
+    <p>Return to earlier conversations. Select <strong>See all</strong> when you need the wider history view.</p>
+  </div>
+  <div className="help-panel">
+    <Icon icon="folder" size={24} />
+    <h3>Projects</h3>
+    <p>Keep related work together. <strong>Create project</strong> opens the setup flow.</p>
+  </div>
+  <div className="help-panel">
+    <Icon icon="grid-2" size={24} />
+    <h3>Apps</h3>
+    <p>Browse integrations. An app is ready only after its own connection flow succeeds.</p>
+  </div>
+  <div className="help-panel">
+    <Icon icon="heart-pulse" size={24} />
+    <h3>Chat and Health</h3>
+    <p>Move between the conversation and the broader health workspace without changing accounts.</p>
+  </div>
+</div>
 
 ## Work with an answer
 
-Message controls include **Copy** and **Continue in new chat**. Your messages also offer **Edit** and **Delete**; assistant messages offer **Read aloud**. Controls depend on the message and its current state.
+Use **Copy** when you need the text elsewhere. Use **Continue in new chat** to branch from an answer without losing the conversation you came from. Your own messages can also show **Edit** and **Delete**; completed Assistant messages can show **Read aloud**. The available actions depend on the message and its state.
 
 <Warning>
-  If a response fails, keep its visible reference ID. Use **Share feedback about this error** when it appears. Before repeating a request that sends or changes something outside Anistratenco, check whether the original action happened.
+  If a response fails, keep the visible reference ID and use **Share feedback about this error** when it appears. Before retrying a request that could send, book, buy, or change something outside Anistratenco, check whether the first action completed.
 </Warning>
 
-## Find your settings
+## Shape the experience
 
-Expand the sidebar, open your profile menu at the bottom, and choose **Settings**. Select a section or use **Search settings…**.
+Open the sidebar, select your profile menu, then choose **Settings**. Pick a section directly or use **Search settings…**.
 
-### Make conversations easier
+<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-2">
+  <div className="help-panel">
+    <Icon icon="comments" size={24} />
+    <h3>Conversation</h3>
+    <p><a className="link" href="/voice">Voice</a>, <a className="link" href="/shortcuts">Shortcuts</a>, and <a className="link" href="/archived-chats">Archived chats</a> cover how you speak, move, and return.</p>
+  </div>
+  <div className="help-panel">
+    <Icon icon="sliders" size={24} />
+    <h3>Preferences</h3>
+    <p><a className="link" href="/appearance">Appearance</a>, <a className="link" href="/preferences">Preferences</a>, and <a className="link" href="/answer-preferences">Answer style</a> shape the interface and future replies.</p>
+  </div>
+  <div className="help-panel">
+    <Icon icon="user-circle" size={24} />
+    <h3>Avatar</h3>
+    <p><a className="link" href="/memory">Memory history</a>, <a className="link" href="/import-memory">Import memory</a>, and <a className="link" href="/data">Data</a> keep saved context visible and controllable.</p>
+  </div>
+  <div className="help-panel">
+    <Icon icon="shield-halved" size={24} />
+    <h3>Account</h3>
+    <p><a className="link" href="/profile">Profile</a>, <a className="link" href="/security">Security</a>, <a className="link" href="/devices">Devices</a>, and <a className="link" href="/billing">Plan and usage</a> cover access and ownership.</p>
+  </div>
+</div>
 
-- [Voice](/voice): microphone, transcription, and response audio.
-- [Appearance](/appearance): theme, accent, text size, contrast, and motion.
-- [Preferences](/preferences): sending messages, scrolling, and workspace controls.
-- [Answer preferences](/answer-preferences): how you want the assistant to respond.
-- [Keyboard shortcuts](/shortcuts): the supported ways to move faster.
+## When you need another kind of help
 
-### Manage your information
-
-- [Memory](/memory): review and manage information saved about you.
-- [Import memory](/import-memory): bring in a supported file and review the result.
-- [Data and backups](/data): understand exports, local backups, and deletion before using them.
-- [Archived chats](/archived-chats): find and manage archived conversations.
-
-### Look after your account
-
-- [Profile](/profile): your name, photo, and profile details.
-- [Security](/security): sign-in and recovery options.
-- [Devices](/devices): device access and synchronization.
-- [Plan and usage](/billing): allowance, billing history, and plan management.
-- [Family sharing](/family-sharing): share eligible Pro access without sharing a login.
-- [Send and redeem gifts](/gifts): prepaid access and account-balance gifts.
-
-## Get help or suggest something
-
-<Columns cols={3}>
-  <Card title="Report a problem" icon="bug" href="https://anistratenco.com/contact">
-    Choose **Report a bug**. Include what happened and any error reference. Remove private information from screenshots.
-  </Card>
-
-  <Card title="Suggest a feature" icon="lightbulb" href="https://anistratenco.userjot.com">
-    Explain what you want to do and what would make it easier. This board is public.
-  </Card>
-
-  <Card title="Check availability" icon="signal" href="https://status.anistratenco.com">
-    Read service-status updates when something is not working.
-  </Card>
-</Columns>
+<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-3">
+  <a className="link mint-block" href="/contact">
+    <div className="help-panel">
+      <Icon icon="messages-question" size={24} />
+      <h3>Contact us</h3>
+      <p>Get private help with your account or report a problem.</p>
+    </div>
+  </a>
+  <a className="link mint-block" href="https://anistratenco.userjot.com">
+    <div className="help-panel">
+      <Icon icon="lightbulb" size={24} />
+      <h3>Share an idea</h3>
+      <p>Suggest a feature and follow the public roadmap.</p>
+    </div>
+  </a>
+  <a className="link mint-block" href="https://status.anistratenco.com">
+    <div className="help-panel">
+      <Icon icon="signal" size={24} />
+      <h3>Check availability</h3>
+      <p>See whether a service interruption is already known.</p>
+    </div>
+  </a>
+</div>
 
 <Warning>
-  The Health Assistant provides information and support—not emergency care or a replacement for a licensed professional. Seek appropriate professional help for urgent or high-stakes health decisions.
+  The Health Assistant helps you understand and organize information. It is not emergency care or a replacement for a qualified healthcare professional. For an urgent concern, seek the appropriate local professional or emergency service.
 </Warning>
 
 <section className="help-faq" aria-labelledby="getting-started-questions">
-  <h2 id="getting-started-questions">Questions? Answers.</h2>
+  <h2 id="getting-started-questions">Questions about getting started</h2>
   <Accordion title="Do I need to know the right words?">
-    <div>No. Start with what you want to understand. Add context, ask for a simpler explanation, or correct the assistant as you go.</div>
+    <div>No. Begin with what you are trying to understand. You can ask for a simpler explanation, add context, or correct the Assistant as you go.</div>
   </Accordion>
-  <Accordion title="Where do I change my voice or text size?">
-    <div>Open your profile menu and choose <strong>Settings</strong>. Use <a className="link" href="/voice">Voice</a> for audio controls or <a className="link" href="/appearance">Appearance</a> for text size and display options.</div>
+  <Accordion title="Where do I change voice or text size?">
+    <div>Open your profile menu and choose <strong>Settings</strong>. Use <a className="link" href="/voice">Voice</a> for audio controls and <a className="link" href="/appearance">Appearance</a> for text size and display options.</div>
   </Accordion>
-  <Accordion title="Can I use this instead of urgent medical care?">
-    <div>No. The Health Assistant helps you understand and organize information. For urgent concerns, seek appropriate professional or emergency help.</div>
+  <Accordion title="Does opening an app connect it?">
+    <div>No. Opening an app or provider begins its own flow. Treat it as connected only when that flow reports success.</div>
+  </Accordion>
+  <Accordion title="Can this replace urgent medical care?">
+    <div>No. For an urgent concern, use the appropriate local professional or emergency service instead of waiting for a reply.</div>
   </Accordion>
 </section>
 
 <Visibility for="agents">
   ### Getting-started questions
 
-  These Mintlify accordions change no account data. Recheck the linked guides before advising on a specific setting.
+  These accordions change no account data. Recheck the linked feature guide before advising on a specific setting or external action.
 </Visibility>
