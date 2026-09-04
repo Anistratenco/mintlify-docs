@@ -1,0 +1,111 @@
+/* Public Health Assistant: shared product surfaces, not per-page approximations. */
+:root {
+  --help-ink: #1c1c1e;
+  --help-accent: #006fe6;
+  --help-fill: rgb(255 255 255 / 24%);
+  --help-hover: rgb(255 255 255 / 38%);
+  --help-edge: rgb(255 255 255 / 56%);
+  --help-top: inset 0 1px 0 rgb(255 255 255 / 68%);
+  --help-glass: rgb(225 227 229 / 78%);
+  --help-link-fill: rgb(0 111 230 / 9%);
+}
+.dark {
+  --help-ink: #f2f2f7;
+  --help-fill: rgb(255 255 255 / 5.5%);
+  --help-hover: rgb(255 255 255 / 9%);
+  --help-edge: rgb(255 255 255 / 18%);
+  --help-top: inset 0 1px 0 rgb(255 255 255 / 18%);
+  --help-glass: rgb(16 16 18 / 76%);
+  --help-link-fill: rgb(0 111 230 / 18%);
+}
+
+/* Remove the two opaque full-width underlays so blur samples the page. */
+#navbar {
+  width: min(640px, calc(100% - 32px));
+  margin: 12px auto 20px;
+  top: 12px;
+  left: 0;
+  right: 0;
+  border-radius: 9999px;
+  border: 1px solid var(--help-edge);
+  background: var(--help-glass);
+  box-shadow: var(--help-top), 0 8px 24px -20px rgb(0 0 0 / 35%);
+  backdrop-filter: blur(18px) saturate(112%);
+  -webkit-backdrop-filter: blur(18px) saturate(112%);
+}
+#navbar > div.absolute { display: none; }
+#navbar > div.relative { padding-inline: 8px; }
+#navbar #topbar-cta-button { border-radius: 9999px; box-shadow: var(--help-top); }
+#sidebar .sidebar-title, #navigation-items .sidebar-title {
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+  font-weight: 600;
+}
+#header .eyebrow { font-size: 15px; height: auto; line-height: 1.5; }
+
+#content a.link {
+  color: var(--help-ink);
+  background: var(--help-link-fill);
+  border: 1px solid rgb(0 111 230 / 28%);
+  border-radius: .45rem;
+  padding: .06em .3em;
+  text-decoration: none !important;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  box-shadow: var(--help-top);
+  font-weight: 550;
+  transition: background-color 160ms ease-out, border-color 160ms ease-out;
+}
+#content a.link:hover { background: rgb(0 111 230 / 24%); border-color: var(--help-accent); }
+#content a.link:focus-visible, #pagination a:focus-visible, .help-faq summary:focus-visible {
+  outline: 2px solid var(--help-accent); outline-offset: 3px;
+}
+#pagination { gap: 16px; }
+#pagination > a {
+  border-radius: 9999px !important;
+  padding: 16px 24px !important;
+  min-height: 80px;
+  border: 1px solid var(--help-edge) !important;
+  background: var(--help-fill) !important;
+  box-shadow: var(--help-top) !important;
+  transition: background-color 160ms ease-out, transform 160ms ease-out;
+}
+#pagination > a:hover { background: var(--help-hover) !important; }
+#pagination > a:active { transform: scale(.985); }
+
+#content .card, #content .help-panel, #content .help-faq {
+  border-radius: 24px !important;
+  border: 1px solid var(--help-edge) !important;
+  background: var(--help-fill) !important;
+  box-shadow: var(--help-top) !important;
+}
+#content .card { transition: background-color 180ms ease-out, border-color 180ms ease-out; }
+#content .card:hover { background: var(--help-hover) !important; border-color: rgb(255 255 255 / 56%) !important; }
+#content .help-panel { padding: 24px; margin-block: 24px; }
+#content .help-faq { padding: 8px; margin-block: 32px; }
+#content .help-faq h2 { text-align: center; margin: 16px 12px 24px; }
+.help-faq details {
+  interpolate-size: allow-keywords;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--help-edge);
+  background: var(--help-fill);
+  margin-top: 7px;
+  transition: background-color 180ms ease-out, transform 180ms ease-out;
+}
+.help-faq details[open] { background: var(--help-hover); transform: scale(1.004); }
+.help-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; list-style: none; padding: 16px; font-weight: 550; }
+.help-faq summary::-webkit-details-marker { display: none; }
+.help-faq summary::after { content: ''; width: 8px; height: 8px; border-right: 1.8px solid currentColor; border-bottom: 1.8px solid currentColor; transform: rotate(45deg); transition: transform 180ms ease-out; flex: none; margin-right: 4px; }
+.help-faq details[open] summary::after { transform: rotate(225deg); }
+.help-faq details > div { padding: 0 16px 16px; }
+.help-faq details::details-content { block-size: 0; overflow: hidden; transition: block-size 240ms ease-out, content-visibility 240ms allow-discrete; }
+.help-faq details[open]::details-content { block-size: auto; }
+@media (max-width: 640px) {
+  #navbar { width: calc(100% - 20px); top: 8px; margin-top: 8px; }
+  #pagination { flex-wrap: wrap; }
+  #pagination > a { min-width: 0; padding: 14px 18px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #content a.link, #content .card, #pagination > a, .help-faq details, .help-faq summary::after, .help-faq details::details-content { transition: none; }
+}
