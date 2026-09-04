@@ -5,16 +5,7 @@ icon: "message"
 
 
 
-<section className="help-faq" aria-labelledby="page-questions">
-<h2 id="page-questions">Questions? Answers.</h2>
-<Accordion title="Where should I start?">
-<div>Start with one question in Chat. Add the context that matters to you, then ask for a simpler explanation or a useful next step. The <a className="link" href="/quickstart">Get started</a> guide shows you around.</div>
-</Accordion>
 
-<Accordion title="Can I correct the assistant?">
-<div>Yes. Correct an answer in the conversation, and review saved information in <a className="link" href="/memory">Memory history</a>. Check important health information against its original sources.</div>
-</Accordion>
-</section>
 
 <Visibility for="agents">
   ## Agent context
@@ -26,19 +17,12 @@ icon: "message"
 
 Your Health Assistant helps you make sense of health information, prepare questions, and think through your next steps. Start with what matters to you—you do not need to know the right medical words.
 
-<div className="grid dark:hidden grid-cols-1 sm:grid-cols-2 gap-4 my-8 not-prose">
-  <a href="/quickstart" className="block rounded-3xl p-6 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2" style={{background:'rgba(255,255,255,0.18)',border:'1px solid rgba(255,255,255,0.28)',boxShadow:'inset 0 1px 0 rgba(255,255,255,0.68)',color:'inherit'}}><Icon icon="message" size={22} /><strong className="block mt-4 mb-2 text-base">Start a conversation</strong><span className="block text-sm leading-6 opacity-75">Write your first message and learn your way around Chat.</span></a>
-  <a href="/voice" className="block rounded-3xl p-6 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2" style={{background:'rgba(255,255,255,0.18)',border:'1px solid rgba(255,255,255,0.28)',boxShadow:'inset 0 1px 0 rgba(255,255,255,0.68)',color:'inherit'}}><Icon icon="microphone" size={22} /><strong className="block mt-4 mb-2 text-base">Voice</strong><span className="block text-sm leading-6 opacity-75">Speak instead of typing, check your transcript, or listen to an answer.</span></a>
-  <a href="/appearance" className="block rounded-3xl p-6 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2" style={{background:'rgba(255,255,255,0.18)',border:'1px solid rgba(255,255,255,0.28)',boxShadow:'inset 0 1px 0 rgba(255,255,255,0.68)',color:'inherit'}}><Icon icon="sliders" size={22} /><strong className="block mt-4 mb-2 text-base">Appearance</strong><span className="block text-sm leading-6 opacity-75">Adjust the theme, text size, contrast, and motion.</span></a>
-  <a href="/contact" className="block rounded-3xl p-6 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2" style={{background:'rgba(255,255,255,0.18)',border:'1px solid rgba(255,255,255,0.28)',boxShadow:'inset 0 1px 0 rgba(255,255,255,0.68)',color:'inherit'}}><Icon icon="life-ring" size={22} /><strong className="block mt-4 mb-2 text-base">Contact us</strong><span className="block text-sm leading-6 opacity-75">Find private help with your account or a problem using the app.</span></a>
-</div>
-
-<div className="hidden dark:grid grid-cols-1 sm:grid-cols-2 gap-4 my-8 not-prose">
-  <a href="/quickstart" className="block rounded-3xl p-6 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2" style={{background:'#0c0c0c',border:'1px solid rgba(255,255,255,0.06)',boxShadow:'inset 0 1px 0 rgba(255,255,255,0.18)',color:'inherit'}}><Icon icon="message" size={22} /><strong className="block mt-4 mb-2 text-base">Start a conversation</strong><span className="block text-sm leading-6 opacity-75">Write your first message and learn your way around Chat.</span></a>
-  <a href="/voice" className="block rounded-3xl p-6 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2" style={{background:'#0c0c0c',border:'1px solid rgba(255,255,255,0.06)',boxShadow:'inset 0 1px 0 rgba(255,255,255,0.18)',color:'inherit'}}><Icon icon="microphone" size={22} /><strong className="block mt-4 mb-2 text-base">Voice</strong><span className="block text-sm leading-6 opacity-75">Speak instead of typing, check your transcript, or listen to an answer.</span></a>
-  <a href="/appearance" className="block rounded-3xl p-6 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2" style={{background:'#0c0c0c',border:'1px solid rgba(255,255,255,0.06)',boxShadow:'inset 0 1px 0 rgba(255,255,255,0.18)',color:'inherit'}}><Icon icon="sliders" size={22} /><strong className="block mt-4 mb-2 text-base">Appearance</strong><span className="block text-sm leading-6 opacity-75">Adjust the theme, text size, contrast, and motion.</span></a>
-  <a href="/contact" className="block rounded-3xl p-6 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2" style={{background:'#0c0c0c',border:'1px solid rgba(255,255,255,0.06)',boxShadow:'inset 0 1px 0 rgba(255,255,255,0.18)',color:'inherit'}}><Icon icon="life-ring" size={22} /><strong className="block mt-4 mb-2 text-base">Contact us</strong><span className="block text-sm leading-6 opacity-75">Find private help with your account or a problem using the app.</span></a>
-</div>
+<CardGroup cols={2}>
+ <Card title="Start a conversation" icon="message" href="/quickstart">Write your first message and learn your way around Chat.</Card>
+ <Card title="Voice" icon="microphone" href="/voice">Speak instead of typing, check your transcript, or listen to an answer.</Card>
+ <Card title="Appearance" icon="palette" href="/appearance">Adjust the theme, text size, contrast, and motion.</Card>
+ <Card title="Contact us" icon="life-ring" href="/contact">Find private help with your account or a problem using the app.</Card>
+</CardGroup>
 
 ## Ask, check, and follow up
 
@@ -65,3 +49,14 @@ HealthOS is the foundation beneath the Health Assistant. It brings conversations
 ## For urgent health concerns
 
 The Health Assistant is not an emergency service or a replacement for a qualified healthcare professional. For an urgent concern, seek appropriate medical help rather than waiting for a support reply.
+
+<section className="help-faq" aria-labelledby="page-questions">
+<h2 id="page-questions">Questions? Answers.</h2>
+<Accordion title="Where should I start?">
+<div>Start with one question in Chat. Add the context that matters to you, then ask for a simpler explanation or a useful next step. The <a className="link" href="/quickstart">Get started</a> guide shows you around.</div>
+</Accordion>
+
+<Accordion title="Can I correct the assistant?">
+<div>Yes. Correct an answer in the conversation, and review saved information in <a className="link" href="/memory">Memory history</a>. Check important health information against its original sources.</div>
+</Accordion>
+</section>

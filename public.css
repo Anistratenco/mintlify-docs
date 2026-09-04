@@ -48,8 +48,9 @@
 }
 #header .eyebrow { font-size: 15px; height: auto; line-height: 1.5; }
 
-#content a.link {
-  color: var(--help-ink);
+#navbar button[aria-label="More actions"] { display: none !important; }
+#content a.link:not(:has(strong.mint-block)):not(.card):not(:has(h2)) {
+  color: var(--help-accent);
   background: var(--help-link-fill);
   border: 1px solid rgb(0 111 230 / 28%);
   border-radius: 9999px;
@@ -61,7 +62,7 @@
   font-weight: 550;
   transition: background-color 160ms ease-out, border-color 160ms ease-out;
 }
-#content a.link:hover { background: rgb(0 111 230 / 24%); border-color: var(--help-accent); }
+#content a.link:not(:has(strong.mint-block)):not(.card):not(:has(h2)):hover { background: rgb(0 111 230 / 24%); border-color: var(--help-accent); }
 #content a.link:focus-visible, #pagination a:focus-visible, .help-faq summary:focus-visible {
   outline: 2px solid var(--help-accent); outline-offset: 3px;
 }
@@ -82,7 +83,15 @@
 #pagination [data-component-part="pagination-label"] { display: none; }
 #pagination [rel="prev"] [data-component-part="pagination-title"] { order: 1; }
 #pagination [data-component-part="pagination-title"] { display: flex; align-items: center; gap: 8px; }
-#pagination .help-destination-icon { width: 16px; height: 16px; flex: none; background-color: currentColor; }
+#pagination .help-destination-icon { width: 20px; height: 20px; flex: none; background-color: var(--help-accent); }
+
+#content .callout {
+  background: var(--help-fill) !important;
+  border: 1px solid var(--help-edge) !important;
+  border-radius: 24px !important;
+  box-shadow: var(--help-top);
+  color: var(--help-ink) !important;
+}
 
 #content .card, #content .help-panel, #content .help-faq {
   border-radius: 24px !important;
