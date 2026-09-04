@@ -7,6 +7,24 @@ icon: "laptop"
 
 Open your profile menu, then **Settings → Account → Security → Devices**. A signed-in browser and an approved sync device are not the same thing: signing in does not always mean this browser can read your encrypted synced data.
 
+<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-3">
+  <div className="help-panel help-panel--compact">
+    <Icon icon="laptop" size={22} />
+    <h3>Request</h3>
+    <p>Begin approval from the new browser you want to use.</p>
+  </div>
+  <div className="help-panel help-panel--compact">
+    <Icon icon="message-dots" size={22} />
+    <h3>Compare</h3>
+    <p>Match the phrase on both browsers before continuing.</p>
+  </div>
+  <div className="help-panel help-panel--compact">
+    <Icon icon="shield-check" size={22} />
+    <h3>Approve</h3>
+    <p>Grant sync access only to a browser you recognize.</p>
+  </div>
+</div>
+
 ## Set up sync
 
 If you see **Set up encrypted sync**, finish and verify your [account recovery kit](/security#save-an-account-recovery-kit) first. Return to Devices and choose **Turn on sync** when it becomes available. The browser must be approved before it can use encrypted sync.

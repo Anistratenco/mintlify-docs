@@ -140,6 +140,8 @@
 #content .card [data-component-part="card-content-container"] { display: flex; align-items: flex-start; gap: 10px; padding: 18px !important; }
 #content .card [data-component-part="card-icon"] { flex: none; margin-top: 1px; }
 #content .help-panel { padding: 18px; margin-block: 18px; }
+#content .help-panel--compact { padding: 14px; margin-block: 14px; }
+#content .help-panel--compact p:last-child { margin-bottom: 0; }
 #content .help-panel:has(> svg:first-child) { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 10px; row-gap: 8px; align-items: center; }
 #content .help-panel:has(> svg:first-child) > h2,
 #content .help-panel:has(> svg:first-child) > h3 { margin: 0 !important; }

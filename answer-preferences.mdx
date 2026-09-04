@@ -7,6 +7,24 @@ icon: "comment-dots"
 
 Open your profile menu, then **Settings → Avatar**. The answer settings here guide how the assistant communicates. They are separate from your profile photo, the app’s appearance, and your health history.
 
+<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-3">
+  <div className="help-panel help-panel--compact">
+    <Icon icon="crosshairs" size={22} />
+    <h3>Precise</h3>
+    <p>Keep the answer close to the question and the available evidence.</p>
+  </div>
+  <div className="help-panel help-panel--compact">
+    <Icon icon="scale-balanced" size={22} />
+    <h3>Balanced</h3>
+    <p>Use clear detail without closing off useful context.</p>
+  </div>
+  <div className="help-panel help-panel--compact">
+    <Icon icon="sparkles" size={22} />
+    <h3>Creative</h3>
+    <p>Explore more ways to frame an idea without inventing facts.</p>
+  </div>
+</div>
+
 ## Style
 
 Move the **Style** slider between **Precise**, **Balanced**, and **Creative**. It requests less or more variation in wording and ideas. **Balanced** is the default; use **Reset Style** to return to it.
@@ -51,6 +69,8 @@ Choose a language to ask the assistant to answer in it. **Automatic** follows th
 You can still ask for a different language in a particular message. Important units, medication names, citations, and quotations may stay in their original form when translating them would change their meaning.
 
 This setting controls written answers. It does not change the app’s interface language or choose a spoken voice. For voice and read-aloud controls, see [Voice](/voice).
+
+For deeper prompting guidance, read OpenAI’s [prompting documentation](https://developers.openai.com/api/docs/guides/text) and Anthropic’s [prompt engineering overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview). Those guides describe their own models; your Anistratenco preferences remain the controls that apply here.
 
 ## Try a simple request
 
