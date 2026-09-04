@@ -54,7 +54,7 @@
 #header > .prose { margin-inline: auto; max-width: 54ch; text-wrap: balance; }
 
 #navbar button[aria-label="More actions"] { display: none !important; }
-#content a.link:not(:has(strong.mint-block)):not(.card):not(:has(h2)) {
+#content a.link:not(.mint-block):not(:has(strong.mint-block)):not(.card):not(:has(h2)) {
   color: var(--help-accent);
   background: var(--help-link-fill);
   border: 1px solid rgb(0 111 230 / 28%);
@@ -67,7 +67,17 @@
   font-weight: 550;
   transition: background-color 160ms ease-out, border-color 160ms ease-out;
 }
-#content a.link:not(:has(strong.mint-block)):not(.card):not(:has(h2)):hover { background: rgb(0 111 230 / 24%); border-color: var(--help-accent); }
+#content a.link:not(.mint-block):not(:has(strong.mint-block)):not(.card):not(:has(h2)):hover { background: rgb(0 111 230 / 24%); border-color: var(--help-accent); }
+#content a.mint-block {
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  text-decoration: none !important;
+}
+#content a.mint-block::before, #content a.mint-block::after { content: none !important; }
 #content a.link:focus-visible, #pagination a:focus-visible, .help-faq summary:focus-visible {
   outline: 2px solid var(--help-accent); outline-offset: 3px;
 }
