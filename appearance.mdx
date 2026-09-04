@@ -2,7 +2,7 @@
 title: "Appearance"
 sidebarTitle: "Appearance"
 icon: "palette"
-description: "Make your Health Assistant comfortable to read and easy to use."
+description: "A space you can settle into. Adjust the light, the type, and the room around your controls."
 ---
 
 <Visibility for="agents">
@@ -11,30 +11,32 @@ These are appearance controls, not changes to answer content or medical interpre
 
 <Steps>
 <Step title="Open Appearance" icon="palette">Open your profile menu in the sidebar, choose **Settings**, then **Appearance**.</Step>
-<Step title="Change one thing" icon="sliders">Start with the theme or text size. Read a familiar conversation to judge whether the change helps.</Step>
-<Step title="Keep what works" icon="check">Use the reset beside a slider to undo that adjustment without changing the others.</Step>
+<Step title="Find your fit" icon="sliders">Try a theme or text size, then return to a conversation. The right choice is the one you can read comfortably.</Step>
+<Step title="Adjust it again" icon="check">Use the reset beside a slider to undo that adjustment. Your other choices stay as they are.</Step>
 </Steps>
 
 ## Light, Dark, and Automatic
 
-Choose **Light** for a light background or **Dark** for a dark background. **Automatic** follows your device's appearance and updates when it changes. Your theme choice is saved in this browser.
+Choose Light or Dark to keep one appearance. Automatic follows your device, including changes to its light or dark setting. Your choice is saved in this browser.
 
 <div className="help-panel">
-### Preview a theme
+### Light where you need it
 
-These simplified examples show the difference. They do not change your app settings.
+Compare a reading surface below. These are examples, not account controls; make your changes in Settings → Appearance.
 
 <Tabs>
 <Tab title="Light" icon="sun">
 <div style={{background: '#e9eaec', color: '#1c1c1e', padding: '24px', borderRadius: '20px', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.68)'}}>
-<strong>Your next question</strong>
-<p style={{marginBottom: 0}}>What would you like to understand about your health today?</p>
+<p style={{fontSize: '13px', opacity: .65, marginTop: 0}}>LIGHT · READING SAMPLE</p>
+<p style={{fontSize: '22px', lineHeight: 1.35, marginBlock: '12px'}}>A little more room to think.</p>
+<p style={{marginBottom: 0}}>Bring a question. Add the context that matters. Return to it when you are ready.</p>
 </div>
 </Tab>
 <Tab title="Dark" icon="moon">
 <div style={{background: '#111113', color: '#f2f2f7', padding: '24px', borderRadius: '20px', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.18)'}}>
-<strong>Your next question</strong>
-<p style={{marginBottom: 0}}>What would you like to understand about your health today?</p>
+<p style={{fontSize: '13px', opacity: .65, marginTop: 0}}>DARK · READING SAMPLE</p>
+<p style={{fontSize: '22px', lineHeight: 1.35, marginBlock: '12px'}}>A little more room to think.</p>
+<p style={{marginBottom: 0}}>Bring a question. Add the context that matters. Return to it when you are ready.</p>
 </div>
 </Tab>
 <Tab title="Automatic" icon="desktop">The app follows the light or dark preference reported by your device. Choose this if you want it to change with your usual day/night setup.</Tab>
@@ -43,7 +45,7 @@ These simplified examples show the difference. They do not change your app setti
 
 ## Accent
 
-The accent highlights controls and selected parts of the interface. It does not change the meaning of an answer.
+Your accent marks selected controls and other interface details. Pick a familiar color or choose your own. It is a visual preference, not a signal about the reliability of an answer.
 
 <div className="help-panel">
 <div style={{display: 'flex', flexWrap: 'wrap', gap: '16px'}}>
@@ -54,17 +56,17 @@ The accent highlights controls and selected parts of the interface. It does not 
 <span><span aria-hidden="true" style={{color: '#10a34a'}}>●</span> Green</span>
 </div>
 
-Choose a swatch in the app, or open **Custom accent color** to choose your own. **Automatic accent** follows the theme's neutral accent treatment; it is separate from Automatic light/dark appearance.
+Choose a swatch in the app, or open Custom accent color. Automatic accent uses the theme's neutral treatment. It is separate from Automatic, which follows your device's light or dark appearance.
 </div>
 
 ## Font size
 
-Use the slider or enter a number from **14 to 18**. The markers are **Standard**, **Large**, and **Largest**. This scales interface text, not the content of your messages. The individual reset returns it to **14**.
+Move the slider or enter a number from 14 to 18. The markers are Standard, Large, and Largest. This scales interface text without rewriting your messages. Resetting this slider returns it to 14.
 
 <div className="help-panel">
 ### Find a comfortable reading size
 
-The interface uses **Inter**, a typeface designed for clear screen reading. Select a sample to compare sizes; your browser zoom can also affect how large it appears.
+The interface uses Inter. Compare the same sentence at three sizes below. Browser zoom also affects what you see, so check your choice in a real conversation before settling on it.
 
 <Tabs>
 <Tab title="Standard · 14"><p style={{fontFamily: 'Inter, sans-serif', fontSize: '14px', lineHeight: 1.6}}>Start with what matters to you. You do not need to know the medical words to ask a question.</p></Tab>
@@ -77,18 +79,18 @@ The interface uses **Inter**, a typeface designed for clear screen reading. Sele
 
 | Setting | What changes | Range | Individual reset |
 | --- | --- | --- | --- |
-| **Contrast** | Strengthens supported text and surface separation in both themes. It does not change screen brightness or every image. | 0–100, in steps of 5 | 0 |
-| **Control size** | Scales supported buttons and controls. Use it when targets feel too small. | 0.75×–1.5×, in steps of 0.05 | 1× |
+| Contrast | Strengthens supported text and surface separation in both themes. It does not change screen brightness or every image. | 0–100, in steps of 5 | 0 |
+| Control size | Scales supported buttons and controls. Use it when targets feel too small. | 0.75×–1.5×, in steps of 0.05 | 1× |
 
 Control size is separate from Font size. You can make text easier to read without making the same change to controls.
 
 ## Reduce motion
 
-Turn on **Reduce motion** to limit decorative movement. Progress and state changes remain visible, so you can still tell when something is loading or has finished.
+Turn on Reduce motion if movement is distracting or uncomfortable. It limits decorative animation while keeping progress and state changes visible.
 
 ## Reset appearance
 
-**Reset appearance** restores the defaults together: **Automatic** theme, **Blue** accent, font size **14**, contrast **0**, control size **1×**, and Reduce motion **off**. The reset is shown when an appearance choice differs from its default.
+**Reset appearance** restores the defaults together: Automatic theme, Blue accent, font size 14, contrast 0, control size 1×, and Reduce motion off. The reset appears when a choice differs from its default.
 
 <Note>This does not delete your conversations, files, or account. Use an individual slider's reset when you want to undo only one adjustment.</Note>
 

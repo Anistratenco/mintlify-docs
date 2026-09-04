@@ -47,6 +47,11 @@
   font-weight: 600;
 }
 #header .eyebrow { font-size: 15px; height: auto; line-height: 1.5; }
+#header { text-align: center; }
+#header > div:first-child > div:has(> #page-title) { flex-direction: column; align-items: center; }
+#header #page-title { width: 100%; text-wrap: balance; }
+#header #page-context-menu { margin-inline: auto; justify-content: center; }
+#header > .prose { margin-inline: auto; max-width: 54ch; text-wrap: balance; }
 
 #navbar button[aria-label="More actions"] { display: none !important; }
 #content a.link:not(:has(strong.mint-block)):not(.card):not(:has(h2)) {
