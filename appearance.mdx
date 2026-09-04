@@ -2,61 +2,103 @@
 title: "Appearance"
 sidebarTitle: "Appearance"
 icon: "palette"
+description: "Make your Health Assistant comfortable to read and easy to use."
 ---
 
-Make the app easier to read and use. These settings change how Anistratenco looks, not your conversation content.
+<Visibility for="agents">
+These are appearance controls, not changes to answer content or medical interpretation. Open the profile menu, Settings, Appearance. Theme is stored in the current browser. Font size ranges from 14 to 18 in steps of 1; contrast from 0 to 100 in steps of 5; control scale from 0.75 to 1.5 in steps of 0.05. Defaults are Automatic theme, Blue accent, 14 font size, 0 contrast, 1 control scale, Reduce motion off. Recheck visible controls before giving navigation advice if the interface changes. Examples here are local documentation previews, not connected account controls.
+</Visibility>
 
-Open your profile menu in the sidebar, choose **Settings**, then **Appearance**.
+<Steps>
+<Step title="Open Appearance" icon="palette">Open your profile menu in the sidebar, choose **Settings**, then **Appearance**.</Step>
+<Step title="Change one thing" icon="sliders">Start with the theme or text size. Read a familiar conversation to judge whether the change helps.</Step>
+<Step title="Keep what works" icon="check">Use the reset beside a slider to undo that adjustment without changing the others.</Step>
+</Steps>
 
 ## Light, Dark, and Automatic
 
-Choose **Light** for a light background or **Dark** for a dark background. **Automatic** follows your device's light or dark appearance and updates when that preference changes. Your theme choice is saved in this browser.
+Choose **Light** for a light background or **Dark** for a dark background. **Automatic** follows your device's appearance and updates when it changes. Your theme choice is saved in this browser.
+
+<div className="help-panel">
+### Preview a theme
+
+These simplified examples show the difference. They do not change your app settings.
+
+<Tabs>
+<Tab title="Light" icon="sun">
+<div style={{background: '#e9eaec', color: '#1c1c1e', padding: '24px', borderRadius: '20px', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.68)'}}>
+<strong>Your next question</strong>
+<p style={{marginBottom: 0}}>What would you like to understand about your health today?</p>
+</div>
+</Tab>
+<Tab title="Dark" icon="moon">
+<div style={{background: '#111113', color: '#f2f2f7', padding: '24px', borderRadius: '20px', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.18)'}}>
+<strong>Your next question</strong>
+<p style={{marginBottom: 0}}>What would you like to understand about your health today?</p>
+</div>
+</Tab>
+<Tab title="Automatic" icon="desktop">The app follows the light or dark preference reported by your device. Choose this if you want it to change with your usual day/night setup.</Tab>
+</Tabs>
+</div>
 
 ## Accent
 
-Choose blue, purple, pink, orange, or green, or open **Custom accent color**. The accent highlights controls and selected parts of the interface; it does not change the meaning of a response.
+The accent highlights controls and selected parts of the interface. It does not change the meaning of an answer.
 
-**Automatic accent** leaves accent styling to the theme. It is separate from Automatic light/dark appearance.
+<div className="help-panel">
+<div style={{display: 'flex', flexWrap: 'wrap', gap: '16px'}}>
+<span><span aria-hidden="true" style={{color: '#006fe6'}}>●</span> Blue</span>
+<span><span aria-hidden="true" style={{color: '#7c3aed'}}>●</span> Purple</span>
+<span><span aria-hidden="true" style={{color: '#db2777'}}>●</span> Pink</span>
+<span><span aria-hidden="true" style={{color: '#ea580c'}}>●</span> Orange</span>
+<span><span aria-hidden="true" style={{color: '#10a34a'}}>●</span> Green</span>
+</div>
+
+Choose a swatch in the app, or open **Custom accent color** to choose your own. **Automatic accent** follows the theme's neutral accent treatment; it is separate from Automatic light/dark appearance.
+</div>
 
 ## Font size
 
-Increase **Font size** when text feels too small. Use the slider or enter a number from **14 to 18**. The markers are **Standard**, **Large**, and **Largest**.
+Use the slider or enter a number from **14 to 18**. The markers are **Standard**, **Large**, and **Largest**. This scales interface text, not the content of your messages. The individual reset returns it to **14**.
 
-This scales text presentation, not message content. The reset beside the slider returns it to **14** without resetting your other choices.
+<div className="help-panel">
+### Find a comfortable reading size
 
-## Contrast
+The interface uses **Inter**, a typeface designed for clear screen reading. Select a sample to compare sizes; your browser zoom can also affect how large it appears.
 
-Raise **Contrast** to make supported secondary text more prominent. The range is **0 to 100**, with **Standard**, **Medium**, and **High** markers.
+<Tabs>
+<Tab title="Standard · 14"><p style={{fontFamily: 'Inter, sans-serif', fontSize: '14px', lineHeight: 1.6}}>Start with what matters to you. You do not need to know the medical words to ask a question.</p></Tab>
+<Tab title="Large · 16"><p style={{fontFamily: 'Inter, sans-serif', fontSize: '16px', lineHeight: 1.6}}>Start with what matters to you. You do not need to know the medical words to ask a question.</p></Tab>
+<Tab title="Largest · 18"><p style={{fontFamily: 'Inter, sans-serif', fontSize: '18px', lineHeight: 1.6}}>Start with what matters to you. You do not need to know the medical words to ask a question.</p></Tab>
+</Tabs>
+</div>
 
-This changes app styling, not screen brightness. It does not change every image or embedded item. The individual reset returns it to **0**.
+## Contrast and control size
 
-## Control size
+| Setting | What changes | Range | Individual reset |
+| --- | --- | --- | --- |
+| **Contrast** | Strengthens supported text and surface separation in both themes. It does not change screen brightness or every image. | 0–100, in steps of 5 | 0 |
+| **Control size** | Scales supported buttons and controls. Use it when targets feel too small. | 0.75×–1.5×, in steps of 0.05 | 1× |
 
-Increase **Control size** if supported buttons and controls are difficult to target. The range is **0.75× to 1.5×**, with **1×** as Standard.
-
-This is separate from Font size. Its reset returns control scale to **1×**.
+Control size is separate from Font size. You can make text easier to read without making the same change to controls.
 
 ## Reduce motion
 
-Limit interface animations and transitions. Progress and state changes remain visible so you can tell when something is loading or has finished.
+Turn on **Reduce motion** to limit decorative movement. Progress and state changes remain visible, so you can still tell when something is loading or has finished.
 
 ## Reset appearance
 
-Restore all appearance defaults together: **Automatic** theme, **Blue** accent, font size **14**, contrast **0**, control size **1×**, and Reduce motion **off**.
+**Reset appearance** restores the defaults together: **Automatic** theme, **Blue** accent, font size **14**, contrast **0**, control size **1×**, and Reduce motion **off**. The reset is shown when an appearance choice differs from its default.
 
-This does not delete conversations, files, or your account. To undo only one slider change, use that slider's reset instead.
+<Note>This does not delete your conversations, files, or account. Use an individual slider's reset when you want to undo only one adjustment.</Note>
 
 ## Get help
 
-Change one option at a time so you can judge the result. For text that is cut off or a control that becomes unusable, [contact us](https://anistratenco.com/contact) and choose **Report a bug**. Include the setting and your browser or device. Remove private information from screenshots.
+If text is cut off or a control becomes difficult to use, [Contact us](https://anistratenco.com/contact) and choose **Report a bug**. Include the setting, browser, and device. Remove private information from screenshots.
 
 <section className="help-faq" aria-labelledby="page-questions">
 <h2 id="page-questions">Questions? Answers.</h2>
-<Accordion title="Does Automatic change with my device?">
-<div>Automatic follows your browser or device theme. It is separate from automatic accent selection.</div>
-</Accordion>
-
-<Accordion title="Will resetting appearance remove my information?">
-<div>No. It restores appearance controls such as theme, accent, text size, contrast, and motion. It does not delete your chats or account data.</div>
-</Accordion>
+<Accordion title="Do these previews change my account?">No. They only demonstrate appearance in this guide. Make your real changes in Settings → Appearance.</Accordion>
+<Accordion title="Does Automatic change with my device?">Yes. Automatic theme follows the light or dark preference reported by your device. Automatic accent is a separate choice.</Accordion>
+<Accordion title="Will resetting appearance remove my information?">No. It restores appearance choices, not chats, files, or account data.</Accordion>
 </section>
