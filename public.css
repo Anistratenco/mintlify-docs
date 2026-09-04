@@ -6,7 +6,8 @@
   --help-hover: rgb(255 255 255 / 38%);
   --help-edge: rgb(255 255 255 / 56%);
   --help-top: inset 0 1px 0 rgb(255 255 255 / 68%);
-  --help-glass: rgb(225 227 229 / 78%);
+  --help-glass: rgb(255 255 255 / 30%);
+  --help-nav-edge: rgb(255 255 255 / 20%);
   --help-link-fill: rgb(0 111 230 / 9%);
 }
 .dark {
@@ -15,7 +16,8 @@
   --help-hover: rgb(255 255 255 / 9%);
   --help-edge: rgb(255 255 255 / 18%);
   --help-top: inset 0 1px 0 rgb(255 255 255 / 18%);
-  --help-glass: rgb(16 16 18 / 76%);
+  --help-glass: rgb(0 0 0 / 30%);
+  --help-nav-edge: rgb(255 255 255 / 5%);
   --help-link-fill: rgb(0 111 230 / 18%);
 }
 
@@ -27,11 +29,11 @@
   left: 0;
   right: 0;
   border-radius: 9999px;
-  border: 1px solid var(--help-edge);
+  border: 1px solid var(--help-nav-edge);
   background: var(--help-glass);
   box-shadow: var(--help-top), 0 8px 24px -20px rgb(0 0 0 / 35%);
-  backdrop-filter: blur(18px) saturate(112%);
-  -webkit-backdrop-filter: blur(18px) saturate(112%);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
 }
 #navbar > div.absolute { display: none; }
 #navbar > div.relative { padding-inline: 8px; }
@@ -50,8 +52,8 @@
   color: var(--help-ink);
   background: var(--help-link-fill);
   border: 1px solid rgb(0 111 230 / 28%);
-  border-radius: .45rem;
-  padding: .06em .3em;
+  border-radius: 9999px;
+  padding: .12em .6em;
   text-decoration: none !important;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
@@ -67,7 +69,7 @@
 #pagination > a {
   border-radius: 9999px !important;
   padding: 16px 24px !important;
-  min-height: 80px;
+  min-height: 52px;
   border: 1px solid var(--help-edge) !important;
   background: var(--help-fill) !important;
   box-shadow: var(--help-top) !important;
@@ -75,6 +77,12 @@
 }
 #pagination > a:hover { background: var(--help-hover) !important; }
 #pagination > a:active { transform: scale(.985); }
+#pagination > a > div { display: flex; align-items: center; gap: 10px; }
+#pagination > a > div > div { margin: 0; }
+#pagination [data-component-part="pagination-label"] { display: none; }
+#pagination [rel="prev"] [data-component-part="pagination-title"] { order: 1; }
+#pagination [data-component-part="pagination-title"] { display: flex; align-items: center; gap: 8px; }
+#pagination .help-destination-icon { width: 16px; height: 16px; flex: none; background-color: currentColor; }
 
 #content .card, #content .help-panel, #content .help-faq {
   border-radius: 24px !important;
@@ -83,10 +91,13 @@
   box-shadow: var(--help-top) !important;
 }
 #content .card { transition: background-color 180ms ease-out, border-color 180ms ease-out; }
-#content .card:hover { background: var(--help-hover) !important; border-color: rgb(255 255 255 / 56%) !important; }
+#content .card:hover { background: var(--help-hover) !important; border-color: var(--help-edge) !important; }
 #content .help-panel { padding: 24px; margin-block: 24px; }
 #content .help-faq { padding: 8px; margin-block: 32px; }
 #content .help-faq h2 { text-align: center; justify-content: center; margin: 16px 12px 24px; }
+#content .help-faq h2 > div.absolute { display: none; }
+.help-faq [data-component-part="accordion-caret-right"] { display: none; }
+.help-faq summary:hover { background: transparent !important; }
 .help-faq details {
   interpolate-size: allow-keywords;
   overflow: hidden;
