@@ -1,0 +1,119 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "luma",
+  "name": "Health Assistant",
+  "colors": {
+    "primary": "#006FE6",
+    "light": "#006FE6",
+    "dark": "#006FE6"
+  },
+  "favicon": {
+    "light": "https://anistratenco.com/icon-512x512.png",
+    "dark": "https://anistratenco.com/icon-512x512.png"
+  },
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Chat",
+          "href": "https://anistratenco.com/chat",
+          "icon": "message"
+        }
+      ]
+    },
+    "groups": [
+      {
+        "group": "Start here",
+        "pages": [
+          "index",
+          "quickstart",
+          "vision"
+        ]
+      },
+      {
+        "group": "Chat",
+        "pages": [
+          "voice",
+          "shortcuts",
+          "archived-chats"
+        ]
+      },
+      {
+        "group": "Preferences",
+        "pages": [
+          "appearance",
+          "preferences",
+          "answer-preferences"
+        ]
+      },
+      {
+        "group": "Avatar",
+        "pages": [
+          "memory",
+          "import-memory",
+          "data"
+        ]
+      },
+      {
+        "group": "Account",
+        "pages": [
+          "profile",
+          "security",
+          "devices"
+        ]
+      },
+      {
+        "group": "Billing",
+        "pages": [
+          "billing",
+          "gifts",
+          "family-sharing"
+        ]
+      },
+      {
+        "group": "Help",
+        "pages": [
+          "contact",
+          "feedback"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [],
+    "primary": {
+      "type": "button",
+      "label": "Chat",
+      "href": "https://anistratenco.com/chat"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "background": {
+    "color": {
+      "light": "#E1E3E5",
+      "dark": "#030303"
+    }
+  },
+  "search": {
+    "prompt": "Search Health Assistant"
+  },
+  "fonts": {
+    "family": "Inter"
+  },
+  "description": "Practical guides to the Anistratenco Health Assistant, powered by HealthOS. Learn about conversations, voice, preferences, privacy, plans, and getting help.",
+  "logo": {
+    "light": "https://anistratenco.com/favicon-light.svg",
+    "dark": "https://anistratenco.com/favicon-dark.svg"
+  }
+}

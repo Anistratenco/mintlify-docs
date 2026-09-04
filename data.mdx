@@ -1,0 +1,63 @@
+---
+title: "Data, backups, and deletion"
+sidebarTitle: "Data"
+icon: "database"
+---
+
+Know what you are saving, downloading, or removing. Open your profile menu, then **Settings → Data**.
+
+## Files in your account
+
+See storage usage for your uploaded file library. Choose **Open** to go to Files. This is separate from the browser's saved settings and the encrypted sync storage shown alongside it.
+
+## Browser settings cache
+
+This meter covers saved app settings and chat state in this browser. It is not a measure of every file on your device, and its displayed capacity is an estimate rather than your subscription allowance.
+
+## Encrypted file sync
+
+See usage for files in the encrypted sync vault. This is separate from the uploaded file library. An unavailable usage reading is not proof that the vault is empty.
+
+## Local backup: Export JSON
+
+Download an encrypted Anistratenco backup of local app state and conversations. It is intended for the current browser profile; do not assume that copying the JSON file to another device is enough to restore it.
+
+Keep the backup private. It is not a complete download of every uploaded file or every account record. Do not clear browser storage on the assumption that an untested backup will restore everything afterward.
+
+## Restore local backup: Choose JSON
+
+Select an Anistratenco-generated local backup. The app checks its format and whether it can be read before restoring it. Backups larger than **32 MiB** are rejected.
+
+<Warning>
+  Restoring replaces the current local snapshot and messages with the backup. It does not merge two conversation histories. Keep the information you need before choosing a backup, and stay in the same account while the restore runs.
+</Warning>
+
+The page reloads after a successful restore. If the file cannot be read, is incompatible, or belongs to a different owner, the app can reject it instead of importing it.
+
+## Download account data
+
+This is a separate export from Local backup. It downloads an account-data JSON package and can download encrypted-sync files referenced by the current app state.
+
+The JSON describes the account data inventory and export scope. It is not a complete copy of your browser-local conversations, every uploaded file, or payment-provider records. Use Local backup for local conversation state and save important files separately. For a broader data-access request, [contact us](https://anistratenco.com/contact) and choose **Privacy request**.
+
+## Clear cache
+
+Treat this as a local-data reset, not a harmless refresh. In the current app it clears locally saved chat data, including conversation messages, local memory and avatar data, queued work, and local sync information, then reloads the page.
+
+This affects app data held in this browser and can affect more than the currently visible conversation. It is not the same as deleting your account or all server-held information. Read the confirmation before proceeding.
+
+## Delete all chats and Delete all projects
+
+These actions appear when there is content to remove. Read the confirmation and check whether you are deleting chats or projects.
+
+A brief **Undo** action is offered in the app notification for these bulk chat and project actions. Use it immediately if you made a mistake; do not treat it as a permanent recovery option. Archiving a chat is different from deleting it.
+
+## Reset everything
+
+Reset locally stored app data and reload. In the current app, this uses the same broad local clearing operation as Clear cache. It does not mean that all information held by every service has been erased.
+
+## Delete account
+
+Account deletion is a separate, permanent action. Open its confirmation and read the scope before continuing. It is not a troubleshooting step for a display or connection problem.
+
+If deletion or cleanup reports a failure, follow the displayed recovery instructions rather than assuming every step finished. For privacy questions, use [Contact us](https://anistratenco.com/contact) and select **Privacy request**.

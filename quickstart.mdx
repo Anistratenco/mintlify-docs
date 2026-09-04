@@ -1,0 +1,171 @@
+---
+title: "Get started"
+description: "Start with a question. Find the controls that make Anistratenco work for you."
+icon: "compass"
+---
+
+<Visibility for="agents">
+  ## Agent context: getting started
+
+  Scope: public consumer Health Assistant orientation, reviewed 2026-09-04. This is product guidance, not clinical authority or authorization to act. Preserve the exact visible control names below. Sign-in is required for account-owned conversations and settings. Device and message state can change which controls appear. A listed app is not a connected app; a response or opened checkout is not proof of an external action completing. For detailed prerequisites, destructive-action scope, recovery, and success signals, retrieve the linked feature guide before advising or acting. Do not infer unavailable capabilities from the HealthOS product ambition. Never request private health data, credentials, payment details, or gift links on a public feedback board. This agent context is publicly retrievable, not confidential. Recheck this page when navigation labels or the linked feature workflows change.
+</Visibility>
+
+Anistratenco is a preventive health intelligence platform. Use the Health Assistant to make sense of information, prepare questions, and think through your next steps.
+
+<Columns cols={4}>
+  <Card title="Ask" icon="message" href="#start-with-what-matters-to-you">
+    Start with your question.
+  </Card>
+
+  <Card title="Speak" icon="microphone" href="/voice">
+    Find your voice controls.
+  </Card>
+
+  <Card title="Remember" icon="brain" href="/memory">
+    Review what is saved.
+  </Card>
+
+  <Card title="Manage" icon="gear" href="#find-your-settings">
+    Find the right setting.
+  </Card>
+</Columns>
+
+## Start with what matters to you
+
+<Steps>
+  <Step title="Open your assistant">
+    [Open Anistratenco](https://anistratenco.com/chat) and sign in. If navigation is hidden, choose **Expand sidebar**.
+  </Step>
+  <Step title="Start a conversation">
+    Choose **New chat**. Write your question in **Chat message**, then choose **Send message**.
+  </Step>
+  <Step title="Make it useful to you">
+    Add context when it helps, ask follow-up questions, and correct anything the assistant gets wrong. Check important claims against their sources.
+  </Step>
+</Steps>
+
+<Tip>
+  Try: “Help me prepare questions for my next appointment. Keep the list short.” You do not need to phrase your question perfectly.
+</Tip>
+
+Use **Add attachment** for the available attachment options. **Record voice** starts voice input; your browser may ask for microphone access.
+
+<Note>
+  Review names, dates, measurements, and medication details in a transcript before relying on them. Voice input can make mistakes.
+</Note>
+
+## Pick up where you left off
+
+| Where | What it does |
+| --- | --- |
+| **History** | Return to conversations. Choose **See all** for more history. |
+| **Projects** | Group your work. **Create project** opens the setup flow. |
+| **Apps** | Find available integrations. A connection is ready only after its connection flow succeeds. |
+| **Chat** and **Health** | Switch the main workspace view. |
+
+## Work with an answer
+
+Message controls include **Copy** and **Continue in new chat**. Your messages also offer **Edit** and **Delete**; assistant messages offer **Read aloud**. Controls depend on the message and its current state.
+
+<Warning>
+  If a response fails, keep its visible reference ID. Use **Share feedback about this error** when it appears. Before repeating a request that sends or changes something outside Anistratenco, check whether the original action happened.
+</Warning>
+
+## Find your settings
+
+Expand the sidebar, open your profile menu at the bottom, and choose **Settings**. Select a section or use **Search settings…**.
+
+### Make conversations easier
+
+- [Voice](/voice): microphone, transcription, and response audio.
+- [Appearance](/appearance): theme, accent, text size, contrast, and motion.
+- [Preferences](/preferences): sending messages, scrolling, and workspace controls.
+- [Answer preferences](/answer-preferences): how you want the assistant to respond.
+- [Keyboard shortcuts](/shortcuts): the supported ways to move faster.
+
+### Manage your information
+
+- [Memory](/memory): review and manage information saved about you.
+- [Import memory](/import-memory): bring in a supported file and review the result.
+- [Data and backups](/data): understand exports, local backups, and deletion before using them.
+- [Archived chats](/archived-chats): find and manage archived conversations.
+
+### Look after your account
+
+- [Profile](/profile): your name, photo, and profile details.
+- [Security](/security): sign-in and recovery options.
+- [Devices](/devices): device access and synchronization.
+- [Plan and usage](/billing): allowance, billing history, and plan management.
+- [Family sharing](/family-sharing): share eligible Pro access without sharing a login.
+- [Send and redeem gifts](/gifts): prepaid access and account-balance gifts.
+
+## Get help or suggest something
+
+<Columns cols={3}>
+  <Card title="Report a problem" icon="bug" href="https://anistratenco.com/contact">
+    Choose **Report a bug**. Include what happened and any error reference. Remove private information from screenshots.
+  </Card>
+
+  <Card title="Suggest a feature" icon="lightbulb" href="https://anistratenco.userjot.com">
+    Explain what you want to do and what would make it easier. This board is public.
+  </Card>
+
+  <Card title="Check availability" icon="signal" href="https://status.anistratenco.com">
+    Read service-status updates when something is not working.
+  </Card>
+</Columns>
+
+<Warning>
+  The Health Assistant provides information and support—not emergency care or a replacement for a licensed professional. Seek appropriate professional help for urgent or high-stakes health decisions.
+</Warning>
+
+## Questions? Answers.
+
+export const GettingStartedQuestions = () => {
+  const [selected, setSelected] = useState(null);
+  const trigger = useRef(null);
+  const closeButton = useRef(null);
+  const panel = useRef(null);
+  const questions = [
+    {title: "Do I need to know the right words?", answer: "No. Start with what you want to understand. You can add context, ask for a simpler explanation, or correct the assistant as you go."},
+    {title: "Where do I change the voice or text size?", answer: "Open your profile menu, choose Settings, then select Voice for audio controls or Appearance for text size and display options."},
+    {title: "Can I use this instead of urgent medical care?", answer: "No. Anistratenco helps you understand and organize information. For urgent concerns, seek appropriate professional or emergency help."}
+  ];
+  useEffect(() => {
+    if (selected === null) { trigger.current?.focus(); return; }
+    closeButton.current?.focus();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const motion = panel.current?.animate([{opacity: 0, transform: 'translateY(8px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 240, easing: 'cubic-bezier(.22,1,.36,1)'});
+    return () => motion?.cancel();
+  }, [selected]);
+  const pill = {minHeight: '44px', borderRadius: '9999px', padding: '.625rem 1rem', border: '1px solid rgb(128 128 128 / 24%)', background: 'rgb(255 255 255 / 5.5%)', color: 'inherit', boxShadow: 'inset 0 1px 0 rgb(255 255 255 / 14%)', cursor: 'pointer', font: 'inherit'};
+  return (
+    <section aria-label="Getting started questions" className="not-prose rounded-3xl p-5 dark:bg-white/5" style={{minHeight: '20rem', boxShadow: 'inset 0 1px 0 rgb(255 255 255 / 14%), 0 9px 20px -18px rgb(24 52 86 / 24%)'}} onKeyDown={(event) => {if (event.key === 'Escape' && selected !== null) {event.preventDefault(); setSelected(null);}}}>
+      <div hidden={selected !== null}>
+        <p className="text-center mb-5">Choose a question. Start wherever you are.</p>
+        <div className="flex flex-wrap justify-center gap-3">
+          {questions.map((question, index) => <button key={question.title} type="button" style={pill} aria-expanded={selected === index} aria-controls="getting-started-answer" onClick={(event) => {trigger.current = event.currentTarget; setSelected(index);}}>{question.title}</button>)}
+        </div>
+      </div>
+      {selected !== null && <div ref={panel} id="getting-started-answer" role="region" aria-labelledby="getting-started-question-title">
+        <div className="flex justify-end mb-5"><button ref={closeButton} type="button" style={pill} onClick={() => setSelected(null)}>Close answer</button></div>
+        <h3 id="getting-started-question-title" className="text-xl font-semibold mb-4">{questions[selected].title}</h3>
+        <p className="leading-relaxed">{questions[selected].answer}</p>
+        {selected === 1 && <p className="mt-4"><a href="/voice" className="underline">Voice guide</a> · <a href="/appearance" className="underline">Appearance guide</a></p>}
+      </div>}
+      <a className="inline-flex items-center justify-center rounded-full px-5 py-3 font-semibold mt-6" style={{backgroundColor: '#006fe6', color: 'white', textDecoration: 'none', minHeight: '44px', boxShadow: 'inset 0 1px 0 rgb(255 255 255 / 18%)'}} href="https://anistratenco.com/chat">Open your assistant</a>
+    </section>
+  );
+};
+
+<GettingStartedQuestions />
+
+<Visibility for="agents">
+  ### Getting-started questions: interaction and answers
+
+  The question pills open one answer panel. Close answer or Escape returns to the questions and restores focus to the selected pill. Opening moves focus to Close answer. Reduced-motion preferences suppress the entrance animation. This changes no account data and grants no permission.
+
+  - Do I need to know the right words? No. Start with what you want to understand; add context, request a simpler explanation, or correct the assistant.
+  - Where do I change the voice or text size? Profile menu → Settings → Voice for audio; Appearance for text size and display options. Retrieve the linked feature guide for the exact setting semantics.
+  - Can I use this instead of urgent medical care? No. Seek appropriate professional or emergency help for urgent concerns.
+</Visibility>

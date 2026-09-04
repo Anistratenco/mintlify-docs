@@ -1,0 +1,61 @@
+---
+title: "Bring existing memories into Anistratenco"
+description: "Review a structured export before adding it to your memory history."
+sidebarTitle: "Import memory"
+icon: "file-import"
+---
+
+Open **Settings → Avatar → Memory history**, then choose **Import**. This adds supported memory records to your account’s local memory. It is not a live connection to another assistant, and it does not transfer an entire account or every conversation.
+
+## Choose a source
+
+The picker includes ChatGPT, Claude, Claude Code, Codex, OpenClaw, Hermes Agent, Perplexity, Gemini, and **JSON**. The named options provide an export prompt to copy into that service yourself. They do not sign in or fetch your information automatically.
+
+Use **JSON** for a supported structured export, including an Anistratenco memory JSON export. A Markdown memory export is for reading; it is not accepted by this importer.
+
+## Prepare the export
+
+For a named source, use **Preview prompt** to inspect the request and copy it into the service where your information already exists. Review its reply before bringing it back. Another assistant may omit information or summarize it incorrectly.
+
+<Warning>
+  The current built-in provider prompt is incomplete: the importer also needs records to identify whether information is about you or family history. A reply that follows the prompt can still be rejected. If you see that error, do not repeatedly import the same reply. Use a compatible Anistratenco JSON export, add a few memories manually, or contact support for help.
+</Warning>
+
+Do not include passwords, recovery keys, unrelated third-party details, or information you do not want retained in Anistratenco.
+
+## Paste or load JSON
+
+Paste the structured JSON into the import field, or load a JSON file where the source screen offers that option. The app checks the content and shows a preview or an error. Pasting content does not complete the import.
+
+Plain text, Markdown, PDF files, and complete account-export archives are not accepted as memory imports here. Use [Add memory](/memory#add-something-to-remember) for a short note you want to enter yourself.
+
+## Read the preview
+
+Check the counts before you continue:
+
+- **New** records are candidates to add.
+- **Duplicate** records are skipped.
+- **Needs review** means a record conflicts with existing memory and will be imported with that conflict preserved. It is not automatically corrected.
+- The import button’s count is the number that will be added after duplicate handling.
+
+Only the first **five entries** are shown in the preview. The importer processes at most **128 memories per batch**. Review the complete source export before proceeding; the preview is not a full checklist of every item.
+
+There is no per-entry selection control in this import preview. If it contains something you do not want to add, change the source export or use a smaller, reviewed batch before importing.
+
+## Import and check the result
+
+Choose **Import memories** or the button showing the number ready to import. Wait for the result. The button is unavailable when there is no valid preview or nothing new to commit.
+
+After success, return to **What Chat remembers** and inspect the added information. Use the **Conflicts** filter and [memory review controls](/memory#review-memories-together) for anything that needs attention.
+
+An import saves memory records; it does not certify them as accurate or guarantee that all devices have synchronized immediately. Check [Devices & sync](/devices) for cross-device status.
+
+## If an import does not work
+
+- **Cannot parse JSON:** the content is not in a format the importer can read. Use the raw structured export, without surrounding prose.
+- **No importable entries:** the file may be valid JSON but not a supported memory export.
+- **Whose information is missing:** the records do not distinguish your information from family history. The source export needs correction.
+- **Already imported:** no new records were added.
+- **Could not be saved:** keep your original export and use the displayed error or support reference when [contacting us](https://anistratenco.com/contact).
+
+Do not send the full export to support by default. It may contain sensitive health and personal information.

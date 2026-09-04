@@ -1,0 +1,76 @@
+---
+title: "Account security and recovery"
+description: "Manage how you sign in and keep a recovery option ready."
+sidebarTitle: "Security & recovery"
+icon: "user-shield"
+---
+
+Open your profile menu, then **Settings → Account → Security**. Choose the setting you want to manage.
+
+## Email
+
+Your account email is used for sign-in, account notices, and password recovery. Open **Email**, choose **Change**, enter your new address, and select **Send verification**. Your current address stays active until you complete confirmation.
+
+If you do not have an account email, use **Add email** and finish verification. If the app asks you to sign in again, complete that step and return to the change.
+
+**Reset password** sends a reset link to your current account email. Requesting the link does not itself change your password. Follow the instructions in the email.
+
+## Password
+
+Open **Password** to change an existing password. Enter your current password, your new password, and the same new password again. Choose **Change password**. The new password must be different and use **15–128 characters**; the app may reject a password that fails its security checks.
+
+A successful change ends other sign-in sessions and refreshes this browser. If the app reports an error, do not assume the change completed.
+
+If your account has no password, **Set password** opens the password-setup flow using your verified email.
+
+## Passkeys
+
+A passkey lets your device or password manager confirm a sign-in. Open **Passkeys**, choose **Add**, and follow the browser or device prompt. The prompt may use your device unlock method or a security key.
+
+Wait for **Passkey added**. The list distinguishes synced passkeys from device-bound passkeys and shows when each was last used. The availability of a passkey on another device depends on where you saved it.
+
+To remove one, use its remove control. It can no longer verify your Anistratenco account after removal. Keep another working sign-in or recovery method before removing a method you rely on.
+
+## Authenticator app
+
+1. Open **Authenticator** and choose **Add**.
+2. Scan the setup QR code with your authenticator app. If needed, enter the displayed setup key in that app instead.
+3. Enter its current six-digit code in Anistratenco.
+4. Choose **Confirm app** and wait for confirmation.
+
+Scanning alone does not finish setup. After confirmation, the authenticator can supply the rotating code used for account verification. Keep its setup key private.
+
+Use the remove control beside an enrolled authenticator to remove it from your account. This does not remove the entry from your separate authenticator app.
+
+## Verify to continue
+
+Sensitive account changes may show **Verify to continue**. Use an existing passkey, enter a current authenticator code, or follow the recent-sign-in instructions offered for your account.
+
+Complete verification, then return to the action you were making. Never send a password, setup QR code, or recovery key to someone claiming they need it to help you.
+
+## Save an account recovery kit
+
+Open **Account recovery**. A kit contains a **vault recovery key** and **one-use recovery codes**. It is not a backup copy of all your chats and files.
+
+If you have not added a sign-in factor, set up a passkey or authenticator first. Use the dedicated **Passkeys** or **Authenticator** section to finish enrollment, then return to Account recovery.
+
+Choose **Create kit** when available. New recovery material may also be created when you add your first factor. Follow the on-screen setup state:
+
+- **Finish recovery setup:** keep the page open and choose **Retry activation**. Do not rely on this kit until activation succeeds.
+- **Save this recovery kit now:** use **Download** or **Copy**, and store the values somewhere private that you can access if you lose this device.
+- **I saved it:** dismisses the displayed values. It does not save a copy for you.
+- **Verify kit:** when shown, enter the vault recovery key from your saved copy to verify it. Check for the configured status afterward.
+
+<Warning>
+  Recovery values are shown once. Anyone with them may be able to recover your account. Do not put them in a support message, public feedback post, or chat attachment.
+</Warning>
+
+## Replace a recovery kit
+
+Choose **Replace kit** to create new recovery material. Once the replacement is activated, the old kit is revoked. Save and verify the new kit, and do not keep relying on the old one.
+
+Recovery restores access under specific conditions; it does not recreate information that was deleted or never synchronized. For local backups and data exports, see [Data, backups, and deletion](/data).
+
+## If you cannot finish a security change
+
+Read the error shown in the app. For help, use [Contact us](https://anistratenco.com/contact). Describe the step that failed and include a support reference if one is shown—but never include your password, current authenticator code, setup secret, or recovery kit.
