@@ -1,86 +1,140 @@
 ---
 title: "Voice and transcription"
-sidebarTitle: "Voice"
+description: "Speak naturally, check the words, and choose how answers sound."
 icon: "microphone"
+sidebarTitle: "Voice"
 ---
 
-Say what is on your mind instead of typing. Voice input turns speech into text you can review before sending. Read aloud lets you listen to an answer.
+Voice should make a conversation easier to begin, not harder to trust. Speak when that feels more natural, read the transcript before you rely on it, and choose how the Health Assistant sounds when it reads an answer back.
 
-Open your profile menu in the sidebar, then choose **Settings → Voice**.
+Open your profile menu, then go to **Settings → Voice**.
 
-## Voice mode
+<Steps>
+  <Step title="Turn on Voice mode">
+    Voice mode places the microphone controls beside the message box. Turning it off hides those controls and stops an active recording.
+  </Step>
+  <Step title="Choose a microphone">
+    Leave **System default** selected, or choose a specific input when your device has more than one.
+  </Step>
+  <Step title="Test before you record">
+    Select **Test** and speak at a comfortable volume. The moving level bars confirm that the browser is receiving sound. Select **Stop** when you are finished; a test never sends a message.
+  </Step>
+  <Step title="Check the transcript">
+    Names, dates, measurements, and medication doses deserve a second look. Correct the text before sending whenever a changed word could change the meaning.
+  </Step>
+</Steps>
 
-Turn this on to show recording and transcription controls. Turn it off to hide microphone controls and stop an active recording. This is separate from listening to answers: turning voice input off does not turn read-aloud off.
+## Speaking and listening are separate
 
-In Chat, choose **Record voice** beside the message box. Allow microphone access if your browser asks. Review the transcribed text before sending, especially names, dates, measurements, and medication doses.
+<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-2">
+  <div className="help-panel">
+    ### Speak to the Assistant
 
-## Microphone
+    **Voice mode** records speech for transcription. You remain in control of the message and can review the words before they enter the conversation.
+  </div>
+  <div className="help-panel">
+    ### Listen to an answer
 
-Choose **System default** to use your device's default microphone, or select a specific microphone. This helps when you have both a headset and a built-in microphone.
+    **Read responses aloud** plays new completed answers. It does not turn on the microphone. You can also use **Read aloud** on an individual response.
+  </div>
+</div>
 
-Under **Microphone access**, choose **Test** and speak. Moving bars show that the app is receiving sound. The test runs in the browser and does not send a chat message. Choose **Stop** when finished. Leaving Voice settings also stops the test.
+## Know what the microphone is telling you
 
-**Not checked** means you have not tested it. **Connected** means the test is active. For **Permission blocked**, check browser and device microphone permissions. For **No microphone found**, reconnect the microphone or select another. Browser or device limitations may also prevent a test.
+<Tabs>
+  <Tab title="Not checked">
+    The browser has not tested the selected microphone in this session. Select **Test** when you are ready.
+  </Tab>
+  <Tab title="Checking">
+    The browser is requesting access and opening the input. Finish any browser permission prompt before trying again.
+  </Tab>
+  <Tab title="Connected">
+    The input is live for the test. Speak and watch the level bars; then select **Stop**.
+  </Tab>
+  <Tab title="Permission blocked">
+    Microphone access was declined or is blocked for this site. Allow microphone access in the browser's site settings, return to Anistratenco, and select **Test** again.
+  </Tab>
+  <Tab title="No microphone found">
+    The selected input is no longer available. Reconnect it or choose another microphone, then test again.
+  </Tab>
+</Tabs>
 
-## Clean up transcripts
+<div className="help-panel">
+  A successful test proves that the browser can hear the selected input. It does not prove that every word will be transcribed correctly. Quiet rooms, a steady distance from the microphone, and a quick review still matter.
+</div>
 
-Request punctuation and grammar cleanup after transcription. Cleanup is intended to preserve meaning and medical details, not add an answer or new information. Check the result: speech recognition and cleanup can make mistakes.
+## Teach transcription the words that matter to you
 
-## Transcription dictionary
+The **Transcription dictionary** gives the speech system hints for names and vocabulary it may not expect. Add a person, medicine, organization, or specialist term exactly as you want it recognized.
 
-Add words you often say, such as an unfamiliar name or specialist term. These give transcription spelling hints; they do not guarantee recognition or automatically replace words.
+<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-2">
+  <div className="help-panel">
+    ### What fits
 
-Enter a term and choose the add button. Duplicate terms are ignored. Limits are 100 terms, 50 characters per term, and 2,048 characters in total. Remove terms you no longer need.
+    Add up to 100 entries. Each entry can contain 50 characters, with 2,048 characters across the dictionary.
+  </div>
+  <div className="help-panel">
+    ### What happens twice
 
-Your dictionary, cleanup preference, and recent transcripts are stored encrypted for your account in this browser. Do not assume they will appear on another device.
+    Empty entries and duplicates are ignored. Capitalization alone does not create a second entry.
+  </div>
+</div>
 
-## Recent transcripts
+Dictionary entries are suggestions, not replacements. They improve context for transcription but do not guarantee a spelling. Clearing the dictionary offers an undo action, so an accidental reset can be restored while that action is still available.
 
-Find your latest completed transcriptions here. The list keeps up to 20 entries; it is not a permanent archive. Save important information in the appropriate conversation or your own records. Clearing browser data can affect locally stored information.
+## Keep only the transcripts you need
 
-## Read responses aloud
+Recent transcripts are a working surface, not a second chat archive. The latest 20 completed transcripts are kept in encrypted, account-scoped storage for this browser. From the list, you can copy one transcript or delete it individually.
 
-Turn this on to hear new assistant answers when they finish. To listen to one answer, choose **Read aloud** on that message. Your browser may require an interaction before audio can play.
+<div className="help-panel">
+  ### Clean up after yourself
 
-Enabling this setting reveals the following controls.
+  Turn on **Clean up transcripts** when you want the app to reduce obvious transcription clutter. Keep it off when preserving the raw wording matters more. In either case, review health details before sending.
+</div>
 
-### Playback speed
+If encrypted local storage is unavailable, the Voice workspace reports that the settings cannot be loaded on this device. Changing browsers or clearing browser data can also remove this local history. Messages you already sent remain governed by the conversation and data controls described in [Data, backups, and deletion](/data).
 
-Choose **0.75×**, **1×**, **1.25×**, **1.5×**, or **2×**. Slower playback gives you more time to follow the answer. It does not change its words.
+## Choose how answers sound
 
-### Speech engine
+<Tabs>
+  <Tab title="Browser TTS">
+    Uses the voices installed or exposed by your browser and device. **Language** filters that list; it does not translate an answer. Choosing another language clears the previous voice selection so you can choose a compatible voice.
+  </Tab>
+  <Tab title="Speak Aloud API">
+    Uses the higher-quality cloud speech option. Availability depends on the service and your connection. The browser-specific language and voice selectors are not shown for this engine.
+  </Tab>
+</Tabs>
 
-**Browser TTS** uses voices available through your browser and device. **Speak Aloud API** uses the app's cloud speech service and needs a connection. Browser voices vary by device; not every voice is guaranteed to work offline.
+| Control | What it changes |
+| --- | --- |
+| Playback speed | Choose 0.75×, 1×, 1.25×, 1.5×, or 2×. |
+| Sound effects | Plays the small audio cues around recording. |
+| Enhanced audio | Uses browser echo cancellation, noise suppression, and automatic gain control when supported. It is on by default. |
+| Dynamic normalization | Smooths sudden volume changes before audio reaches transcription. It is off by default. |
 
-### Language and Voice
+These controls change capture and playback. They do not change the meaning, evidence, or safety limits of an answer.
 
-These appear with **Browser TTS**. Language filters available voices; it does not translate the answer. Voice selects who reads it. Changing Language clears the previous voice selection so you can choose a matching voice.
+## Privacy deserves a quiet boundary
 
-## Enable sound effects
+Microphone access is granted to the browser, and the native browser prompt is the authority for that permission. A microphone test stays in Settings and does not create a chat message. Recording for transcription sends only when you use the product flow that performs transcription; a cloud speech engine may process the answer text needed to produce audio.
 
-Play a short cue when recording starts and stops. This is separate from reading answers aloud.
+Do not paste a transcript into public feedback. For private account help, use [Contact us](/contact) and leave out passwords, authentication codes, recovery material, and anything the support team does not need.
 
-## Use enhanced audio engine
+<div className="help-faq">
+  ## Questions about Voice
 
-Ask the browser to apply echo cancellation, noise suppression, and automatic microphone gain. These can help with background noise and speaker echo. Results depend on your browser and microphone.
-
-## Dynamic normalization
-
-Smooth sudden microphone-volume changes before audio reaches transcription. This can help when you move closer to or farther from the microphone. It changes audio levels, not transcript wording.
-
-## Get help
-
-Check your selected microphone and permissions for recording problems. For playback, check device volume and output.
-
-For a repeatable problem, [contact us](https://anistratenco.com/contact) and choose **Report a bug**. Include your browser, the setting involved, and any error reference. Leave private recordings and health details out unless you intend to share them with support.
-
-<section className="help-faq" aria-labelledby="page-questions">
-<h2 id="page-questions">Questions? Answers.</h2>
-<Accordion title="Does choosing a voice translate my answers?">
-<div>No. Voice and language controls choose how supported speech is played. Use <a className="link" href="/answer-preferences">Answer style</a> for your preferred written response language.</div>
-</Accordion>
-
-<Accordion title="What should I check after recording?">
-<div>Review the transcript before sending it, especially names, dates, measurements, and medication details. Correct anything the microphone or transcription missed.</div>
-</Accordion>
-</section>
+  <AccordionGroup>
+    <Accordion title="Why can I see the microphone but not record?">
+      Test the selected microphone in **Settings → Voice**. If it says **Permission blocked**, allow access in the browser's site settings. If it says **No microphone found**, reconnect the input or choose another one.
+    </Accordion>
+    <Accordion title="Does Read responses aloud listen to me?">
+      No. Read-aloud controls playback of completed answers. Voice mode controls microphone recording and transcription.
+    </Accordion>
+    <Accordion title="Will the dictionary always spell a term correctly?">
+      No. Dictionary entries are recognition hints. Review the transcript, especially when a name, number, measurement, or dose affects the meaning.
+    </Accordion>
+    <Accordion title="Where are recent transcripts stored?">
+      The latest 20 are kept in encrypted, account-scoped storage for the current browser. They are not a substitute for your conversation archive and may disappear when local browser data is cleared.
+    </Accordion>
+  </AccordionGroup>
+</div>
