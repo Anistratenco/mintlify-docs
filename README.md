@@ -1,55 +1,20 @@
-# Mintlify Starter Kit
+# Anistratenco public help
 
-Use the starter kit to get your docs deployed and ready to customize.
+This repository is the Git source for [docs.anistratenco.com](https://docs.anistratenco.com), the public help site for the Anistratenco Health Assistant. Private engineering guidance belongs in the private [`Anistratenco/docs`](https://github.com/Anistratenco/docs) repository.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+## Content boundary
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+Document only released product behavior, visible control names, safe examples, recovery steps, and clearly labelled product direction. Never add credentials, internal operations, user records, health information, private telemetry, or browser-session material. Agent-oriented pages, `llms.txt`, and the public MCP are publicly retrievable.
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+Feature suggestions go to UserJot. Private account help and bug reports go through the product contact form. Keep manual category-selection instructions until the corresponding contact query is verified in the released application.
 
-## AI-assisted writing
+## Editing and publishing
 
-Set up your AI coding tool to work with Mintlify:
+- Edit the smallest relevant MDX page and reuse the shared styles in `public.css`.
+- Add every reader-facing page to `docs.json` navigation.
+- Keep every article’s final section titled **Questions and Answers** with at least five article-specific questions.
+- Push `main` to publish through the existing Mintlify GitHub connection.
 
-```bash
-npx skills add https://mintlify.com/docs
-```
+## Verification
 
-This command installs Mintlify's documentation skill for your configured AI tools like Claude Code, Cursor, Windsurf, and others. The skill includes component reference, writing standards, and workflow guidance.
-
-See the [AI tools guides](/ai-tools) for tool-specific setup.
-
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
-npm i -g mint
-```
-
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
-mint dev
-```
-
-View your local preview at `http://localhost:3000`.
-
-## Publishing changes
-
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+Validate `docs.json`, navigation targets, MDX structure, internal links, and changed shared selectors before pushing. After the exact commit’s Mintlify deployment succeeds, verify the published route in a browser and retrieve the changed content through `https://docs.anistratenco.com/mcp` separately. A successful documentation deployment does not prove that application code is released.
