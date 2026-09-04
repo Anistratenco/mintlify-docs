@@ -86,7 +86,7 @@
 #content .card:hover { background: var(--help-hover) !important; border-color: rgb(255 255 255 / 56%) !important; }
 #content .help-panel { padding: 24px; margin-block: 24px; }
 #content .help-faq { padding: 8px; margin-block: 32px; }
-#content .help-faq h2 { text-align: center; margin: 16px 12px 24px; }
+#content .help-faq h2 { text-align: center; justify-content: center; margin: 16px 12px 24px; }
 .help-faq details {
   interpolate-size: allow-keywords;
   overflow: hidden;
