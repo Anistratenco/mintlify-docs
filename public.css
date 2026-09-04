@@ -36,6 +36,9 @@
 #navbar > div.absolute { display: none; }
 #navbar > div.relative { padding-inline: 8px; }
 #navbar #topbar-cta-button { border-radius: 9999px; box-shadow: var(--help-top); }
+@media (min-width: 1024px) {
+  #navbar ul:has(> #topbar-cta-button) { display: flex; }
+}
 #sidebar .sidebar-title, #navigation-items .sidebar-title {
   font-size: 15px !important;
   line-height: 1.4 !important;
