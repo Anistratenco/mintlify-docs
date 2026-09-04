@@ -83,9 +83,9 @@
 }
 #pagination { gap: 16px; }
 #pagination > a {
-  border-radius: 9999px !important;
-  padding: 16px 24px !important;
-  min-height: 52px;
+  border-radius: 20px !important;
+  padding: 12px 18px !important;
+  min-height: 48px;
   border: 1px solid var(--help-edge) !important;
   background: var(--help-fill) !important;
   box-shadow: var(--help-top) !important;
@@ -97,8 +97,9 @@
 #pagination > a > div > div { margin: 0; }
 #pagination [data-component-part="pagination-label"] { display: none; }
 #pagination [rel="prev"] [data-component-part="pagination-title"] { order: 1; }
-#pagination [data-component-part="pagination-title"] { display: flex; align-items: center; gap: 8px; }
-#pagination .help-destination-icon { width: 20px; height: 20px; flex: none; background-color: var(--help-accent); }
+#pagination [data-component-part="pagination-title"] { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+#pagination svg { width: 18px !important; height: 18px !important; color: var(--help-accent) !important; }
+#pagination .help-destination-icon { width: 22px; height: 22px; flex: none; background-color: var(--help-accent); }
 
 #content .callout {
   background: var(--help-fill) !important;
@@ -107,6 +108,12 @@
   box-shadow: var(--help-top);
   color: var(--help-ink) !important;
 }
+#content .callout[data-callout-type="note"] {
+  background: rgb(0 111 230 / 7%) !important;
+  border-color: rgb(0 111 230 / 26%) !important;
+}
+.dark #content .callout[data-callout-type="note"] { background: rgb(0 111 230 / 12%) !important; }
+#content .callout[data-callout-type="note"] [data-component-part="callout-icon"] svg { color: var(--help-accent) !important; }
 #content .callout[data-callout-type="warning"] {
   background: rgb(249 115 22 / 10%) !important;
   border-color: rgb(249 115 22 / 42%) !important;
@@ -165,7 +172,7 @@
 @media (max-width: 640px) {
   #navbar { width: calc(100% - 20px); top: 8px; margin-top: 8px; }
   #pagination { flex-wrap: wrap; }
-  #pagination > a { min-width: 0; padding: 14px 18px !important; }
+  #pagination > a { min-width: 0; padding: 11px 15px !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   #content a.link, #content .card, #pagination > a, .help-faq details, .help-faq summary::after, .help-faq details::details-content { transition: none; }
