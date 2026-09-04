@@ -69,12 +69,12 @@
 }
 #content a.link:not(.mint-block):not(:has(strong.mint-block)):not(.card):not(:has(h2)):hover { background: rgb(0 111 230 / 24%); border-color: var(--help-accent); }
 #content a.mint-block {
-  color: inherit;
-  background: none;
-  border: 0;
-  border-radius: 0;
-  padding: 0;
-  box-shadow: none;
+  color: inherit !important;
+  background: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
   text-decoration: none !important;
 }
 #content a.mint-block::before, #content a.mint-block::after { content: none !important; }
