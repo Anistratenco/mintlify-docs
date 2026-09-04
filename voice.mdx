@@ -120,10 +120,9 @@ Microphone access is granted to the browser, and the native browser prompt is th
 
 Do not paste a transcript into public feedback. For private account help, use [Contact us](/contact) and leave out passwords, authentication codes, recovery material, and anything the support team does not need.
 
-<div className="help-faq">
-  ## Questions about Voice
+<section className="help-faq" aria-labelledby="page-questions">
+  <h2 id="page-questions">Questions and Answers</h2>
 
-  <AccordionGroup>
     <Accordion title="Why can I see the microphone but not record?">
       Test the selected microphone in **Settings → Voice**. If it says **Permission blocked**, allow access in the browser's site settings. If it says **No microphone found**, reconnect the input or choose another one.
     </Accordion>
@@ -136,5 +135,7 @@ Do not paste a transcript into public feedback. For private account help, use [C
     <Accordion title="Where are recent transcripts stored?">
       The latest 20 are kept in encrypted, account-scoped storage for the current browser. They are not a substitute for your conversation archive and may disappear when local browser data is cleared.
     </Accordion>
-  </AccordionGroup>
-</div>
+    <Accordion title="Does a microphone test send anything to Chat?">
+      No. A test confirms that the browser can hear the selected input. It does not create or send a message.
+    </Accordion>
+</section>

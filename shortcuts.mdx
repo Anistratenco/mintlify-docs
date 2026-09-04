@@ -1,59 +1,91 @@
 ---
-title: "Keyboard shortcuts"
-description: "Move between chat, search, files, and settings without reaching for your mouse."
+title: "Shortcuts"
+description: "Keep your attention on the question, not the interface."
 sidebarTitle: "Shortcuts"
 icon: "keyboard"
 ---
 
-Open your profile menu, then **Settings → Shortcuts**. Use a desktop-sized window to change a shortcut, confirm it, or switch it off.
+{/* Agent context: document the five commands in CHAT_RUNTIME_KEYBOARD_SHORTCUT_COMMANDS, not the larger future-facing registry. Shortcut labels, defaults, validation, and platform behavior are owned by KeyboardRegistry.ts, KeyboardValidation.ts, and ShortcutsWorkspace.tsx. */}
 
-## The available shortcuts
+The fastest interface is the one that gets out of your way. Shortcuts let you search, write, select, and move between the places you use most without breaking your train of thought.
 
-Use **Command** on Mac or **Ctrl** on Windows and Linux where the table says Command/Ctrl. Your settings show the keys for your device.
+Open your profile menu, then choose **Settings → Shortcuts**. The keys shown there are the source of truth for your device and any changes you have made.
 
-| Setting | Default keys | What it does |
-| --- | --- | --- |
-| Toggle search | Command/Ctrl + K | Opens or closes chat search. |
-| Focus composer | / | Moves your cursor to the message box when you are not already typing in a field. |
-| Select transcript | Command/Ctrl + A | Selects the visible chat text when you are in Chat, outside an editable field, with search closed. |
-| Open settings | Command/Ctrl + , | Opens Settings and closes chat search. |
-| Open files | Command/Ctrl + Alt + F | Opens Files and closes chat search. |
+## Five useful moves
 
-**Select transcript** does not copy text to the clipboard by itself. Copy the selection afterward. It is not a full conversation export: messages that are not currently rendered may not be included. Inside a text field, the usual select-all behavior still applies to that field.
+<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-2">
+  <div className="help-panel">
+    <Icon icon="magnifying-glass" size={24} />
+    <h3>Find a conversation</h3>
+    <p><kbd>⌘ K</kbd> on Mac or <kbd>Ctrl K</kbd> on Windows and Linux opens or closes chat search.</p>
+  </div>
+  <div className="help-panel">
+    <Icon icon="cursor-text" size={24} />
+    <h3>Return to the message box</h3>
+    <p><kbd>/</kbd> focuses the composer when you are not already typing in an editable field.</p>
+  </div>
+  <div className="help-panel">
+    <Icon icon="text-size" size={24} />
+    <h3>Select what you can see</h3>
+    <p><kbd>⌘ A</kbd> or <kbd>Ctrl A</kbd> selects the visible transcript when Chat is active and search is closed.</p>
+  </div>
+  <div className="help-panel">
+    <Icon icon="sliders" size={24} />
+    <h3>Open Settings</h3>
+    <p><kbd>⌘ ,</kbd> or <kbd>Ctrl ,</kbd> takes you straight to Settings and closes chat search.</p>
+  </div>
+  <div className="help-panel">
+    <Icon icon="folder-open" size={24} />
+    <h3>Open Files</h3>
+    <p><kbd>⌘ ⌥ F</kbd> or <kbd>Ctrl Alt F</kbd> opens the Files workspace and closes chat search.</p>
+  </div>
+</div>
 
-## Change a shortcut
+<Note>
+  Selecting a transcript does not copy it. Copy the selection afterward. It is not a full export: messages outside the rendered transcript may not be included.
+</Note>
 
-1. Select the current key combination beside the action. If no combination is shown, choose **Configure**.
-2. Press the combination you want to use.
-3. Choose **Confirm** to save it, or **Cancel** to keep the previous setting.
+## Make a shortcut yours
 
-The app checks for combinations reserved by the browser or system and for conflicts with another command. If a warning appears, choose a different combination. Saving a new combination also enables that shortcut.
+<Steps>
+  <Step title="Choose the current combination">
+    Select the keys beside an action. If that action has no assigned keys, choose **Configure**.
+  </Step>
+  <Step title="Press the new combination">
+    Use the keys together. The app checks for another Anistratenco command using the same combination and for common browser or operating-system shortcuts.
+  </Step>
+  <Step title="Keep it or leave it">
+    Choose **Confirm** to save. Choose **Cancel** to keep the previous setting.
+  </Step>
+</Steps>
 
-For **Focus composer**, keep the default **/** for now. Modified combinations using Command, Ctrl, or Alt are not handled by this action in the current app.
+<Warning>
+  Keep **Focus composer** on <kbd>/</kbd>. That action currently listens for the unmodified key; combinations using Command, Ctrl, or Alt are not handled by it.
+</Warning>
 
-## Switch a shortcut off
+## Turn one off
 
-Use the switch beside an action to disable its keyboard shortcut. This does not remove the feature: you can still open it with the app controls. Switch it back on to use the shortcut again.
+Use the switch beside an action when a shortcut gets in your way. The feature remains available through the interface; only its keyboard combination stops responding.
 
-## Restore the defaults
+The reset icon beside a changed action restores its default keys and turns it back on. **Reset shortcuts** does the same for every shortcut. It does not change conversations, files, appearance, or answer preferences.
 
-Use the reset icon beside a changed or disabled shortcut to restore its default keys and enable it.
+## When nothing happens
 
-**Reset shortcuts** resets all custom combinations and re-enables disabled shortcuts. It does not delete chats, files, or other settings.
+<div className="help-panel">
+  <Icon icon="circle-info" size={24} />
+  <h3>Check the context first</h3>
+  <p>Make sure the shortcut is enabled and use the combination displayed in Settings. For <kbd>/</kbd>, click outside any text field. For transcript selection, close search and return to Chat.</p>
+</div>
 
-## If a shortcut does not respond
+Some combinations belong to the browser or operating system. If Anistratenco marks one as reserved or already assigned, choose another. The app will not save a known conflict.
 
-Check that it is enabled and that you are using the combination displayed in Settings. Your browser or operating system may also use that combination. For **/**, click outside a text field first; for **Select transcript**, close search and return to Chat.
-
-The setting for sending messages with Enter or Shift + Enter is separate. See [Conversation preferences](/preferences).
+Message sending is separate from this list. Choose whether <kbd>Enter</kbd> sends or adds a line from <a className="link" href="/preferences">Preferences</a>.
 
 <section className="help-faq" aria-labelledby="page-questions">
-<h2 id="page-questions">Questions? Answers.</h2>
-<Accordion title="Will changing a shortcut change my chats?">
-<div>No. Shortcuts change how you reach an action. Resetting them does not delete conversations or files.</div>
-</Accordion>
-
-<Accordion title="Why is my shortcut unavailable?">
-<div>Some combinations conflict with another action or are handled by your browser or operating system. Follow the conflict message and choose another supported combination.</div>
-</Accordion>
+  <h2 id="page-questions">Questions and Answers</h2>
+  <Accordion title="Why does Command or Ctrl change by device?"><div>Anistratenco follows the platform selected in your shortcut settings. Automatic uses the device reported by your browser; you can also choose a platform explicitly.</div></Accordion>
+  <Accordion title="Why did Command or Ctrl plus A select only the message field?"><div>When the cursor is inside an editable field, select-all stays with that field. Click outside it before selecting the visible transcript.</div></Accordion>
+  <Accordion title="Can I restore one shortcut without resetting everything?"><div>Yes. Use the reset icon beside that action. Use **Reset shortcuts** only when you want every combination and enabled state returned to its default.</div></Accordion>
+  <Accordion title="Why was my new combination rejected?"><div>It is already assigned to another Anistratenco action or reserved by the browser or operating system. Choose a different combination.</div></Accordion>
+  <Accordion title="Does turning a shortcut off remove the feature?"><div>No. It only disables that keyboard combination. The action remains available through the interface.</div></Accordion>
 </section>

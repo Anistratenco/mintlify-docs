@@ -107,6 +107,17 @@
   box-shadow: var(--help-top);
   color: var(--help-ink) !important;
 }
+#content .callout[data-callout-type="warning"] {
+  background: rgb(249 115 22 / 10%) !important;
+  border-color: rgb(249 115 22 / 42%) !important;
+  color: #9a3412 !important;
+}
+.dark #content .callout[data-callout-type="warning"] {
+  background: rgb(249 115 22 / 14%) !important;
+  border-color: rgb(251 146 60 / 38%) !important;
+  color: #fdba74 !important;
+}
+#content .callout[data-callout-type="warning"] [data-component-part="callout-icon"] svg { color: #f97316 !important; }
 
 #content .card, #content .help-panel, #content .help-faq {
   border-radius: 24px !important;
@@ -114,11 +125,23 @@
   background: var(--help-fill) !important;
   box-shadow: var(--help-top) !important;
 }
-#content .card { transition: background-color 180ms ease-out, border-color 180ms ease-out; }
+#content .mint-grid { gap: 16px !important; }
+#content .mint-grid > .help-panel,
+#content .mint-grid > a.mint-block > .help-panel { margin-block: 0; height: 100%; }
+#content .card { margin-block: 0 !important; transition: background-color 180ms ease-out, border-color 180ms ease-out; }
 #content .card:hover { background: var(--help-hover) !important; border-color: var(--help-edge) !important; }
-#content .help-panel { padding: 24px; margin-block: 24px; }
-#content .help-faq { padding: 8px; margin-block: 32px; }
-#content .help-faq h2 { text-align: center; justify-content: center; margin: 16px 12px 24px; }
+#content .card [data-component-part="card-content-container"] { display: flex; align-items: flex-start; gap: 10px; padding: 18px !important; }
+#content .card [data-component-part="card-icon"] { flex: none; margin-top: 1px; }
+#content .help-panel { padding: 18px; margin-block: 18px; }
+#content .help-panel:has(> svg:first-child) { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 10px; row-gap: 8px; align-items: center; }
+#content .help-panel:has(> svg:first-child) > h2,
+#content .help-panel:has(> svg:first-child) > h3 { margin: 0 !important; }
+#content .help-panel:has(> svg:first-child) > :not(svg):not(h2):not(h3) { grid-column: 1 / -1; }
+#content .help-panel > .steps { margin-top: 0 !important; margin-bottom: 0 !important; }
+#content .help-panel > .tab-container > [data-component-part="tabs-list"] { margin-bottom: 14px !important; }
+#content .help-panel > .tab-container [data-component-part="tab-button"] { padding-top: 7px !important; padding-bottom: 7px !important; }
+#content .help-faq { padding: 0; margin-block: 24px; border: 0 !important; background: transparent !important; box-shadow: none !important; }
+#content .help-faq h2 { text-align: center; justify-content: center; margin: 0 12px 14px; }
 #content .help-faq h2 > div.absolute { display: none; }
 .help-faq [data-component-part="accordion-caret-right"] { display: none; }
 .help-faq summary:hover { background: transparent !important; }
@@ -132,11 +155,11 @@
   transition: background-color 180ms ease-out, transform 180ms ease-out;
 }
 .help-faq details[open] { background: var(--help-hover); transform: scale(1.004); }
-.help-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; list-style: none; padding: 16px; font-weight: 550; }
+.help-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; list-style: none; padding: 11px 14px; font-weight: 550; }
 .help-faq summary::-webkit-details-marker { display: none; }
 .help-faq summary::after { content: ''; width: 8px; height: 8px; border-right: 1.8px solid currentColor; border-bottom: 1.8px solid currentColor; transform: rotate(45deg); transition: transform 180ms ease-out; flex: none; margin-right: 4px; }
 .help-faq details[open] summary::after { transform: rotate(225deg); }
-.help-faq details > div { padding: 0 16px 16px; }
+.help-faq details > div { padding: 0 14px 12px; }
 .help-faq details::details-content { block-size: 0; overflow: hidden; transition: block-size 240ms ease-out, content-visibility 240ms allow-discrete; }
 .help-faq details[open]::details-content { block-size: auto; }
 @media (max-width: 640px) {
