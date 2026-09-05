@@ -9,6 +9,7 @@
   --help-glass: rgb(255 255 255 / 30%);
   --help-nav-edge: rgb(255 255 255 / 20%);
   --help-link-fill: rgb(0 111 230 / 9%);
+  --help-rail: rgb(28 28 30 / 18%);
 }
 .dark {
   --help-ink: #f2f2f7;
@@ -19,6 +20,7 @@
   --help-glass: rgb(0 0 0 / 30%);
   --help-nav-edge: rgb(255 255 255 / 5%);
   --help-link-fill: rgb(0 111 230 / 18%);
+  --help-rail: rgb(255 255 255 / 20%);
 }
 
 /* Remove the two opaque full-width underlays so blur samples the page. */
@@ -40,6 +42,7 @@
 #navbar #topbar-cta-button { border-radius: 9999px; box-shadow: var(--help-top); }
 @media (min-width: 1024px) {
   #navbar ul:has(> #topbar-cta-button) { display: flex; }
+  #navbar > div.relative > div.relative > button { display: none !important; }
 }
 #sidebar .sidebar-title, #navigation-items .sidebar-title {
   font-size: 15px !important;
@@ -48,9 +51,13 @@
 }
 #header .eyebrow { font-size: 15px; height: auto; line-height: 1.5; }
 #header { text-align: center; }
-#header > div:first-child > div:has(> #page-title) { flex-direction: column; align-items: center; }
-#header #page-title { width: 100%; text-wrap: balance; }
-#header #page-context-menu { margin-inline: auto; justify-content: center; }
+#header > div:first-child > div:has(> #page-title) { display: grid; grid-template-columns: 40px minmax(0, 1fr) 40px; align-items: center; gap: 10px; }
+#header #page-title { grid-column: 2; width: 100%; text-wrap: balance; }
+#header #page-context-menu { display: flex; grid-column: 3; min-width: 0; margin: 0; justify-content: end; }
+#header > #page-context-menu { display: none !important; }
+#header #page-context-menu > button[aria-label="More actions"],
+#header #page-context-menu-button span { display: none; }
+#header #page-context-menu-button { width: 40px; height: 40px; padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
 #header > .prose { margin-inline: auto; max-width: 54ch; text-wrap: balance; }
 
 #navbar button[aria-label="More actions"] { display: none !important; }
@@ -141,8 +148,13 @@
 #content .card [data-component-part="card-content-container"] { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; column-gap: 10px; padding: 14px 16px !important; }
 #content .card [data-component-part="card-icon"] { grid-column: 1; grid-row: 1; margin-top: 2px; }
 #content .card [data-component-part="card-content-container"] > .w-full { grid-column: 2; min-width: 0; }
+#content .card [data-component-part="card-content-container"] > .w-full { display: contents; }
+#content .card [data-component-part="card-title"] { grid-column: 2; }
+#content .card [data-component-part="card-content"] { grid-column: 1 / -1; margin-top: 6px; }
 #content .card [data-component-part="card-title"] { margin: 0 !important; line-height: 1.4; }
 #content .help-panel { padding: 14px 16px; margin-block: 16px; }
+#content .help-panel > :first-child { margin-top: 0 !important; }
+#content .help-panel > :last-child { margin-bottom: 0 !important; }
 #content .help-panel--compact { padding: 12px 14px; margin-block: 12px; }
 #content .help-panel--compact p:last-child { margin-bottom: 0; }
 #content .help-panel:has(> svg:first-child) { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 10px; row-gap: 6px; align-items: start; }
@@ -154,6 +166,24 @@
 #content > .steps { margin-top: 20px !important; margin-bottom: 16px !important; }
 #content .step-container { padding-bottom: 10px !important; }
 #content .step-container [data-component-part="step-title"] { margin-bottom: 4px !important; }
+#content .step-container [data-component-part="step-line"] { top: 42px; bottom: -8px; height: auto; width: 2px; background: var(--help-rail); box-shadow: var(--help-top); }
+#content .step-container:last-child [data-component-part="step-line"] { display: none; }
+#content .step-container [data-component-part="step-number"] { margin-left: -17px; padding-block: 4px; }
+#navbar button:not([aria-label="More actions"]), #navbar #topbar-cta-button a,
+#navbar .help-mobile-chat, #header #page-context-menu-button,
+#content [data-component-part="step-indicator"] {
+  border: 1px solid var(--help-edge); background: var(--help-fill); box-shadow: var(--help-top);
+  color: var(--help-ink); border-radius: 50%;
+}
+#navbar button:not([aria-label="More actions"]), #navbar .help-mobile-chat { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; }
+#content [data-component-part="step-indicator"] { width: 34px; height: 34px; color: var(--help-accent); font-size: 13px; }
+#navbar button, #navbar a, #header #page-context-menu-button { transition: background-color 160ms ease-out, transform 160ms ease-out; }
+#navbar button:hover, #navbar .help-mobile-chat:hover, #header #page-context-menu-button:hover { background: var(--help-hover); }
+#navbar button:active, #navbar a:active, #header #page-context-menu-button:active { transform: scale(.96); }
+#navbar button:focus-visible, #navbar a:focus-visible, #header button:focus-visible { outline: 2px solid var(--help-accent); outline-offset: 2px; }
+#navbar .help-mobile-chat { display: none; }
+#navbar #topbar-cta-button a { height: 40px; border-radius: 999px; }
+#navbar #topbar-cta-button a span { color: var(--help-accent); }
 #content > h2 { margin-top: 28px !important; margin-bottom: 12px !important; }
 #content > h3 { margin-top: 22px !important; margin-bottom: 8px !important; }
 #content .help-panel > .tab-container > [data-component-part="tabs-list"] { margin-bottom: 14px !important; }
@@ -186,6 +216,9 @@
   #navbar > div.relative > div.relative > div:has(#search-bar-entry-mobile) { order: 2; flex: 1; height: 52px; padding: 0 8px 0 4px; }
   #navbar > div.relative > div.relative > button { order: 1; flex: none; width: 40px; height: 40px; padding: 0; justify-content: center; }
   #navbar > div.relative > div.relative > button > div:last-child { display: none; }
+  #navbar > div.relative > div.relative > div:has(#search-bar-entry-mobile) a.select-none { display: none; }
+  #navbar .help-mobile-chat { display: inline-flex; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: auto; padding-inline: 16px; border-radius: 999px; color: var(--help-accent); font-weight: 600; }
+  #navbar #search-bar-entry-mobile + button { margin-left: 0; }
 }
 @media (max-width: 640px) {
   #content .mint-grid, #content .card-group { gap: 12px !important; }
@@ -195,5 +228,6 @@
   #pagination > a { min-width: 0; padding: 11px 15px !important; }
 }
 @media (prefers-reduced-motion: reduce) {
+  #navbar button, #navbar a, #header #page-context-menu-button { transition: none; }
   #content a.link, #content .card, #pagination > a, .help-faq details, .help-faq summary::after, .help-faq details::details-content { transition: none; }
 }

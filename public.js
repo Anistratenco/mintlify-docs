@@ -3,6 +3,15 @@
   let queued = false;
   function syncPagination() {
     queued = false;
+    const navbar = document.querySelector('#navbar');
+    const chat = navbar?.querySelector('#topbar-cta-button a[href]');
+    if (navbar && chat && !navbar.querySelector('.help-mobile-chat')) {
+      const mobileChat = document.createElement('a');
+      mobileChat.className = 'help-mobile-chat';
+      mobileChat.href = chat.href;
+      mobileChat.textContent = 'Chat';
+      navbar.append(mobileChat);
+    }
     const sidebar = [...document.querySelectorAll('#navigation-items a[href]')];
     for (const link of document.querySelectorAll('#pagination a[href]')) {
       const source = sidebar.find(item => item.getAttribute('href') === link.getAttribute('href'));
