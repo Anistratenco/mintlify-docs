@@ -56,6 +56,11 @@
 #navbar #topbar-cta-button { border-radius: 9999px; box-shadow: none; }
 @media (min-width: 1024px) {
   #navbar > div.relative > div.relative > div:has(.topbar-right-container) { padding-inline: 12px; }
+  #navbar .topbar-right-container > div:has(#search-bar-entry) { position: static; }
+  #navbar #search-bar-entry { position: absolute; left: 56px; top: 50%; transform: translateY(-50%); }
+  #navbar #assistant-entry { position: absolute; right: 56px; top: 50%; transform: translateY(-50%); }
+  #navbar #theme-preference-menu-trigger { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); }
+  #navbar #topbar-cta-button { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
   #navbar ul:has(> #topbar-cta-button) { display: flex; }
   #navbar > div.relative > div.relative > button { display: none !important; }
 }
@@ -252,6 +257,8 @@
   #navbar .topbar-right-container > :not(#theme-preference-menu-trigger) { display: none !important; }
   #navbar #theme-preference-menu-trigger { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); }
   #navbar #theme-preference-menu-trigger:active { transform: translateY(-50%) scale(.96); }
+  #navbar #search-bar-entry-mobile { position: absolute; left: 52px; top: 50%; transform: translateY(-50%); }
+  #navbar #assistant-entry-mobile { position: absolute; right: 52px; top: 50%; transform: translateY(-50%); }
   #navbar > div.relative > div.relative > button { order: 1; flex: none; width: 40px; height: 40px; padding: 0; justify-content: center; }
   #navbar > div.relative > div.relative > button > div:last-child { display: none; }
   #navbar > div.relative > div.relative > div:has(#search-bar-entry-mobile) a.select-none { display: none; }
@@ -259,6 +266,7 @@
   #navbar .help-mobile-chat:active { transform: translate(-50%, -50%) scale(.96); }
   #navbar #search-bar-entry-mobile + button { margin-left: 0; }
 }
+#navbar :is(#search-bar-entry, #assistant-entry, #theme-preference-menu-trigger, #search-bar-entry-mobile, #assistant-entry-mobile):active { transform: translateY(-50%) scale(.96); }
 [role="menu"] { background: var(--help-menu-fill) !important; color: var(--help-ink); border: 1px solid var(--help-menu-edge) !important; border-radius: 18px !important; box-shadow: var(--help-menu-shadow) !important; padding: 6px !important; backdrop-filter: blur(20px); max-width: calc(100vw - 16px); }
 [role="menu"] [role="menuitem"] { border-radius: 12px; padding: 8px 10px; min-height: 40px; gap: 8px; color: var(--help-ink); }
 [role="menu"] [role="menuitem"]:is(:hover, :focus-visible, [data-highlighted]) { background: var(--help-hover); outline: none; }
