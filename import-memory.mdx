@@ -9,7 +9,7 @@ icon: "file-import"
 Import is a user-driven structured-memory transfer, not provider authentication or automatic history synchronization. Named providers supply a prompt; JSON also supports file selection. The preview shows five entries and processes at most 128 records per batch. Duplicate records are skipped; conflicts are retained for review. The current provider prompt omits the required owner-versus-family-history classification. Do not claim that its output always imports successfully. Only a completed import saves records; do not infer cross-device synchronization from local success.
 </Visibility>
 
-Keep the useful parts of your existing context without starting from a blank page. You choose what to bring, review the source, and decide when to save it.
+Bring selected memories from another assistant or an Anistratenco JSON export. Review the information first, then choose what to keep in your account.
 
 <div className="help-panel">
 <Steps>
@@ -25,10 +25,19 @@ Import adds supported records to your account's local memory. It does not transf
 
 <div className="help-panel">
 <Tabs>
-<Tab title="Another assistant" icon="messages-square">
-The picker includes **ChatGPT, Gemini, Claude, Perplexity, Claude Code, Codex, OpenClaw, and Hermes Agent**.
+<Tab title="Another assistant" icon="comments">
+<ul className="help-providers" aria-label="Available sources">
+  <li><img src="/images/providers/chatgpt.svg" alt="" style={{background: '#000'}} />ChatGPT</li>
+  <li><img src="/images/providers/gemini.svg" alt="" style={{background: '#fff'}} />Gemini</li>
+  <li><img src="/images/providers/claude.svg" alt="" style={{background: '#F1F0E8'}} />Claude</li>
+  <li><img src="/images/providers/perplexity.svg" alt="" style={{background: '#22B8CD'}} />Perplexity</li>
+  <li><img src="/images/providers/claude-code.svg" alt="" style={{background: '#09090B'}} />Claude Code</li>
+  <li><img src="/images/providers/codex.svg" alt="" style={{background: '#fff'}} />Codex</li>
+  <li><img src="/images/providers/openclaw.svg" alt="" style={{background: '#000'}} />OpenClaw</li>
+  <li><img src="/images/providers/hermes-agent.svg" alt="" style={{background: '#fff'}} />Hermes Agent</li>
+</ul>
 
-These options give you a prompt to copy into that service yourself. Choosing one does **not** sign you in, connect the accounts, or fetch your history.
+Choose a source to get a prompt you can copy into that service. The picker does not sign you in, connect your accounts, or fetch your history.
 </Tab>
 <Tab title="A JSON export" icon="file-code">
 Choose **JSON** to paste supported structured data or use **Choose file** to load a `.json` file. This includes an Anistratenco memory JSON export.

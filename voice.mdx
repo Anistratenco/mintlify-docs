@@ -5,7 +5,7 @@ icon: "microphone"
 sidebarTitle: "Voice"
 ---
 
-Voice should make a conversation easier to begin, not harder to trust. Speak when that feels more natural, read the transcript before you rely on it, and choose how the Health Assistant sounds when it reads an answer back.
+Use Voice to dictate a message or listen to an answer. Recording and playback are separate controls: you can use either without turning on the other.
 
 Open your profile menu, then go to **Settings → Voice**.
 
@@ -69,12 +69,12 @@ The **Transcription dictionary** gives the speech system hints for names and voc
 
 <div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-2">
   <div className="help-panel">
-    ### What fits
+    ### Dictionary limits
 
     Add up to 100 entries. Each entry can contain 50 characters, with 2,048 characters across the dictionary.
   </div>
   <div className="help-panel">
-    ### What happens twice
+    ### Duplicate entries
 
     Empty entries and duplicates are ignored. Capitalization alone does not create a second entry.
   </div>
@@ -87,7 +87,7 @@ Dictionary entries are suggestions, not replacements. They improve context for t
 Recent transcripts are a working surface, not a second chat archive. The latest 20 completed transcripts are kept in encrypted, account-scoped storage for this browser. From the list, you can copy one transcript or delete it individually.
 
 <div className="help-panel">
-  ### Clean up after yourself
+  ### Clean up transcripts
 
   Turn on **Clean up transcripts** when you want the app to reduce obvious transcription clutter. Keep it off when preserving the raw wording matters more. In either case, review health details before sending.
 </div>
@@ -101,7 +101,7 @@ If encrypted local storage is unavailable, the Voice workspace reports that the 
     Uses the voices installed or exposed by your browser and device. **Language** filters that list; it does not translate an answer. Choosing another language clears the previous voice selection so you can choose a compatible voice.
   </Tab>
   <Tab title="Speak Aloud API">
-    Uses the higher-quality cloud speech option. Availability depends on the service and your connection. The browser-specific language and voice selectors are not shown for this engine.
+    Uses cloud-generated speech. Availability depends on the service and your connection. The browser-specific language and voice selectors are not shown for this engine.
   </Tab>
 </Tabs>
 
@@ -114,9 +114,9 @@ If encrypted local storage is unavailable, the Voice workspace reports that the 
 
 These controls change capture and playback. They do not change the meaning, evidence, or safety limits of an answer.
 
-## Privacy deserves a quiet boundary
+## Microphone access and privacy
 
-Microphone access is granted to the browser, and the native browser prompt is the authority for that permission. A microphone test stays in Settings and does not create a chat message. Recording for transcription sends only when you use the product flow that performs transcription; a cloud speech engine may process the answer text needed to produce audio.
+Your browser asks for microphone permission. You can change that permission in its site settings. Testing the microphone does not create a chat message. Transcription processes your recorded speech; cloud read-aloud processes the answer text needed to produce audio.
 
 Do not paste a transcript into public feedback. For private account help, use [Contact us](/contact) and leave out passwords, authentication codes, recovery material, and anything the support team does not need.
 
