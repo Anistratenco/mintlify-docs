@@ -32,6 +32,7 @@
 .appearance-selection { border-bottom: 2px solid var(--demo-accent); font-weight: 600; }
 .appearance-sample-message { background: var(--demo-card); padding: 16px; border-radius: 12px; border: 1px solid color-mix(in srgb,var(--demo-ink) calc(10% + var(--demo-contrast) * 55%),transparent); }
 #content .appearance-sample p { font-size: inherit; line-height: inherit; margin: 8px 0; color: inherit; }
+#content .appearance-sample strong { color: inherit; }
 .appearance-sample-secondary { opacity: calc(.65 + var(--demo-contrast) * .35); }
 .appearance-sample-control { flex: none; display: grid; place-items: center; width: calc(36px * var(--demo-scale)); height: calc(36px * var(--demo-scale)); border-radius: 50%; border: 2px solid var(--demo-accent); font-size: calc(14px * var(--demo-scale)); }
 #content .appearance-demo-note { margin: 0; }
