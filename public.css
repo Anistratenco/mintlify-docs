@@ -151,6 +151,11 @@
 #content .help-panel:has(> svg:first-child) > h3 { margin: 0 !important; }
 #content .help-panel:has(> svg:first-child) > p { grid-column: 1 / -1; margin: 0 !important; }
 #content .help-panel > .steps { margin-top: 0 !important; margin-bottom: 0 !important; }
+#content > .steps { margin-top: 20px !important; margin-bottom: 16px !important; }
+#content .step-container { padding-bottom: 10px !important; }
+#content .step-container [data-component-part="step-title"] { margin-bottom: 4px !important; }
+#content > h2 { margin-top: 28px !important; margin-bottom: 12px !important; }
+#content > h3 { margin-top: 22px !important; margin-bottom: 8px !important; }
 #content .help-panel > .tab-container > [data-component-part="tabs-list"] { margin-bottom: 14px !important; }
 #content .help-panel > .tab-container [data-component-part="tab-button"] { padding-top: 7px !important; padding-bottom: 7px !important; }
 #content .help-faq { padding: 0; margin-block: 24px; border: 0 !important; background: transparent !important; box-shadow: none !important; }
