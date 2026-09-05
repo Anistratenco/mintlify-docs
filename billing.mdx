@@ -1,17 +1,13 @@
 ---
 title: "Plan and usage"
-description: "See what is included, review activity, and manage renewal in one place."
+description: "Check your allowance, manage payments, and get help with access."
 sidebarTitle: "Plan and usage"
 icon: "credit-card"
 ---
 
 Open **Settings → Billing**. Use **Overview** for your plan, **Usage** for activity, **History** for transactions, and **Plans** to compare your options.
 
-<div className="help-panel help-panel--compact">
-  <Icon icon="sparkles" size={24} />
-  <h2>Choose the plan that fits your use</h2>
-  <p>Compare the included allowance, features, and billing period in <a className="link" href="https://anistratenco.com/plans">Plans</a>. Review the current price and checkout summary before making a change.</p>
-</div>
+Compare allowances, features, and billing periods in [Plans](https://anistratenco.com/plans). If cost is a barrier, [request a free subscription](#cant-afford-a-subscription).
 
 <div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-3">
   <div className="help-panel help-panel--compact">
@@ -37,7 +33,7 @@ Open **Settings → Billing**. Use **Overview** for your plan, **Usage** for act
 
 The monthly usage allowance is not the same as a cash balance or an invoice. Check the amount and reset time shown for your account rather than assuming every plan has the same limit.
 
-Choose **Choose plan** or **Change plan** to open Plans. Comparing plans does not buy one. Review the price, billing period, and confirmation before completing a purchase or change.
+Choose **Choose plan** or **Change plan** to open Plans. Comparing plans does not buy one. Review the price, billing period, and confirmation before completing a purchase or change. Existing paid subscriptions are changed through the secure billing portal rather than by starting a second subscription.
 
 ## Understand the Usage screen
 
@@ -77,21 +73,30 @@ For invoices and payment-method management, use **Manage billing**. Those contro
 
 On a paid plan, open **Overview → Cancel** and review the cancellation dialog before confirming. Cancellation is scheduled for the end of the current billing period; access remains until that period ends.
 
-<div className="help-panel help-panel--compact">
-  <Icon icon="sun" size={24} />
-  <h2>The longer horizon</h2>
-  <p>Our five-year ambition is to make the entire platform free to use. Paid plans today help us build toward that future with the precision, privacy, and depth the product requires. It is a direction we are working toward, not a guarantee that current prices or timelines cannot change.</p>
-</div>
-
 Canceling renewal does not delete your account, erase conversations, or automatically refund the current period. Check the confirmation and the updated renewal state. If the request fails, do not assume renewal has stopped.
 
 ## Resume renewal
 
 If cancellation is scheduled, **Resume** appears instead. Choosing it sends the request to turn automatic renewal back on. Check the success message and updated plan state.
 
-## Something does not look right?
+## Payment needs attention?
 
-If Billing reports a loading problem, retry before treating missing information as zero usage or a canceled plan. For an unexpected charge or a plan that has not updated, [contact us](https://anistratenco.com/contact). Include what you expected, the date, and the visible error. Do not send a full card number, password, or recovery code.
+| What you see | What to do |
+| --- | --- |
+| Checkout closed or payment is pending | Check History and your plan before starting another purchase. Opening checkout alone does not confirm payment. |
+| Payment failed | Read the checkout message and check your payment method. If the result is unclear, check the original transaction before retrying. |
+| A charge appeared but your plan did not update | Reopen Billing and check Overview and History. If they still disagree, contact us with the transaction date and visible reference. |
+| An unexpected or duplicate charge | Contact us so we can investigate. Canceling renewal does not automatically refund a payment. |
+| Billing cannot load | Retry. Missing information does not mean zero usage, no payments, or a canceled subscription. |
+| Manage billing is unavailable | A billing customer may not yet exist for the account. Contact us if you have already paid. |
+
+Use [Contact us](https://anistratenco.com/contact) for payment help. Include what you expected, the date, and any visible error or transaction reference. Never send a full card number, security code, password, or recovery code.
+
+## Can't afford a subscription?
+
+Ask us. We provide free subscriptions on request when cost is a barrier. [Contact us](https://anistratenco.com/contact) and say you would like a free subscription. You do not need to share medical records or sensitive health details in your message.
+
+Our goal is to make the entire platform free for everyone. Access matters especially for people facing financial hardship, people with disabilities, and anyone living with health challenges who needs support. Free subscriptions on request are one way we can help today while working toward that goal.
 
 <section className="help-faq" aria-labelledby="page-questions">
 <h2 id="page-questions">Questions and Answers</h2>
@@ -104,5 +109,5 @@ If Billing reports a loading problem, retry before treating missing information 
 </Accordion>
 <Accordion title="When does a plan change take effect?"><div>Use the effective date shown in the purchase or plan-management flow. Do not infer it from the comparison page alone.</div></Accordion>
 <Accordion title="Where can I see my current allowance?"><div>Open Settings → Billing → Overview. Your allowance and reset time appear there when available for your account. Usage shows the activity breakdown.</div></Accordion>
-<Accordion title="Can support change my plan without confirmation?"><div>No. A purchase or plan change should remain visible in its own provider confirmation flow before it is completed.</div></Accordion>
+<Accordion title="Can I get a subscription if I cannot afford it?"><div>Yes. We provide free subscriptions on request when cost is a barrier. <a className="link" href="https://anistratenco.com/contact">Contact us</a> and ask for one. Keep medical records and sensitive health details out of the request.</div></Accordion>
 </section>
