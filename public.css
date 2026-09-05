@@ -259,6 +259,7 @@
   #navbar #theme-preference-menu-trigger:active { transform: translateY(-50%) scale(.96); }
   #navbar #search-bar-entry-mobile { position: absolute; left: 52px; top: 50%; transform: translateY(-50%); }
   #navbar #assistant-entry-mobile { position: absolute; right: 52px; top: 50%; transform: translateY(-50%); }
+  #navbar div.relative:has(> div > #search-bar-entry-mobile) { position: static; }
   #navbar > div.relative > div.relative > button { order: 1; flex: none; width: 40px; height: 40px; padding: 0; justify-content: center; }
   #navbar > div.relative > div.relative > button > div:last-child { display: none; }
   #navbar > div.relative > div.relative > div:has(#search-bar-entry-mobile) a.select-none { display: none; }
