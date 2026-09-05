@@ -1,0 +1,29 @@
+<div className="appearance-demo" data-theme="light" style={{'--demo-accent': '#006fe6', '--demo-font': '14px', '--demo-scale': 1, '--demo-contrast': 0}}>
+  <div className="appearance-demo-heading"><strong>Try the appearance controls</strong><span>Preview only · nothing is saved</span></div>
+  <fieldset className="appearance-themes">
+    <legend>Theme</legend>
+    <button type="button" data-preview-theme="light" aria-pressed="true"><span className="appearance-thumbnail light"><i /><i /><i /></span><span>Light</span></button>
+    <button type="button" data-preview-theme="dark" aria-pressed="false"><span className="appearance-thumbnail dark"><i /><i /><i /></span><span>Dark</span></button>
+    <button type="button" data-preview-theme="auto" aria-pressed="false"><span className="appearance-thumbnail auto"><i /><i /><i /></span><span>Automatic</span></button>
+  </fieldset>
+  <fieldset className="appearance-swatches">
+    <legend>Accent</legend>
+    <button type="button" data-preview-accent="auto" aria-label="Automatic accent" aria-pressed="false"><span style={{background: 'linear-gradient(90deg,#1c1c1e 50%,#f2f2f7 50%)'}} /></button>
+    <button type="button" data-preview-accent="#006fe6" aria-label="Blue accent" aria-pressed="true"><span style={{background: '#006fe6'}} /></button>
+    <button type="button" data-preview-accent="#7c3aed" aria-label="Purple accent" aria-pressed="false"><span style={{background: '#7c3aed'}} /></button>
+    <button type="button" data-preview-accent="#db2777" aria-label="Pink accent" aria-pressed="false"><span style={{background: '#db2777'}} /></button>
+    <button type="button" data-preview-accent="#ea580c" aria-label="Orange accent" aria-pressed="false"><span style={{background: '#ea580c'}} /></button>
+    <button type="button" data-preview-accent="#10a34a" aria-label="Green accent" aria-pressed="false"><span style={{background: '#10a34a'}} /></button>
+    <label className="appearance-custom">Custom<input type="color" aria-label="Custom accent color preview" defaultValue="#006fe6" data-preview-color="true" /></label>
+  </fieldset>
+  <div className="appearance-range"><label htmlFor="preview-font">Font size <output id="preview-font-value">14</output></label><input id="preview-font" type="range" min="14" max="18" step="1" defaultValue="14" data-preview-range="font" /><div className="appearance-marks"><span>Standard · 14</span><span>Large · 16</span><span>Largest · 18</span></div></div>
+  <div className="appearance-range"><label htmlFor="preview-contrast">Contrast <output id="preview-contrast-value">0</output></label><input id="preview-contrast" type="range" min="0" max="100" step="5" defaultValue="0" data-preview-range="contrast" /><div className="appearance-marks"><span>Standard · 0</span><span>Medium · 50</span><span>High · 100</span></div></div>
+  <div className="appearance-range"><label htmlFor="preview-scale">Control size <output id="preview-scale-value">1×</output></label><input id="preview-scale" type="range" min="0.75" max="1.5" step="0.05" defaultValue="1" data-preview-range="scale" /><div className="appearance-marks"><span>0.75×</span><span>Standard · 1×</span><span>1.5×</span></div></div>
+  <div className="appearance-sample">
+    <div className="appearance-sample-toolbar"><span>Health Assistant</span><span className="appearance-selection">Selected</span></div>
+    <div className="appearance-sample-message"><strong>Make room for what matters.</strong><p>Bring a question, compare information, and keep the context that helps you understand your health.</p><span className="appearance-sample-secondary">Secondary text · sources and supporting details</span></div>
+    <div className="appearance-sample-footer"><span>Text and controls scale independently.</span><span className="appearance-sample-control" aria-label="Illustrative control, not an action">Aa</span></div>
+  </div>
+  <p className="appearance-demo-note">The sample illustrates text, surface, and control relationships. Contrast is illustrative; check your choice in a real conversation. Automatic follows your device theme.</p>
+  <button className="appearance-reset" type="button" data-preview-reset="true">Reset preview</button>
+</div>

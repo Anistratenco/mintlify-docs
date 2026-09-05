@@ -9,71 +9,39 @@ description: "Choose a theme, adjust text and control size, and reduce motion."
 These are appearance controls, not changes to answer content or medical interpretation. Open the profile menu, Settings, Appearance. Theme is stored in the current browser. Font size ranges from 14 to 18 in steps of 1; contrast from 0 to 100 in steps of 5; control scale from 0.75 to 1.5 in steps of 0.05. Defaults are Automatic theme, Blue accent, 14 font size, 0 contrast, 1 control scale, Reduce motion off. Recheck visible controls before giving navigation advice if the interface changes. Examples here are local documentation previews, not connected account controls.
 </Visibility>
 
-<Steps>
-<Step title="Open Appearance" icon="palette">Open your profile menu in the sidebar, choose **Settings**, then **Appearance**.</Step>
-<Step title="Adjust the display" icon="sliders">Try a theme or text size, then return to a conversation to check that it is comfortable to read.</Step>
-<Step title="Adjust it again" icon="check">Use the reset beside a slider to undo that adjustment. Your other choices stay as they are.</Step>
-</Steps>
+import AppearancePreview from '/snippets/appearance-preview.mdx';
+
+Open your profile menu, then **Settings → Appearance**. These settings change the interface, not the content of an answer.
+
+## See the choices together
+
+Try the theme cards, accent swatches, and sliders. They change only this sample—not your account or the rest of this guide.
+
+<AppearancePreview />
 
 ## Light, Dark, and Automatic
 
 Choose Light or Dark to keep one appearance. Automatic follows your device, including changes to its light or dark setting. Your choice is saved in this browser.
 
-<div className="help-panel">
-### Compare themes
+| Choice | Canvas and text | What stays the same |
+| --- | --- | --- |
+| Light | Pale surfaces with dark text | Your content and chosen accent |
+| Dark | Dark surfaces with light text | Your content and chosen accent |
+| Automatic | Follows your device’s Light or Dark preference | Your content and chosen accent |
 
-Compare a reading surface below. These are examples, not account controls; make your changes in Settings → Appearance.
-
-<Tabs>
-<Tab title="Light" icon="sun">
-<div style={{background: '#e9eaec', color: '#1c1c1e', padding: '24px', borderRadius: '20px', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.68)'}}>
-<p style={{fontSize: '13px', opacity: .65, marginTop: 0}}>LIGHT · READING SAMPLE</p>
-<p style={{fontSize: '22px', lineHeight: 1.35, marginBlock: '12px'}}>A little more room to think.</p>
-<p style={{marginBottom: 0}}>Bring a question. Add the context that matters. Return to it when you are ready.</p>
-</div>
-</Tab>
-<Tab title="Dark" icon="moon">
-<div style={{background: '#111113', color: '#f2f2f7', padding: '24px', borderRadius: '20px', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.18)'}}>
-<p style={{fontSize: '13px', opacity: .65, marginTop: 0}}>DARK · READING SAMPLE</p>
-<p style={{fontSize: '22px', lineHeight: 1.35, marginBlock: '12px'}}>A little more room to think.</p>
-<p style={{marginBottom: 0}}>Bring a question. Add the context that matters. Return to it when you are ready.</p>
-</div>
-</Tab>
-<Tab title="Automatic" icon="desktop">The app follows the light or dark preference reported by your device. Choose this if you want it to change with your usual day/night setup.</Tab>
-</Tabs>
-</div>
+Theme changes the canvas, reading surfaces, text, and control edges together. Automatic follows a device schedule if you have one; it does not create a schedule itself.
 
 ## Accent
 
 Your accent marks selected controls and other interface details. Choose a preset or enter your own color in Custom accent color.
 
-<div className="help-panel">
-<div style={{display: 'flex', flexWrap: 'wrap', gap: '16px'}}>
-<span><span aria-hidden="true" style={{color: '#006fe6'}}>●</span> Blue</span>
-<span><span aria-hidden="true" style={{color: '#7c3aed'}}>●</span> Purple</span>
-<span><span aria-hidden="true" style={{color: '#db2777'}}>●</span> Pink</span>
-<span><span aria-hidden="true" style={{color: '#ea580c'}}>●</span> Orange</span>
-<span><span aria-hidden="true" style={{color: '#10a34a'}}>●</span> Green</span>
-</div>
-
-Choose a swatch in the app, or open Custom accent color. Automatic accent uses the theme's neutral treatment. It is separate from Automatic, which follows your device's light or dark appearance.
-</div>
+The presets are Blue, Purple, Pink, Orange, and Green. Automatic accent uses the theme’s neutral treatment—dark in Light mode, light in Dark mode. It is separate from Automatic theme. Try your accent against both themes so selected controls remain easy to distinguish.
 
 ## Font size
 
 Move the slider or enter a number from 14 to 18. The markers are Standard, Large, and Largest. This scales interface text without rewriting your messages. Resetting this slider returns it to 14.
 
-<div className="help-panel">
-### Find a comfortable reading size
-
-The interface uses Inter. Compare the same sentence at three sizes below. Browser zoom also affects what you see, so check your choice in a real conversation before settling on it.
-
-<Tabs>
-<Tab title="Standard · 14"><p style={{fontFamily: 'Inter, sans-serif', fontSize: '14px', lineHeight: 1.6}}>Start with what matters to you. You do not need to know the medical words to ask a question.</p></Tab>
-<Tab title="Large · 16"><p style={{fontFamily: 'Inter, sans-serif', fontSize: '16px', lineHeight: 1.6}}>Start with what matters to you. You do not need to know the medical words to ask a question.</p></Tab>
-<Tab title="Largest · 18"><p style={{fontFamily: 'Inter, sans-serif', fontSize: '18px', lineHeight: 1.6}}>Start with what matters to you. You do not need to know the medical words to ask a question.</p></Tab>
-</Tabs>
-</div>
+The interface uses Inter. Larger text wraps sooner and takes more vertical space. Move the preview’s slider to compare the same paragraph. Browser zoom also affects what you see, so check your choice in a real conversation.
 
 ## Contrast and control size
 

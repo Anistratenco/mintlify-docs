@@ -33,3 +33,42 @@
   observer.observe(document.body, { childList: true, subtree: true });
   syncPagination();
 })();
+
+/* Unsaved Appearance guide controls; never change the site's theme or account. */
+(() => {
+  function update(event) {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const demo = target.closest('.appearance-demo');
+    if (!demo) return;
+    const theme = target.closest('[data-preview-theme]');
+    const accent = target.closest('[data-preview-accent]');
+    if (event.type === 'click' && theme) {
+      demo.dataset.theme = theme.dataset.previewTheme;
+      demo.querySelectorAll('[data-preview-theme]').forEach(button => button.setAttribute('aria-pressed', String(button === theme)));
+    }
+    if ((event.type === 'click' && accent) || (event.type === 'input' && target.matches('[data-preview-color]'))) {
+      const color = accent ? accent.dataset.previewAccent : target.value;
+      demo.style.setProperty('--demo-accent', color === 'auto' ? 'var(--demo-ink)' : color);
+      demo.querySelectorAll('[data-preview-accent]').forEach(button => button.setAttribute('aria-pressed', String(button === accent)));
+    }
+    if (event.type === 'input' && target.matches('[data-preview-range]')) {
+      const key = target.dataset.previewRange;
+      const value = Number(target.value);
+      if (!Number.isFinite(value)) return;
+      demo.style.setProperty(`--demo-${key}`, key === 'font' ? `${value}px` : key === 'contrast' ? value / 100 : value);
+      demo.querySelector(`#${target.id}-value`).textContent = `${value}${key === 'scale' ? '×' : ''}`;
+    }
+    if (event.type === 'click' && target.closest('[data-preview-reset]')) {
+      demo.querySelector('[data-preview-theme="light"]').click();
+      demo.querySelector('[data-preview-accent="#006fe6"]').click();
+      demo.querySelectorAll('[data-preview-range]').forEach(input => {
+        input.value = input.defaultValue;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+      demo.querySelector('[data-preview-color]').value = '#006fe6';
+    }
+  }
+  document.addEventListener('click', update);
+  document.addEventListener('input', update);
+})();
