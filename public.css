@@ -133,6 +133,7 @@
   box-shadow: var(--help-top) !important;
 }
 #content .mint-grid { gap: 14px !important; }
+#content .card-group { gap: 14px !important; }
 #content .mint-grid > .help-panel,
 #content .mint-grid > a.mint-block > .help-panel { margin-block: 0; height: 100%; }
 #content .card { margin-block: 0 !important; transition: background-color 180ms ease-out, border-color 180ms ease-out; }
@@ -182,7 +183,7 @@
   #navbar > div.relative > div.relative > button > div:last-child { display: none; }
 }
 @media (max-width: 640px) {
-  #content .mint-grid { gap: 12px !important; }
+  #content .mint-grid, #content .card-group { gap: 12px !important; }
   #content .card [data-component-part="card-content-container"],
   #content .help-panel { padding: 13px 14px !important; }
   #pagination { flex-wrap: wrap; }
