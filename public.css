@@ -1,8 +1,6 @@
 /* Public Health Assistant: shared product surfaces, not per-page approximations. */
 /* Appearance: native, unsaved controls and a deliberately scoped reading sample. */
 #content .appearance-demo { padding: 20px; border: 1px solid var(--help-edge); border-radius: 24px; background: var(--help-fill); box-shadow: var(--help-top); display: grid; gap: 20px; }
-#content .appearance-demo fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
-#content .appearance-demo legend { margin-bottom: 10px; font-weight: 600; font-size: 14px; }
 .appearance-demo-heading { display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; align-items: baseline; }
 .appearance-demo-heading span, .appearance-marks, #content .appearance-demo-note { font-size: 12px; line-height: 1.5; }
 .appearance-themes { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
