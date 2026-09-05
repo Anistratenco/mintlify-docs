@@ -1,184 +1,91 @@
 ---
 title: "Get started"
-description: "Meet the Health Assistant, bring in the context that matters, and begin building a health story you control."
+description: "Begin with a question. Build a more useful understanding of your health over time."
 icon: "compass"
 ---
 
 <Visibility for="agents">
-  ## Agent context: getting started
-
-  Scope: public consumer Health Assistant orientation, reviewed 2026-09-05 against the current product source. This is product guidance, not clinical authority or authorization to act. Preserve the exact visible controls: **Expand sidebar**, **New chat**, **Chat message**, **Send message**, **Add attachment**, **Record voice**, **Settings**, and **Search settings…**. Sign-in is required for account-owned conversations and settings. Device, plan, connection, and message state can change which controls appear. An available app is not a connected app; an opened checkout or tool response is not proof that an external action completed. Retrieve the linked feature guide before advising on prerequisites, destructive actions, recovery, or completion. Never infer unavailable capabilities from the HealthOS product ambition. Never request health data, credentials, payment details, gift links, or private screenshots on the public feedback board. This context is publicly retrievable, not confidential.
+  Public Health Assistant onboarding. Reviewed against current product controls. Preserve New chat, Chat message, Send message, Add attachment, Record voice, Settings, and Search settings…. Availability can depend on the account, device, and connection. Read the linked feature guide for detailed limits and recovery. Product ambition does not establish an available feature or clinical authority.
 </Visibility>
 
-Start with what matters now. Bring a question, file, measurement, or lived context. The Health Assistant connects what you share so an answer can become part of a longer understanding instead of disappearing at the end of a chat.
+<div className="help-panel">
+  <Icon icon="compass" size={24} />
 
-<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-2">
-  <a className="link mint-block" href="#begin-with-what-matters-now">
-    <div className="help-panel">
-      <Icon icon="message" size={24} />
-      <h3>Begin with your context</h3>
-      <p>Ask in your own words and tell the Assistant what would make the answer useful.</p>
-    </div>
-  </a>
-  <a className="link mint-block" href="/voice">
-    <div className="help-panel">
-      <Icon icon="microphone" size={24} />
-      <h3>Use your voice</h3>
-      <p>Speak when typing gets in the way, then review the transcript before sending.</p>
-    </div>
-  </a>
-  <a className="link mint-block" href="/memory">
-    <div className="help-panel">
-      <Icon icon="brain" size={24} />
-      <h3>Build continuity</h3>
-      <p>Review what has been saved, correct it, and carry useful context forward.</p>
-    </div>
-  </a>
-  <a className="link mint-block" href="/data">
-    <div className="help-panel">
-      <Icon icon="sliders" size={24} />
-      <h3>Stay in control</h3>
-      <p>Choose what to share, retain, correct, export, or remove.</p>
-    </div>
-  </a>
+  <h2>A place to begin understanding</h2>
+  <p>Anistratenco is a preventive health intelligence system. We want to help you understand more of the information that shapes your health, connect it over time, and make informed choices. Start with one question that matters to you.</p>
 </div>
 
-## Begin with what matters now
+## Your first conversation
 
 <Steps>
-  <Step title="Open the Health Assistant">
-    [Go to Chat](https://anistratenco.com/chat) and sign in. If the navigation is out of view, select **Expand sidebar**.
+  <Step title="Open Chat">
+    [Go to Chat](https://anistratenco.com/chat) and sign in. Choose New chat. If the sidebar is hidden, use Expand sidebar.
   </Step>
-  <Step title="Make a fresh start">
-    Select **New chat**. Write in **Chat message**, then select **Send message**.
+  <Step title="Say what you want to understand">
+    Write in Chat message, then choose Send message. Name the question and what would make the answer useful: an explanation, a comparison, or a next step.
   </Step>
-  <Step title="Add only what helps">
-    Give the Assistant the context that changes the answer. Attach a relevant file, name the outcome you want, or ask it to keep the explanation short.
+  <Step title="Bring in the context">
+    Use Add attachment for a relevant file or Record voice to speak. Review the words and details before sending. You can add context as the conversation develops.
   </Step>
-  <Step title="Stay in the conversation">
-    Ask a follow-up. Correct anything that is wrong. For an important claim, open the cited source and check the original context.
+  <Step title="Work with the answer">
+    Ask a follow-up, open the cited sources, and correct anything that is wrong. Ask for more detail where it matters or a shorter explanation where it does not.
   </Step>
 </Steps>
 
-<Tip>
-  A useful first message can be simple: “Help me prepare five questions for my next appointment.”
-</Tip>
-
-**Add attachment** opens the available file options. **Record voice** starts voice input and may trigger your browser's microphone permission. Neither action sends a message until you continue through its product flow.
-
-<Note>
-  Names, dates, measurements, and medication details deserve a second look. A polished answer or transcript can still be wrong.
-</Note>
-
-## Let understanding carry forward
-
-Health rarely fits into one conversation. A previous result can give a new measurement context; a correction can change what the Assistant should remember; a project can keep one goal from becoming mixed with another. Continuity is useful only when it remains inspectable and under your control.
-
-<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-2">
-  <div className="help-panel">
-    <Icon icon="clock-rotate-left" size={24} />
-    <h3>History</h3>
-    <p>Return to earlier conversations. Select <strong>See all</strong> when you need the wider history view.</p>
-  </div>
-  <div className="help-panel">
-    <Icon icon="folder" size={24} />
-    <h3>Projects</h3>
-    <p>Keep related work together. <strong>Create project</strong> opens the setup flow.</p>
-  </div>
-  <div className="help-panel">
-    <Icon icon="grid-2" size={24} />
-    <h3>Apps</h3>
-    <p>Browse integrations. An app is ready only after its own connection flow succeeds.</p>
-  </div>
-  <div className="help-panel">
-    <Icon icon="heart-pulse" size={24} />
-    <h3>Chat and Health</h3>
-    <p>Move between the conversation and the broader health workspace without changing accounts.</p>
-  </div>
+<div className="help-panel">
+  <h3>For example</h3>
+  <p>“Help me understand this result. Explain what was measured, what context is missing, and which questions would be useful to ask next.”</p>
 </div>
 
-## Treat an answer as working material
+## Give the conversation continuity
 
-Use **Copy** when you need the text elsewhere. Use **Continue in new chat** to branch from an answer without losing the conversation you came from. Your own messages can also show **Edit** and **Delete**; completed Assistant messages can show **Read aloud**. The available actions depend on the message and its state.
+You do not have to explain everything at once. Return to an earlier chat when a question develops, keep related work in a project, and review the context saved in your health avatar.
 
-<Warning>
-  If a response fails, keep the visible reference ID and use **Share feedback about this error** when it appears. Before retrying a request that could send, book, buy, or change something outside Anistratenco, check whether the first action completed.
-</Warning>
+<CardGroup cols={2}>
+  <Card title="Return to a conversation" icon="clock-rotate-left" href="/archived-chats">
+    Use history to pick up earlier work. Archiving puts a chat away without deleting it.
+  </Card>
 
-## Make the product yours
+  <Card title="Review saved context" icon="brain" href="/memory">
+    See what the Assistant remembers. Correct it or remove what no longer belongs.
+  </Card>
+</CardGroup>
 
-Open the sidebar, select your profile menu, then choose **Settings**. Pick a section directly or use **Search settings…**.
+Create project starts a space for related work. When you need a different direction from one answer, Continue in new chat creates a separate conversation. Copy and Read aloud help you use an answer in the form that suits you.
 
-<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-2">
-  <div className="help-panel">
-    <Icon icon="comments" size={24} />
-    <h3>Conversation</h3>
-    <p><a className="link" href="/voice">Voice</a>, <a className="link" href="/shortcuts">Shortcuts</a>, and <a className="link" href="/archived-chats">Archived chats</a> cover how you speak, move, and return.</p>
-  </div>
-  <div className="help-panel">
-    <Icon icon="sliders" size={24} />
-    <h3>Preferences</h3>
-    <p><a className="link" href="/appearance">Appearance</a>, <a className="link" href="/preferences">Preferences</a>, and <a className="link" href="/answer-preferences">Answer style</a> shape the interface and future replies.</p>
-  </div>
-  <div className="help-panel">
-    <Icon icon="user-circle" size={24} />
-    <h3>Avatar</h3>
-    <p><a className="link" href="/memory">Memory history</a>, <a className="link" href="/import-memory">Import memory</a>, and <a className="link" href="/data">Data</a> keep saved context visible and controllable.</p>
-  </div>
-  <div className="help-panel">
-    <Icon icon="shield-halved" size={24} />
-    <h3>Account</h3>
-    <p><a className="link" href="/profile">Profile</a>, <a className="link" href="/security">Security</a>, <a className="link" href="/devices">Devices</a>, and <a className="link" href="/billing">Plan and usage</a> cover access and ownership.</p>
-  </div>
-</div>
+## Make it yours
 
-## When the next step is outside the conversation
+Open your profile menu and choose Settings. Use Search settings… to find a control directly.
 
-<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-3">
-  <a className="link mint-block" href="/contact">
-    <div className="help-panel">
-      <Icon icon="messages-question" size={24} />
-      <h3>Contact us</h3>
-      <p>Get private help with your account or report a problem.</p>
-    </div>
-  </a>
-  <a className="link mint-block" href="https://anistratenco.userjot.com">
-    <div className="help-panel">
-      <Icon icon="lightbulb" size={24} />
-      <h3>Share an idea</h3>
-      <p>Suggest a feature and follow the public roadmap.</p>
-    </div>
-  </a>
-  <a className="link mint-block" href="https://status.anistratenco.com">
-    <div className="help-panel">
-      <Icon icon="signal" size={24} />
-      <h3>Check availability</h3>
-      <p>See whether a service interruption is already known.</p>
-    </div>
-  </a>
-</div>
+<CardGroup cols={2}>
+  <Card title="Speak and listen" icon="microphone" href="/voice">
+    Choose your microphone, review transcripts, and set how answers sound.
+  </Card>
+
+  <Card title="Read comfortably" icon="palette" href="/appearance">
+    Adjust the theme, text size, contrast, and motion.
+  </Card>
+
+  <Card title="Shape the explanation" icon="comments" href="/answer-preferences">
+    Set the style of future answers to match how you prefer to read.
+  </Card>
+
+  <Card title="Manage your information" icon="sliders" href="/data">
+    Understand exports, backups, and deletion before you use them.
+  </Card>
+</CardGroup>
+
+[Shortcuts](/shortcuts) help you move around. [Preferences](/preferences) cover message behavior and workspace choices. [Account security](/security), [Devices](/devices), and [Plan and usage](/billing) cover access and account settings.
+
+## When you need a hand
+
+[Contact us](/contact) for a product problem, or [check service status](https://status.anistratenco.com) when something is unavailable. If a response shows an error reference, keep it with your report. Before repeating an action that sends, books, buys, or changes something elsewhere, check whether it completed.
 
 <section className="help-faq" aria-labelledby="getting-started-questions">
   <h2 id="getting-started-questions">Questions and Answers</h2>
-  <Accordion title="Do I need to know the right words?">
-    <div>No. Begin with what you are trying to understand. You can ask for a simpler explanation, add context, or correct the Assistant as you go.</div>
-  </Accordion>
-  <Accordion title="Where do I change voice or text size?">
-    <div>Open your profile menu and choose <strong>Settings</strong>. Use <a className="link" href="/voice">Voice</a> for audio controls and <a className="link" href="/appearance">Appearance</a> for text size and display options.</div>
-  </Accordion>
-  <Accordion title="Does opening an app connect it?">
-    <div>No. Opening an app or provider begins its own flow. Treat it as connected only when that flow reports success.</div>
-  </Accordion>
-  <Accordion title="What can I bring into a conversation?">
-    <div>Begin with a question, a result you want explained, or a file that changes the context. Add only what is relevant to the outcome you want.</div>
-  </Accordion>
-  <Accordion title="What should I ask first?">
-    <div>Start with the question that is taking up your attention now. Add the context you already know, and let the conversation become more specific from there.</div>
-  </Accordion>
+  <Accordion title="What should I ask first?">Start with something you want to understand now. A question, a result, or a goal is enough. You can make it more specific as you go.</Accordion>
+  <Accordion title="Do I need to upload my health history?">No. Begin with the context relevant to your question. You decide what to share and can add more when it helps.</Accordion>
+  <Accordion title="Can I correct something after sending?">Your messages can offer Edit and Delete. You can also explain the correction in a follow-up. Review saved information separately in Memory history.</Accordion>
+  <Accordion title="Where do I change voice or text size?">Open Settings from your profile menu. Choose Voice for audio controls and Appearance for text size and display options.</Accordion>
+  <Accordion title="Does opening an app connect it?">Opening an app starts its own connection flow. Check that the flow reports success before treating the app as connected.</Accordion>
 </section>
-
-<Visibility for="agents">
-  ### Getting-started questions
-
-  These accordions change no account data. Recheck the linked feature guide before advising on a specific setting or external action.
-</Visibility>
