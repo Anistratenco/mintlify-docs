@@ -125,6 +125,9 @@
 #header > div:first-child > div:has(> #page-title) { display: grid; grid-template-columns: 76px minmax(0, 1fr) 76px; align-items: center; gap: 10px; }
 #header #page-title { grid-column: 2; width: 100%; text-wrap: balance; }
 #header #page-context-menu { display: flex; grid-column: 3; min-width: 0; margin: 0; justify-content: end; }
+@media (max-width: 640px) {
+  #header > div:first-child > div:has(> #page-title) { gap: 0; }
+}
 #header > #page-context-menu { display: none !important; }
 #header #page-context-menu-button span { display: none; }
 #header #page-context-menu { border: 1px solid var(--help-control-edge); border-radius: 999px; background: var(--help-control-fill); box-shadow: var(--help-control-shadow); overflow: hidden; }
