@@ -10,6 +10,13 @@
   --help-nav-edge: rgb(255 255 255 / 20%);
   --help-link-fill: rgb(0 111 230 / 9%);
   --help-rail: rgb(28 28 30 / 18%);
+  --help-control-fill: rgb(255 255 255 / 14%);
+  --help-control-edge: rgb(255 255 255 / 24%);
+  --help-control-shadow: inset 0 1px 0 rgb(255 255 255 / 36%), 0 4px 9px -7px rgb(15 23 42 / 20%);
+  --help-menu-fill: rgb(225 227 229 / 86%);
+  --help-menu-edge: rgb(255 255 255 / 72%);
+  --help-menu-shadow: inset 0 1px 0 rgb(255 255 255 / 50%), 0 2px 5px -4px rgb(15 23 42 / 8%), 0 18px 42px -28px rgb(15 23 42 / 24%);
+  --help-chat-shadow: 0 10px 22px -18px rgb(0 111 230 / 24%), 0 3px 8px -8px rgb(0 111 230 / 14%), inset 0 1px 0 rgb(255 255 255 / 14%);
 }
 .dark {
   --help-ink: #f2f2f7;
@@ -21,12 +28,19 @@
   --help-nav-edge: rgb(255 255 255 / 5%);
   --help-link-fill: rgb(0 111 230 / 18%);
   --help-rail: rgb(255 255 255 / 20%);
+  --help-control-fill: rgb(255 255 255 / 3.5%);
+  --help-control-edge: rgb(255 255 255 / 6%);
+  --help-control-shadow: inset 0 1px 0 rgb(255 255 255 / 8%), 0 5px 11px -8px rgb(0 0 0 / 58%);
+  --help-menu-fill: rgb(3 3 3 / 86%);
+  --help-menu-edge: rgb(255 255 255 / 14%);
+  --help-menu-shadow: inset 0 1px 0 rgb(255 255 255 / 8.5%), 0 2px 6px -3px rgb(0 0 0 / 36%), 0 20px 44px -28px rgb(0 0 0 / 48%);
+  --help-chat-shadow: 0 12px 24px -18px rgb(0 111 230 / 30%), 0 4px 12px -10px rgb(0 111 230 / 18%), inset 0 1px 0 rgb(255 255 255 / 12%);
 }
 
 /* Remove the two opaque full-width underlays so blur samples the page. */
 #navbar {
   width: min(640px, calc(100% - 32px));
-  margin: 12px auto 20px;
+  margin: 0 auto 20px;
   top: 12px;
   left: 0;
   right: 0;
@@ -38,9 +52,10 @@
   -webkit-backdrop-filter: blur(20px) saturate(190%);
 }
 #navbar > div.absolute { display: none; }
-#navbar > div.relative { padding-inline: 8px; }
+#navbar > div.relative { padding-inline: 0; }
 #navbar #topbar-cta-button { border-radius: 9999px; box-shadow: none; }
 @media (min-width: 1024px) {
+  #navbar > div.relative > div.relative > div:has(.topbar-right-container) { padding-inline: 12px; }
   #navbar ul:has(> #topbar-cta-button) { display: flex; }
   #navbar > div.relative > div.relative > button { display: none !important; }
 }
@@ -56,7 +71,7 @@
 #header #page-context-menu { display: flex; grid-column: 3; min-width: 0; margin: 0; justify-content: end; }
 #header > #page-context-menu { display: none !important; }
 #header #page-context-menu-button span { display: none; }
-#header #page-context-menu { border: 1px solid var(--help-edge); border-radius: 999px; background: var(--help-fill); box-shadow: var(--help-top); overflow: hidden; }
+#header #page-context-menu { border: 1px solid var(--help-control-edge); border-radius: 999px; background: var(--help-control-fill); box-shadow: var(--help-control-shadow); overflow: hidden; }
 #header #page-context-menu > button { display: flex; height: 40px; border: 0; border-radius: 0; background: transparent; box-shadow: none; align-items: center; justify-content: center; }
 #header #page-context-menu-button { width: 40px; padding: 0; }
 #header #page-context-menu > button[aria-label="More actions"] { width: 34px; border-left: 1px solid var(--help-edge); }
@@ -189,15 +204,16 @@
   border: 1px solid var(--help-edge); background: var(--help-fill); box-shadow: var(--help-top);
   color: var(--help-ink); border-radius: 50%;
 }
-#navbar button:not([aria-label="More actions"]), #navbar .help-mobile-chat { width: 40px !important; height: 40px !important; min-width: 40px; flex: none; padding: 0 !important; border-radius: 50% !important; display: inline-flex; align-items: center; justify-content: center; }
-#navbar button:not([aria-label="More actions"]) { border-color: var(--help-nav-edge); box-shadow: none; }
+#navbar button:not([aria-label="More actions"]), #navbar .help-mobile-chat { width: 36px !important; height: 36px !important; min-width: 36px; flex: none; padding: 0 !important; border-radius: 50% !important; display: inline-flex; align-items: center; justify-content: center; }
+#navbar button:not([aria-label="More actions"]), #content [data-component-part="step-indicator"] { border: 1px solid var(--help-control-edge); background: var(--help-control-fill); box-shadow: var(--help-control-shadow); }
 #content [data-component-part="step-indicator"] { width: 34px; height: 34px; color: var(--help-accent); font-size: 13px; }
 #navbar button, #navbar a, #header #page-context-menu-button { transition: background-color 160ms ease-out, transform 160ms ease-out; }
 #navbar button:hover, #navbar .help-mobile-chat:hover, #header #page-context-menu-button:hover { background: var(--help-hover); }
 #navbar button:active, #navbar a:active, #header #page-context-menu-button:active { transform: scale(.96); }
 #navbar button:focus-visible, #navbar a:focus-visible, #header button:focus-visible { outline: 2px solid var(--help-accent); outline-offset: 2px; }
 #navbar .help-mobile-chat { display: none; }
-#navbar #topbar-cta-button a, #navbar .help-mobile-chat { height: 40px; border-radius: 999px !important; background: var(--help-accent); border-color: var(--help-accent); color: white; box-shadow: none; }
+#navbar #topbar-cta-button a, #navbar .help-mobile-chat { height: 36px; border-radius: 999px !important; background: var(--help-accent); border-color: rgb(255 255 255 / 26%); color: white; box-shadow: var(--help-chat-shadow); }
+.dark #navbar #topbar-cta-button a, .dark #navbar .help-mobile-chat { border-color: rgb(255 255 255 / 16%); }
 #navbar #topbar-cta-button a span { color: white; }
 #navbar #topbar-cta-button a:hover, #navbar .help-mobile-chat:hover { background: var(--help-accent); border-color: rgb(255 255 255 / 34%); }
 #content > h2 { margin-top: 28px !important; margin-bottom: 12px !important; }
@@ -227,9 +243,15 @@
 .help-faq details::details-content { block-size: 0; overflow: hidden; transition: block-size 240ms ease-out, content-visibility 240ms allow-discrete; }
 .help-faq details[open]::details-content { block-size: auto; }
 @media (max-width: 1023px) {
-  #navbar { width: calc(100% - 20px); top: 8px; margin: 8px auto 14px; overflow: hidden; }
-  #navbar > div.relative > div.relative { display: flex; align-items: center; min-height: 52px; padding-inline: 8px; }
-  #navbar > div.relative > div.relative > div:has(#search-bar-entry-mobile) { order: 2; flex: 1; height: 52px; padding: 0 8px 0 4px; }
+  #navbar { width: calc(100% - 16px); top: 8px; margin: 0 auto 14px; }
+  #navbar > div.relative > div.relative { display: flex; align-items: center; min-height: 48px; padding-inline: 8px; }
+  #navbar > div.relative > div.relative > div:has(#search-bar-entry-mobile) { order: 2; flex: 1; height: 48px; padding: 0 40px 0 4px; justify-content: end; gap: 4px; }
+  #navbar > div.relative > div.relative > div:has(.topbar-right-container),
+  #navbar .topbar-right-container { display: contents !important; }
+  #navbar > div.relative > div.relative > div:has(.topbar-right-container) > :not(.topbar-right-container),
+  #navbar .topbar-right-container > :not(#theme-preference-menu-trigger) { display: none !important; }
+  #navbar #theme-preference-menu-trigger { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); }
+  #navbar #theme-preference-menu-trigger:active { transform: translateY(-50%) scale(.96); }
   #navbar > div.relative > div.relative > button { order: 1; flex: none; width: 40px; height: 40px; padding: 0; justify-content: center; }
   #navbar > div.relative > div.relative > button > div:last-child { display: none; }
   #navbar > div.relative > div.relative > div:has(#search-bar-entry-mobile) a.select-none { display: none; }
@@ -237,6 +259,9 @@
   #navbar .help-mobile-chat:active { transform: translate(-50%, -50%) scale(.96); }
   #navbar #search-bar-entry-mobile + button { margin-left: 0; }
 }
+[role="menu"] { background: var(--help-menu-fill) !important; color: var(--help-ink); border: 1px solid var(--help-menu-edge) !important; border-radius: 18px !important; box-shadow: var(--help-menu-shadow) !important; padding: 6px !important; backdrop-filter: blur(20px); max-width: calc(100vw - 16px); }
+[role="menu"] [role="menuitem"] { border-radius: 12px; padding: 8px 10px; min-height: 40px; gap: 8px; color: var(--help-ink); }
+[role="menu"] [role="menuitem"]:is(:hover, :focus-visible, [data-highlighted]) { background: var(--help-hover); outline: none; }
 @media (max-width: 640px) {
   #content .mint-grid, #content .card-group { gap: 12px !important; }
   #content .card [data-component-part="card-content-container"],
