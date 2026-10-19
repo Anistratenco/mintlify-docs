@@ -112,6 +112,18 @@
     "family": "Inter"
   },
   "description": "Practical guides to the Anistratenco Health Assistant, powered by HealthOS. Learn about conversations, voice, preferences, privacy, plans, and getting help.",
+  "seo": {
+    "metatags": {
+      "canonical": "https://docs.anistratenco.com"
+    },
+    "organization": {
+      "id": "https://anistratenco.com/#organization",
+      "name": "Anistratenco",
+      "legalName": "Anistratenco Platform, LLC",
+      "url": "https://anistratenco.com/",
+      "logo": "https://anistratenco.com/icon-512x512.png"
+    }
+  },
   "logo": {
     "light": "https://anistratenco.com/favicon-light.svg",
     "dark": "https://anistratenco.com/favicon-dark.svg"
