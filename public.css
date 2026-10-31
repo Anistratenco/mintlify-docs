@@ -48,6 +48,7 @@
 :root {
   --help-ink: #1c1c1e;
   --help-accent: #006fe6;
+  --help-text-accent: #0050a8;
   --help-fill: rgb(255 255 255 / 24%);
   --help-hover: rgb(255 255 255 / 38%);
   --help-edge: rgb(255 255 255 / 56%);
@@ -65,6 +66,7 @@
   --help-chat-shadow: 0 10px 22px -18px rgb(0 111 230 / 24%), 0 3px 8px -8px rgb(0 111 230 / 14%), inset 0 1px 0 rgb(255 255 255 / 14%);
 }
 .dark {
+  --help-text-accent: #70b4ff;
   --help-ink: #f2f2f7;
   --help-fill: rgb(255 255 255 / 5.5%);
   --help-hover: rgb(255 255 255 / 9%);
@@ -120,7 +122,7 @@
   line-height: 1.4 !important;
   font-weight: 600;
 }
-#header .eyebrow { font-size: 15px; height: auto; line-height: 1.5; }
+#header .eyebrow { color: var(--help-text-accent); font-size: 15px; height: auto; line-height: 1.5; }
 #header { text-align: center; }
 #header > div:first-child > div:has(> #page-title) { display: grid; grid-template-columns: 76px minmax(0, 1fr) 76px; align-items: center; gap: 10px; }
 #header #page-title { grid-column: 2; width: 100%; text-wrap: balance; }
@@ -146,7 +148,7 @@
 
 #navbar button[aria-label="More actions"] { display: none !important; }
 #content a.link:not(.mint-block):not(:has(strong.mint-block)):not(.card):not(:has(h2)) {
-  color: var(--help-accent);
+  color: var(--help-text-accent);
   background: var(--help-link-fill);
   border: 1px solid rgb(0 111 230 / 28%);
   border-radius: 9999px;
