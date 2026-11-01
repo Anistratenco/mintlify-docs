@@ -55,9 +55,7 @@ The page reloads after a successful restore. If the file cannot be read, is inco
 
 ## Download account data
 
-The account export is separate from **Local backup**. Its JSON lists the account-data inventory and export scope, not the contents of the underlying records. The app also downloads files from encrypted sync that are referenced in the current app state. Your browser decrypts each file before saving it, so keep the downloaded copies private.
-
-This export does not include browser-local conversations or health data, your full uploaded file library, or payment-provider records. Save any other files you need separately. For a broader data-access request, [contact us](https://anistratenco.com/contact) and choose **Privacy request**.
+**Download account data** saves a JSON inventory, not the underlying record contents, plus encrypted-sync files referenced in the current app state. The browser decrypts those files before saving, so keep the downloaded copies private. The export excludes conversations and health data stored only on this device; it does not include your full uploaded file library or payment-provider records. Use **Local backup** for local conversation state and save other files separately. For a broader data-access request, [contact us](https://anistratenco.com/contact) and choose **Privacy request**.
 
 If the export fails partway through, the message identifies the failed step. Check your browser's download location or the folder you chose for files already saved, then choose **Download account data** again. Files saved before the failure are not removed.
 
