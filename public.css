@@ -306,6 +306,7 @@
 .help-faq details > div { padding: 0 14px 12px; }
 .help-faq details::details-content { block-size: 0; overflow: hidden; transition: block-size 240ms ease-out, content-visibility 240ms allow-discrete; }
 .help-faq details[open]::details-content { block-size: auto; }
+.help-faq details:has(> summary:focus-visible)::details-content { transition: none; }
 @media (max-width: 1023px) {
   #navbar { width: calc(100% - 16px); top: 8px; margin: 0 auto 14px; }
   #navbar > div.relative > div.relative { display: flex; align-items: center; min-height: 48px; padding-inline: 8px; }
