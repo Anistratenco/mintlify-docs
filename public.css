@@ -48,6 +48,7 @@
 :root {
   --help-ink: #1c1c1e;
   --help-accent: #006fe6;
+  --help-text-accent: #004c98;
   --help-fill: rgb(255 255 255 / 24%);
   --help-hover: rgb(255 255 255 / 38%);
   --help-edge: rgb(255 255 255 / 56%);
@@ -65,6 +66,7 @@
   --help-chat-shadow: 0 10px 22px -18px rgb(0 111 230 / 24%), 0 3px 8px -8px rgb(0 111 230 / 14%), inset 0 1px 0 rgb(255 255 255 / 14%);
 }
 .dark {
+  --help-text-accent: #70b4ff;
   --help-ink: #f2f2f7;
   --help-fill: rgb(255 255 255 / 5.5%);
   --help-hover: rgb(255 255 255 / 9%);
@@ -120,7 +122,7 @@
   line-height: 1.4 !important;
   font-weight: 600;
 }
-#header .eyebrow { font-size: 15px; height: auto; line-height: 1.5; }
+#header .eyebrow { color: var(--help-text-accent); font-size: 15px; height: auto; line-height: 1.5; }
 #header { text-align: center; }
 #header > div:first-child > div:has(> #page-title) { display: grid; grid-template-columns: 76px minmax(0, 1fr) 76px; align-items: center; gap: 10px; }
 #header #page-title { grid-column: 2; width: 100%; text-wrap: balance; }
@@ -146,7 +148,7 @@
 
 #navbar button[aria-label="More actions"] { display: none !important; }
 #content a.link:not(.mint-block):not(:has(strong.mint-block)):not(.card):not(:has(h2)) {
-  color: var(--help-accent);
+  color: var(--help-text-accent);
   background: var(--help-link-fill);
   border: 1px solid rgb(0 111 230 / 28%);
   border-radius: 9999px;
@@ -281,6 +283,7 @@
 #content > h3 { margin-top: 22px !important; margin-bottom: 8px !important; }
 #content .help-panel > .tab-container > [data-component-part="tabs-list"] { margin-bottom: 14px !important; }
 #content .help-panel > .tab-container [data-component-part="tab-button"] { padding-top: 7px !important; padding-bottom: 7px !important; }
+#content [data-component-part="tab-button"][data-active="true"] { color: var(--help-text-accent); }
 #content .help-faq { padding: 0; margin-block: 24px; border: 0 !important; background: transparent !important; box-shadow: none !important; }
 #content .help-faq h2 { text-align: center; justify-content: center; margin: 0 12px 14px; }
 #content .help-faq h2 > div.absolute { display: none; }
@@ -303,6 +306,7 @@
 .help-faq details > div { padding: 0 14px 12px; }
 .help-faq details::details-content { block-size: 0; overflow: hidden; transition: block-size 240ms ease-out, content-visibility 240ms allow-discrete; }
 .help-faq details[open]::details-content { block-size: auto; }
+.help-faq details:has(> summary:focus-visible)::details-content { transition: none; }
 @media (max-width: 1023px) {
   #navbar { width: calc(100% - 16px); top: 8px; margin: 0 auto 14px; }
   #navbar > div.relative > div.relative { display: flex; align-items: center; min-height: 48px; padding-inline: 8px; }
