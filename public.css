@@ -51,11 +51,7 @@
   --help-fill: rgb(255 255 255 / 24%);
   --help-hover: rgb(255 255 255 / 38%);
   --help-edge: rgb(255 255 255 / 56%);
-  --help-faq-edge: rgb(255 255 255 / 24%);
-  --help-faq-edge-active: rgb(255 255 255 / 56%);
-  --help-faq-fill: color-mix(in srgb, var(--help-ink) 3.5%, transparent);
-  --help-faq-fill-open: color-mix(in srgb, var(--help-ink) 5.5%, transparent);
-  --help-faq-inset: inset 0 1px 0 var(--help-faq-edge);
+  --help-faq-inset: inset 0 1px 0 rgb(255 255 255 / 24%);
   --help-faq-radius: 1.5rem;
   --help-faq-height: 3rem;
   --help-faq-pad-block: clamp(.625rem, 2cqi, .75rem);
@@ -78,8 +74,7 @@
   --help-fill: rgb(255 255 255 / 5.5%);
   --help-hover: rgb(255 255 255 / 9%);
   --help-edge: rgb(255 255 255 / 18%);
-  --help-faq-edge: rgb(255 255 255 / 6%);
-  --help-faq-edge-active: rgb(255 255 255 / 10%);
+  --help-faq-inset: inset 0 1px 0 rgb(255 255 255 / 6%);
   --help-top: inset 0 1px 0 rgb(255 255 255 / 18%);
   --help-glass: rgb(0 0 0 / 30%);
   --help-nav-edge: rgb(255 255 255 / 5%);
@@ -301,14 +296,14 @@
   interpolate-size: allow-keywords;
   overflow: hidden;
   border-radius: var(--help-faq-radius);
-  border: 1px solid var(--help-faq-edge);
-  background: var(--help-faq-fill);
+  border: 1px solid var(--help-edge);
+  background: var(--help-fill);
   box-shadow: var(--help-faq-inset);
   margin-top: 7px;
   transition: background-color 120ms ease-out, border-color 120ms ease-out;
 }
-.help-faq details[open] { background: var(--help-faq-fill-open); border-color: var(--help-faq-edge-active); }
-.help-faq details:has(summary:hover) { border-color: var(--help-faq-edge-active); }
+.help-faq details[open] { background: var(--help-hover); border-color: var(--help-edge); }
+.help-faq details:has(summary:hover) { border-color: var(--help-edge); }
 .help-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; list-style: none; min-height: var(--help-faq-height); padding: var(--help-faq-pad-block) var(--help-faq-pad-inline); font-size: clamp(.875rem, 2.4cqi, .9375rem); font-weight: 560; line-height: 1.4; }
 .help-faq summary::-webkit-details-marker { display: none; }
 .help-faq summary::after { content: ''; width: 8px; height: 8px; border-right: 1.8px solid currentColor; border-bottom: 1.8px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform 180ms ease-out; flex: none; margin-right: 4px; }
