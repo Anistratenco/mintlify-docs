@@ -7,7 +7,7 @@ icon: "credit-card"
 
 Open **Settings → Billing**. Use **Overview** for your plan, **Usage** for activity, **History** for transactions, and **Plans** to compare your options.
 
-Compare allowances, features, and billing periods in [Plans](https://anistratenco.com/plans). If cost is a barrier, [request no-cost access](#can%E2%80%99t-afford-a-subscription).
+Compare the current plans, allowances, features, and billing periods on [Plans](https://anistratenco.com/plans).
 
 <div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-3">
   <div className="help-panel help-panel--compact">
@@ -29,7 +29,7 @@ Compare allowances, features, and billing periods in [Plans](https://anistratenc
 
 ## See what you have left
 
-**Overview** shows your current plan and included usage. On Free, the main allowance is shown as messages per day. On a paid plan, it is shown as a monthly usage allowance. The progress bar tells you the percentage **remaining**, with a reset time underneath.
+**Overview** shows your current plan and any remaining allowance. Paid plans show a monthly usage allowance. When the account has no spendable allowance, Overview shows **None until you choose a plan**. The progress bar tells you the percentage **remaining**, with a reset time underneath.
 
 The monthly usage allowance is not the same as a cash balance or an invoice. Check the amount and reset time shown for your account rather than assuming every plan has the same limit.
 
@@ -87,16 +87,10 @@ If cancellation is scheduled, **Resume** appears instead. Choosing it sends the 
 | Payment failed | Read the checkout message and check your payment method. If the result is unclear, check the original transaction before retrying. |
 | A charge appeared but your plan did not update | Reopen Billing and check Overview and History. If they still disagree, contact us with the transaction date and visible reference. |
 | An unexpected or duplicate charge | Contact us so we can investigate. Canceling renewal does not automatically refund a payment. |
-| Billing cannot load | Retry. Missing information does not mean zero usage, no payments, or a canceled subscription. |
+| Usage summary is unavailable | Choose **Retry** to reload it. A failed load does not prove zero usage, no payments, or a canceled subscription. |
 | Manage billing is unavailable | A billing customer may not yet exist for the account. Contact us if you have already paid. |
 
 Use [Contact us](https://anistratenco.com/contact) for payment help. Include what you expected, the date, and any visible error or transaction reference. Never send a full card number, security code, password, or recovery code.
-
-## Can't afford a subscription?
-
-If cost is a barrier, [contact us](https://anistratenco.com/contact) about no-cost access. We will tell you what is currently available. You do not need to share medical records or sensitive health details in your message.
-
-Our goal is to make the entire platform free for everyone. Access matters especially for people facing financial hardship, people with disabilities, and anyone living with health challenges who needs support. The access program helps us support people today while working toward that goal.
 
 <section className="help-faq" aria-labelledby="page-questions">
 <h2 id="page-questions">Questions and answers</h2>
@@ -109,5 +103,6 @@ Our goal is to make the entire platform free for everyone. Access matters especi
 </Accordion>
 <Accordion title="When does a plan change take effect?"><div>Use the effective date shown in the purchase or plan-management flow. Do not infer it from the comparison page alone.</div></Accordion>
 <Accordion title="Where can I see my current allowance?"><div>Open Settings → Billing → Overview. Your allowance and reset time appear there when available for your account. Usage shows the activity breakdown.</div></Accordion>
-<Accordion title="Can I request access if I cannot afford a subscription?"><div>Yes. If price is a barrier, <a className="link" href="https://anistratenco.com/contact">ask us about no-cost access</a>. We will tell you what is currently available. Keep medical records and sensitive health details out of the request.</div></Accordion>
+<Accordion title="What does 'None until you choose a plan' mean?"><div>Your account has no spendable allowance. Review the current options on <a className="link" href="https://anistratenco.com/plans">Plans</a>. If you already paid, check History and contact us with the payment date and any visible reference.</div></Accordion>
+<Accordion title="Are tokens the same as messages?"><div>No. A conversation can use several model calls or tools, so token activity is not a direct count of messages or a bill. Use Overview for your remaining allowance.</div></Accordion>
 </section>
