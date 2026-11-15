@@ -1,123 +1,35 @@
 ---
-title: "Review and manage memory"
-description: "Inspect saved context, correct details, and choose what the Assistant keeps."
-sidebarTitle: "Memory history"
+title: "Saved context availability"
+description: "See which memory controls are available in the Health Assistant."
+sidebarTitle: "Memory status"
 icon: "brain"
 ---
 
-Open your profile menu, then **Settings → Avatar → Memory history**. Memory helps the assistant carry useful context into future conversations. A saved memory can still be incomplete or wrong: review it when your situation changes.
+The earlier Memory history guide described cross-conversation consent, memory search, review, correction, import, suppression, and deletion controls. These features are no longer available in the current Health Assistant. You will not find **Settings → Avatar → Memory history**, **What Chat remembers**, or the old import and memory review flows.
 
-<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-3">
-  <div className="help-panel help-panel--compact">
-    <Icon icon="magnifying-glass" size={22} />
-    <h3>Inspect</h3>
-    <p>See what was saved, when it changed, and where it came from.</p>
-  </div>
-  <div className="help-panel help-panel--compact">
-    <Icon icon="pen" size={22} />
-    <h3>Correct</h3>
-    <p>Edit an incorrect detail or update information that has changed.</p>
-  </div>
-  <div className="help-panel help-panel--compact">
-    <Icon icon="eye-slash" size={22} />
-    <h3>Control</h3>
-    <p>Suppress a memory or forget it after reviewing the difference.</p>
-  </div>
-</div>
+The retirement of these controls does not confirm that information saved by earlier versions has been erased. Do not assume that older data has been removed just because the controls are unavailable.
 
-## Find a memory
+## What you can do now
 
-Under **What Chat remembers**, search for words in a memory or use the category filter. Filters include Health, Goals, Preferences and profile, Measurements, Family history, Conflicts, Suppressed, and Conversation or resource.
-
-**No memories match** means your search or filter found nothing. **Memories are unavailable on this device** means the app could not read them; it does not mean they were deleted. Use **Try again** and check your device and sync state.
-
-## Add something to remember
-
-Choose **Add memory**, write the information in **Manual memory**, and select **Save memory**. Keep it specific and useful—for example, “I prefer measurements in metric units.” Wait for the saved message.
-
-Adding information does not make it medically verified. If it is uncertain, say so in the memory.
-
-## Edit an incorrect memory
-
-Choose **Edit** beside a current memory, change the text, and select **Save**. The edit field allows up to **2,000 characters**. **Cancel** leaves the stored version unchanged.
-
-A successful edit keeps the previous revision in history. If the memory changed elsewhere, refresh and edit the current version instead of assuming your old draft replaced it. A local save may still be waiting to sync to other devices.
-
-## Check details and sources
-
-Choose **Details** to see when a memory was added, updated, and last used. “Not used in an answer yet” reflects the usage information available on this device.
-
-When source links are available, **View source** takes you to the source conversation and relevant message. Use this to check what was originally said. A source link is context, not proof that the information is correct.
-
-The memory’s action menu provides additional controls:
-
-| Action | What it is for |
-| --- | --- |
-| Make a correction | Starts the correction flow for an editable memory. |
-| Mark as wrong | Marks the linked memory information as disputed rather than silently treating it as correct. |
-| Show in Avatar | Opens the linked current health-avatar item when one exists. |
-| Suppress everywhere | Stops the memory from being used through a global suppression preference without erasing the saved record. |
-| Unsuppress everywhere | Removes that global suppression preference. |
-| Forget everywhere | Prepares irreversible deletion of the memory and its linked evidence. |
-
-Some actions depend on a current conversation or a linked avatar item. Topic suppression is not enabled in this settings view.
-
-## Forget one memory
-
-Choose **Forget everywhere** and read the impact preview: it lists the affected memory, sources, and avatar items. Choose **Cancel** to keep them or **Confirm Forget everywhere** to proceed.
-
-This cannot be undone. Read the resulting status: completion on this device and completion across synced devices are not the same moment. Offline devices may need to reconnect before receiving a deletion.
-
-## Review memories together
-
-Choose **Review** under **Review memories** to look for duplicates, stale information, and conflicts. Opening a review does not apply its proposals.
-
-1. Read each proposal’s **Before**, **After**, and **Impact**.
-2. Select only the changes you want.
-3. Check whether the selection includes permanent forgetting.
-4. Choose **Apply selected**.
-
-The app rechecks current information before applying changes. If you see **Review needs attention** or **Review interrupted**, reopen Review and inspect the current proposals. Do not assume every selected change succeeded.
-
-## Export selected memories
-
-1. Choose **Export** under **Import or export**.
-2. Review the selected memories and their **Current** or **Historical** labels. Deselect anything you do not want included.
-3. Choose **JSON** or **Markdown**.
-4. Read the warning and choose **Download plaintext**.
-
-The export includes the selected memory information and applicable sources, history, and consent records. It is not a complete account export or a backup of every chat and file.
-
-<Warning>
-  Downloaded memory exports are not encrypted. Store them privately and check their contents before sharing. A historical revision may include information you previously corrected.
-</Warning>
-
-## Import memory
-
-**Import** opens the source-selection and import flow. Choose the appropriate source and review what will be added before completing it. Importing memory is separate from connecting an app or granting access to an external account.
-
-## Delete all memory
-
-**Delete all memory** starts permanent removal of saved memory information, its retained evidence, memory-profile contributions, avatar memory projections, and associated sync state. It also turns off active conversational-memory consent as part of the deletion flow.
-
-<Warning>
-  Do not select this as a way to refresh the list. It can start deletion directly, and it cannot be undone. Save a private export first only if you actually want to retain a separate copy.
-</Warning>
-
-Read the feedback carefully. Local erasure, avatar cleanup, and cross-device deletion can be pending or queued separately. A pending state is not confirmation that everything has already disappeared everywhere.
-
-This is not account deletion and does not erase copies you previously downloaded or shared yourself. For other storage and account controls, see [Data, backups, and deletion](/data).
+- Continue in the same conversation when you need its history. Use a project to organize related conversations and files.
+- For the current account export, browser cache, and deletion controls, see [Data export and deletion](/data).
+- To ask about access, correction, or deletion of account data, open [Contact us](/contact) and choose **Privacy request**. The Data guide lists the available request types.
 
 <section className="help-faq" aria-labelledby="page-questions">
 <h2 id="page-questions">Questions and answers</h2>
-<Accordion title="What is the difference between suppressing and forgetting?">
-<div>Suppressing keeps the record while excluding it from use. Forgetting removes it and cannot be undone through that action. Review the impact shown before confirming.</div>
+<Accordion title="Can I open Memory history in Settings?">
+<div>No. The cross-conversation Memory history controls described in older guides are not available in the current Health Assistant.</div>
 </Accordion>
-
-<Accordion title="Does a saved memory prove something is medically true?">
-<div>No. Review its source, date, and context. Correct inaccurate information, and keep uncertainty or conflicting information visible rather than treating every saved statement as a fact.</div>
+<Accordion title="Does that mean information saved earlier was deleted?">
+<div>No. The old controls are retired, but their retirement does not confirm that earlier saved information was erased. Use the privacy request route if you need information about account data.</div>
 </Accordion>
-<Accordion title="Can I correct something the assistant remembered incorrectly?"><div>Yes. Open Memory history, review the entry, and use the available correction or removal control. Keep the accurate source and date when they matter.</div></Accordion>
-<Accordion title="Why are two memories shown as conflicting?"><div>The system preserves disagreement instead of silently choosing one statement. Review both entries, their dates, and their sources before deciding what should remain.</div></Accordion>
-<Accordion title="Does removing a memory rewrite old conversations?"><div>No. It changes what is available as saved context going forward. It does not alter the words already present in earlier conversations.</div></Accordion>
+<Accordion title="Does the Assistant carry the old memory feature between chats?">
+<div>The old cross-conversation memory feature is retired. Continue in the same chat for its history, or share important context again in a new conversation.</div>
+</Accordion>
+<Accordion title="Can I import or edit a saved memory now?">
+<div>No. The earlier import, edit, suppress, and forget controls are not available in the current product.</div>
+</Accordion>
+<Accordion title="How do I request access, correction, or deletion?">
+<div>Open <a className="link" href="/contact">Contact us</a>, select **Privacy request**, then choose the request type. See <a className="link" href="/data">Data export and deletion</a> for the options and current account controls.</div>
+</Accordion>
 </section>

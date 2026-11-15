@@ -1,132 +1,31 @@
 ---
-title: "Import memory"
-description: "Bring useful context with you. Review it before you keep it."
-sidebarTitle: "Import memory"
+title: "Memory import status"
+description: "Availability of the earlier memory import flow."
+sidebarTitle: "Import status"
 icon: "file-import"
 ---
 
-<Visibility for="agents">
-Import is a user-driven structured-memory transfer, not provider authentication or automatic history synchronization. Named providers supply a prompt; JSON also supports file selection. The preview shows five entries and processes at most 128 records per batch. Duplicate records are skipped; conflicts are retained for review. The current provider prompt omits the required owner-versus-family-history classification. Do not claim that its output always imports successfully. Only a completed import saves records; do not infer cross-device synchronization from local success.
-</Visibility>
+The memory import flow described in older help is no longer available in the current Health Assistant. There is no provider picker, JSON memory import, or **Import memories** control to use. Do not upload an old export expecting it to be added as saved context.
 
-Bring selected memories from another assistant or an Anistratenco JSON export. Review the information first, then choose what to keep in your account.
+Downloaded files remain separate copies. For the current account export, browser cache, and deletion controls, see [Data export and deletion](/data). For a privacy request about information held in your account, open [Contact us](/contact) and choose **Privacy request**.
 
-<div className="help-panel">
-<Steps>
-<Step title="Open Import">Open **Settings → Avatar → Memory history**, then choose **Import**.</Step>
-<Step title="Prepare your memories">Choose a source and prepare a supported JSON export. Review the complete export before you paste it.</Step>
-<Step title="Check, then save">Read the preview and its counts. Choose **Import memories** only when you are ready to keep the records.</Step>
-</Steps>
-</div>
-
-Import adds supported records to your account's local memory. It does not transfer an entire account or every conversation.
-
-## Choose a source
-
-<div className="help-panel">
-<Tabs>
-<Tab title="Another assistant" icon="comments">
-<ul className="help-providers" aria-label="Available sources">
-  <li><img src="/images/providers/chatgpt.svg" alt="" style={{background: '#000'}} />ChatGPT</li>
-  <li><img src="/images/providers/gemini.svg" alt="" style={{background: '#fff'}} />Gemini</li>
-  <li><img src="/images/providers/claude.svg" alt="" style={{background: '#F1F0E8'}} />Claude</li>
-  <li><img src="/images/providers/perplexity.svg" alt="" style={{background: '#22B8CD'}} />Perplexity</li>
-  <li><img src="/images/providers/claude-code.svg" alt="" style={{background: '#09090B'}} />Claude Code</li>
-  <li><img src="/images/providers/codex.svg" alt="" style={{background: '#fff'}} />Codex</li>
-  <li><img src="/images/providers/openclaw.svg" alt="" style={{background: '#000'}} />OpenClaw</li>
-  <li><img src="/images/providers/hermes-agent.svg" alt="" style={{background: '#fff'}} />Hermes Agent</li>
-</ul>
-
-Choose a source to get a prompt you can copy into that service. The picker does not sign you in, connect your accounts, or fetch your history.
-</Tab>
-<Tab title="A JSON export" icon="file-code">
-Choose **JSON** to paste supported structured data or use **Choose file** to load a `.json` file. This includes an Anistratenco memory JSON export.
-
-A Markdown export is useful for reading, but this importer does not accept it. Plain text, PDFs, and complete account-export archives are not memory imports here.
-</Tab>
-</Tabs>
-</div>
-
-For a short note, [add a memory manually](/memory#add-something-to-remember) instead.
-
-## Prepare the export
-
-For a named source, open **Preview prompt** to inspect the request. Choose **Copy**, paste the prompt into the service where your information already exists, and review its reply. Another assistant may leave things out or summarize them incorrectly.
-
-<Warning>
-The current built-in provider prompt is incomplete: the importer also needs records to identify whether information is about you or family history. A reply that follows the prompt can still be rejected. If that happens, use a compatible Anistratenco JSON export, add a few memories manually, or contact support. Repeatedly submitting the same reply will not correct it.
-</Warning>
-
-Do not include passwords, recovery keys, unrelated third-party details, or information you do not want retained.
-
-## Read the preview
-
-Paste the JSON reply into the import field, or choose a file in the **JSON** source screen. The app shows a preview or an error. **A preview is not a completed import.**
-
-<div className="help-panel">
-### What each state means
-
-<Tabs>
-<Tab title="New" icon="plus">
-The record is ready to add. Check that it describes something you want the assistant to remember—not a guess you want treated as a fact.
-</Tab>
-<Tab title="Duplicate" icon="copy">
-The record is already represented in your memory and will be skipped. You do not need to add it again.
-</Tab>
-<Tab title="Needs review" icon="triangle-exclamation">
-The record conflicts with existing memory. It will be imported with the conflict preserved, not silently corrected. Review it afterward using the **Conflicts** filter.
-</Tab>
-</Tabs>
-</div>
-
-| Check | What to look for |
-| --- | --- |
-| Preview | Only the first **five entries** are shown. Review the full source export too. |
-| Batch size | At most **128 memories** are processed per batch. Use smaller reviewed batches when needed. |
-| Import count | The button shows how many records will be added after duplicate handling. |
-| Unwanted information | There is no per-entry selection in this preview. Edit the source export before importing. |
-
-## Save and review
-
-<div className="help-panel">
-<Steps>
-<Step title="Import">Choose **Import memories**, or the button showing the number ready to import. It is unavailable if the preview is invalid or nothing new can be added.</Step>
-<Step title="Wait for the result">An **Importing…** state means the save is still in progress. Keep your original export if the operation fails.</Step>
-<Step title="Review what you kept">After success, return to **What Chat remembers**. Inspect the new information and use **Conflicts** for anything needing attention.</Step>
-</Steps>
-</div>
-
-Use the [memory review controls](/memory#review-memories-together) to manage what was added. Import does not certify that a record is accurate. Local success also does not guarantee that all devices have synchronized; check [Devices & sync](/devices).
-
-[Contact us](https://anistratenco.com/contact) if you cannot complete the import.
+If you would like to suggest a new import feature, use the public [Feedback board](/feedback). Do not post health records, private conversation details, or account credentials there.
 
 <section className="help-faq" aria-labelledby="page-questions">
 <h2 id="page-questions">Questions and answers</h2>
-<Accordion title="Why can't the JSON be read?">
-Use raw structured JSON without surrounding prose or a Markdown code fence. A valid JSON file can still contain no supported memory records; it needs to be a compatible memory export.
+<Accordion title="Can I import a memory file into the Health Assistant?">
+<div>No. The earlier memory import flow is not available in the current product.</div>
 </Accordion>
-<Accordion title="Why does the app ask whose information this is?">
-The records need to distinguish your information from family history. The built-in prompt currently omits this requirement. Use a compatible Anistratenco export, add the memories manually, or ask support for help.
+<Accordion title="Does a downloaded export get deleted when import is unavailable?">
+<div>No. A downloaded file remains a copy on your device. Keep it private and do not assume the current app can restore it.</div>
 </Accordion>
-<Accordion title="What does Already imported mean?">
-There are no new records to add. Check your existing memory rather than submitting the same export repeatedly.
+<Accordion title="Does the old provider picker connect another account?">
+<div>No. The provider picker described in older help is no longer available, and this page does not start an account connection.</div>
 </Accordion>
-<Accordion title="What if the memories could not be saved?">
-Keep your original export. Use the displayed error or support reference when contacting us. Do not send the full export by default—it may contain sensitive health and personal information.
+<Accordion title="Where can I review current account exports and deletion?">
+<div>Open <a className="link" href="/data">Data export and deletion</a> for the current account export, browser cache, and deletion controls.</div>
 </Accordion>
-<Accordion title="Does choosing a provider connect my account?">
-<div>No. You copy a prompt and bring back a supported structured export. The picker does not sign in to the provider or automatically fetch your history.</div>
-</Accordion>
-<Accordion title="Is everything saved as soon as I upload?">
-<div>No. Review the preview first, then choose Import memories. An upload or preview alone does not save the records.</div>
-</Accordion>
-<Accordion title="Can I choose individual records in the preview?">
-<div>No. Edit the source export or prepare a smaller batch if you do not want to import every eligible record. The preview shows only the first five entries, so review the complete source before saving.</div>
-</Accordion>
-<Accordion title="What happens to a conflicting memory?">
-<div>It is imported with the conflict preserved. Review it afterward with the <strong>Conflicts</strong> filter instead of assuming the newer statement replaced the older one.</div>
-</Accordion>
-<Accordion title="Should I delete the original export after importing?">
-<div>Keep it until you have reviewed the imported records and confirmed the result. Store it somewhere private because it may contain sensitive health and personal information.</div>
+<Accordion title="How do I suggest an import feature?">
+<div>Use the public <a className="link" href="/feedback">Feedback board</a> and describe the goal without health records or credentials.</div>
 </Accordion>
 </section>
