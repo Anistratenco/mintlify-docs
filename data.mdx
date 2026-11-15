@@ -1,6 +1,6 @@
 ---
-title: "Data, backups, and deletion"
-description: "Understand what each export preserves and what each deletion removes."
+title: "Data export and deletion"
+description: "Review account export contents, browser cache, and deletion effects."
 sidebarTitle: "Data"
 icon: "database"
 ---
@@ -10,60 +10,50 @@ Know what you are saving, downloading, or removing. Open your profile menu, then
 <div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-3">
   <div className="help-panel help-panel--compact">
     <Icon icon="hard-drive" size={22} />
-    <h3>Local backup</h3>
-    <p>Export the conversations and app state held in this browser.</p>
+    <h3>Browser data</h3>
+    <p>Review the browser-local cache and decide before clearing it.</p>
   </div>
   <div className="help-panel help-panel--compact">
     <Icon icon="download" size={22} />
     <h3>Account export</h3>
-    <p>Download the supported account-data inventory and sync files.</p>
+    <p>Download account inventory metadata, server records, and uploaded files.</p>
   </div>
   <div className="help-panel help-panel--compact">
     <Icon icon="trash-can" size={22} />
     <h3>Deletion</h3>
-    <p>Read the scope before removing chats, projects, or local state.</p>
+    <p>Read the scope before removing chats, projects, or browser data.</p>
   </div>
 </div>
 
 ## Files in your account
 
-See storage usage for your uploaded file library. Choose **Open** to go to Files. This is separate from the browser's saved settings and the encrypted sync storage shown alongside it.
+The **Files in your account** card shows storage used by uploaded files, which are available across your signed-in devices. Select the card to open Files. This storage is separate from the browser cache below.
 
 ## Browser settings cache
 
-This meter covers saved app settings and chat state in this browser. It is not a measure of every file on your device, and its displayed capacity is an estimate rather than your subscription allowance.
-
-## Encrypted file sync
-
-See usage for files in the encrypted sync vault. This is separate from the uploaded file library. An unavailable usage reading is not proof that the vault is empty.
-
-## Local backup: Export JSON
-
-Download an encrypted Anistratenco backup of local app state and conversations. It is intended for the current browser profile; do not assume that copying the JSON file to another device is enough to restore it.
-
-Keep the backup private. It is not a complete download of every uploaded file or every account record. Do not clear browser storage on the assumption that an untested backup will restore everything afterward.
-
-## Restore local backup: Choose JSON
-
-Select an Anistratenco-generated local backup. The app checks its format and whether it can be read before restoring it. Backups larger than **32 MiB** are rejected.
-
-<Warning>
-  Restoring replaces the current local snapshot and messages with the backup. It does not merge two conversation histories. Keep the information you need before choosing a backup, and stay in the same account while the restore runs.
-</Warning>
-
-The page reloads after a successful restore. If the file cannot be read, is incompatible, or belongs to a different owner, the app can reject it instead of importing it.
+The meter covers settings and temporary workspace data in this browser. Its used and total values describe this browser-local cache, not account file storage or all storage on your device.
 
 ## Download account data
 
-This is a separate export from Local backup. It downloads an account-data JSON package and can download encrypted-sync files referenced by the current app state.
+Choose **Download account data** in **Settings → Data**. The export contains three parts:
 
-The JSON describes the account data inventory and export scope. It is not a complete copy of your browser-local conversations, every uploaded file, or payment-provider records. Use Local backup for local conversation state and save important files separately. For a broader data-access request, [contact us](https://anistratenco.com/contact) and choose **Privacy request**.
+- `anistratenco-account-data.json` lists account data inventory metadata. It does not contain the underlying record contents.
+- `anistratenco-personal-records.ndjson` contains server-stored conversations and messages, projects, personal health records, notes, uploaded-file metadata, and Voice state.
+- Uploaded file contents are downloaded as individual files.
+
+This export does not include browser-local data or payment-provider data. It is a portable account copy, not a backup or restore file for this browser. Keep downloaded copies private.
+
+Some exports require recent identity verification. If **Open Security settings** appears, finish verification in Security, return to Data, and try again.
+
+If an export fails partway through, read the message to see which step failed. Check your download location for files already saved; a retry does not remove them. Choose **Download account data** again to retry.
+
+For a data-access, deletion, correction, export, restriction, or privacy request, open the [Anistratenco contact form](https://anistratenco.com/contact), select **Privacy request**, then choose **Access my data**, **Delete my data**, **Correct my data**, **Export my data**, **Restrict or object**, or **Privacy question**.
 
 ## Clear cache
 
-Treat this as a local-data reset, not a harmless refresh. In the current app it clears locally saved chat data, including conversation messages, local memory and avatar data, queued work, and local sync information, then reloads the page.
+If **Clear cache** appears, it is because this browser has locally persisted chat state. Choose it only when you are ready to clear that local state, then confirm with **Clear**. The action reloads the page and does not delete server-held account data. The account export does not include this browser-local cache, so it is not a backup for it.
 
-This affects app data held in this browser and can affect more than the currently visible conversation. It is not the same as deleting your account or all server-held information. Read the confirmation before proceeding.
+If the app says the browser cache could not be completely cleared, treat the result as incomplete and follow the message shown in the app.
 
 ## Delete all chats and Delete all projects
 
@@ -79,18 +69,16 @@ Reset locally stored app data and reload. In the current app, this uses the same
 
 Account deletion is a separate, permanent action. Open its confirmation and read the scope before continuing. It is not a troubleshooting step for a display or connection problem.
 
-If deletion or cleanup reports a failure, follow the displayed recovery instructions rather than assuming every step finished. For privacy questions, use [Contact us](https://anistratenco.com/contact) and select **Privacy request**.
+If deletion or cleanup reports a failure, follow the displayed recovery instructions rather than assuming every step finished. Use the privacy request route above for data rights questions.
 
 <section className="help-faq" aria-labelledby="page-questions">
 <h2 id="page-questions">Questions and answers</h2>
-<Accordion title="Is a local backup a copy of everything in my account?">
-<div>No. It covers supported local state in the current browser. Account exports, cloud files, and encrypted synchronization are separate. Check what you need to preserve before clearing or restoring data.</div>
-</Accordion>
-
-<Accordion title="Does restoring a backup merge it with this browser?">
-<div>No. Restore replaces the supported local state rather than merging it. Preserve anything you still need before continuing.</div>
-</Accordion>
-<Accordion title="Does exporting data delete it from Anistratenco?"><div>No. Export creates a copy. Deletion is a separate action with its own scope and confirmation.</div></Accordion>
-<Accordion title="Should I send a backup to support?"><div>Not by default. Backups may contain sensitive health and account information. Share only the smallest information needed for a specific support request.</div></Accordion>
-<Accordion title="Can a deleted account be restored from a local backup?"><div>Do not rely on that. A local backup covers only the supported local state described on this page and is not an account-recovery mechanism.</div></Accordion>
+<Accordion title="What does Download account data include?"><div>It includes an account inventory, server-stored records, and downloaded copies of uploaded files. Browser-local data and payment-provider data are not included.</div></Accordion>
+<Accordion title="Does the JSON file contain my chats and records?"><div>No. The JSON file contains account inventory metadata. Server-stored conversations and personal records are in the separate NDJSON file.</div></Accordion>
+<Accordion title="Does exporting delete anything from my account?"><div>No. Export creates downloadable copies. Deletion is separate and has its own scope and confirmation.</div></Accordion>
+<Accordion title="Is account export a backup for this browser?"><div>No. The export does not include browser-local cache and cannot restore this browser or recover an account.</div></Accordion>
+<Accordion title="What if the export fails partway through?"><div>Read the error, check for files already saved, and choose **Download account data** again to retry. Earlier files are not removed by a retry.</div></Accordion>
+<Accordion title="What does Clear cache remove?"><div>It clears locally persisted chat state on this device and reloads the page. It does not delete server-held account data. Confirm only when you are ready to clear the browser-local state.</div></Accordion>
+<Accordion title="How do I submit a privacy request?"><div>Open the <a className="link" href="https://anistratenco.com/contact">Anistratenco contact form</a>, select **Privacy request**, then choose the option that matches your request.</div></Accordion>
+<Accordion title="Should I send my export to support?"><div>Not by default. Downloaded copies may contain private account, conversation, or health information. Share only what a support request needs, and keep it out of public feedback.</div></Accordion>
 </section>
