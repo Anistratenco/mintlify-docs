@@ -51,6 +51,11 @@
   --help-fill: rgb(255 255 255 / 24%);
   --help-hover: rgb(255 255 255 / 38%);
   --help-edge: rgb(255 255 255 / 56%);
+  --help-faq-inset: inset 0 1px 0 rgb(255 255 255 / 24%);
+  --help-faq-radius: 1.5rem;
+  --help-faq-height: 3rem;
+  --help-faq-pad-block: clamp(.625rem, 2cqi, .75rem);
+  --help-faq-pad-inline: clamp(.875rem, 3cqi, 1.125rem);
   --help-top: inset 0 1px 0 rgb(255 255 255 / 68%);
   --help-glass: rgb(255 255 255 / 30%);
   --help-nav-edge: rgb(255 255 255 / 20%);
@@ -69,6 +74,7 @@
   --help-fill: rgb(255 255 255 / 5.5%);
   --help-hover: rgb(255 255 255 / 9%);
   --help-edge: rgb(255 255 255 / 18%);
+  --help-faq-inset: inset 0 1px 0 rgb(255 255 255 / 6%);
   --help-top: inset 0 1px 0 rgb(255 255 255 / 18%);
   --help-glass: rgb(0 0 0 / 30%);
   --help-nav-edge: rgb(255 255 255 / 5%);
@@ -281,7 +287,7 @@
 #content > h3 { margin-top: 22px !important; margin-bottom: 8px !important; }
 #content .help-panel > .tab-container > [data-component-part="tabs-list"] { margin-bottom: 14px !important; }
 #content .help-panel > .tab-container [data-component-part="tab-button"] { padding-top: 7px !important; padding-bottom: 7px !important; }
-#content .help-faq { padding: 0; margin-block: 24px; border: 0 !important; background: transparent !important; box-shadow: none !important; }
+#content .help-faq { container-type: inline-size; padding: 0; margin-block: 24px; border: 0 !important; background: transparent !important; box-shadow: none !important; }
 #content .help-faq h2 { text-align: center; justify-content: center; margin: 0 12px 14px; }
 #content .help-faq h2 > div.absolute { display: none; }
 .help-faq [data-component-part="accordion-caret-right"] { display: none; }
@@ -289,18 +295,20 @@
 .help-faq details {
   interpolate-size: allow-keywords;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: var(--help-faq-radius);
   border: 1px solid var(--help-edge);
   background: var(--help-fill);
+  box-shadow: var(--help-faq-inset);
   margin-top: 7px;
-  transition: background-color 180ms ease-out, transform 180ms ease-out;
+  transition: background-color 120ms ease-out, border-color 120ms ease-out;
 }
-.help-faq details[open] { background: var(--help-hover); transform: scale(1.004); }
-.help-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; list-style: none; padding: 11px 14px; font-weight: 550; }
+.help-faq details[open] { background: var(--help-hover); border-color: var(--help-edge); }
+.help-faq details:has(summary:hover) { border-color: var(--help-edge); }
+.help-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; list-style: none; min-height: var(--help-faq-height); padding: var(--help-faq-pad-block) var(--help-faq-pad-inline); font-size: clamp(.875rem, 2.4cqi, .9375rem); font-weight: 560; line-height: 1.4; }
 .help-faq summary::-webkit-details-marker { display: none; }
 .help-faq summary::after { content: ''; width: 8px; height: 8px; border-right: 1.8px solid currentColor; border-bottom: 1.8px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform 180ms ease-out; flex: none; margin-right: 4px; }
 .help-faq details[open] summary::after { transform: translateY(2px) rotate(225deg); }
-.help-faq details > div { padding: 0 14px 12px; }
+.help-faq details > div { padding: 0 var(--help-faq-pad-inline) var(--help-faq-pad-block); font-size: clamp(.875rem, 2.4cqi, .9375rem); }
 .help-faq details::details-content { block-size: 0; overflow: hidden; transition: block-size 240ms ease-out, content-visibility 240ms allow-discrete; }
 .help-faq details[open]::details-content { block-size: auto; }
 @media (max-width: 1023px) {
