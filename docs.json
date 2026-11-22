@@ -50,8 +50,7 @@
         "group": "Your information",
         "pages": [
           "memory",
-          "import-memory",
-          "data"
+          "import-memory"
         ]
       },
       {
@@ -59,7 +58,8 @@
         "pages": [
           "profile",
           "security",
-          "devices"
+          "devices",
+          "data"
         ]
       },
       {
