@@ -75,7 +75,8 @@
     "prompt": "Search Eye documentation"
   },
   "fonts": {
-    "family": "Inter"
+    "heading": { "family": "Inter" },
+    "body": { "family": "Open Runde", "source": "/fonts/OpenRunde-Regular.woff2", "format": "woff2" }
   },
   "description": "Set up Eye for Mac. Learn how blink tracking, reminders, widgets, display profiles and local automation work.",
   "seo": {
