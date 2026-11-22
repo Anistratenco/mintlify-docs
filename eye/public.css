@@ -108,17 +108,16 @@
 #content a.link:not(.mint-block):not(:has(strong.mint-block)):not(.card):not(:has(h2)) {
   color: var(--help-accent);
   background: var(--help-link-fill);
-  border: 1px solid rgb(0 111 230 / 28%);
-  border-radius: 9999px;
-  padding: .12em .6em;
+  border-radius: .45em;
+  padding-inline: .35em;
   text-decoration: none !important;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   box-shadow: none;
   font-weight: 550;
-  transition: background-color 160ms ease-out, border-color 160ms ease-out;
+  transition: background-color 160ms ease-out;
 }
-#content a.link:not(.mint-block):not(:has(strong.mint-block)):not(.card):not(:has(h2)):hover { background: rgb(0 111 230 / 24%); border-color: var(--help-accent); }
+#content a.link:not(.mint-block):not(:has(strong.mint-block)):not(.card):not(:has(h2)):hover { background: rgb(0 111 230 / 24%); text-decoration: underline !important; }
 #content a.mint-block {
   color: inherit !important;
   background: none !important;
@@ -132,8 +131,10 @@
 #content a.link:focus-visible, #pagination a:focus-visible, .help-faq summary:focus-visible {
   outline: 2px solid var(--help-accent); outline-offset: 3px;
 }
+#content a.link:focus-visible { outline-offset: 0; }
 #pagination { gap: 16px; }
 #pagination > a {
+  min-width: 0;
   border-radius: 20px !important;
   padding: 12px 18px !important;
   min-height: 48px;
@@ -148,7 +149,7 @@
 #pagination > a > div > div { margin: 0; }
 #pagination [data-component-part="pagination-label"] { display: none; }
 #pagination [rel="prev"] [data-component-part="pagination-title"] { order: 1; }
-#pagination [data-component-part="pagination-title"] { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+#pagination [data-component-part="pagination-title"] { display: flex; align-items: center; gap: 8px; overflow-wrap: anywhere; }
 #pagination svg { width: 18px !important; height: 18px !important; color: var(--help-accent) !important; }
 #pagination .help-destination-icon { width: 22px; height: 22px; flex: none; background-color: var(--help-accent); }
 
