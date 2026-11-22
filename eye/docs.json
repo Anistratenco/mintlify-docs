@@ -1,0 +1,98 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "luma",
+  "name": "Eye",
+  "colors": {
+    "primary": "#006FE6",
+    "light": "#006FE6",
+    "dark": "#006FE6"
+  },
+  "favicon": "/eye.ico",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Start here",
+        "pages": [
+          "index",
+          "install",
+          "camera"
+        ]
+      },
+      {
+        "group": "Use Eye",
+        "pages": [
+          "reminders",
+          "watch-together",
+          "dashboard",
+          "widgets",
+          "focus-and-breaks",
+          "display"
+        ]
+      },
+      {
+        "group": "Manage Eye",
+        "pages": [
+          "privacy-and-history",
+          "account-and-updates",
+          "troubleshooting"
+        ]
+      },
+      {
+        "group": "Automation",
+        "pages": [
+          "local-automation"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [],
+    "primary": {
+      "type": "button",
+      "label": "Download Eye",
+      "href": "https://geteye.app/download/"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "background": {
+    "color": {
+      "light": "#E1E3E5",
+      "dark": "#030303"
+    }
+  },
+  "search": {
+    "prompt": "Search Eye documentation"
+  },
+  "fonts": {
+    "family": "Inter"
+  },
+  "description": "Set up Eye for Mac. Learn how blink tracking, reminders, widgets, display profiles and local automation work.",
+  "seo": {
+    "metatags": {
+      "canonical": "https://docs.geteye.app"
+    },
+    "organization": {
+      "id": "https://anistratenco.com/#organization",
+      "name": "Anistratenco",
+      "legalName": "Anistratenco Platform, LLC",
+      "url": "https://anistratenco.com/",
+      "logo": "https://anistratenco.com/icon-512x512.png"
+    }
+  },
+  "logo": {
+    "light": "/eye.svg",
+    "dark": "/eye.svg",
+    "href": "https://geteye.app/"
+  }
+}
