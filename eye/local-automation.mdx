@@ -1,0 +1,69 @@
+---
+title: Eye local automation
+description: Control tracking and dashboard widgets from a terminal or MCP client.
+---
+
+Eye sits in the macOS menu bar. Use Live for camera tracking and Today for your widgets, blink history, focus timer, and breathing sessions. Eye can remind you to blink and apply display profiles. An agent on the same Mac can read saved statistics and control tracking, widgets, focus, and display profiles.
+
+## Connect
+
+In Eye, enable **Developer Mode** under **General**, then **Local automation** under **Developer**. Enable **Allow local changes** to permit writes. The running Eye app checks permissions for each request. The same macOS account runs the client. Saved personal aggregates can be read. Camera images, face geometry, guest data, expression history, and location stay outside the API.
+
+```json
+{"mcpServers":{"eye":{"command":"/Applications/Eye.app/Contents/MacOS/Eye","args":["--mcp"]}}}
+```
+
+MCP uses stdio. Discover the tools through `tools/list`. Eye supports discovery in 2026-07-28 and the initialize handshake in 2025-11-25 and 2025-06-18. A tool name is its CLI operation with the `eye_` prefix. Results include the same JSON envelope in structured and text forms.
+
+```sh
+EYE=/Applications/Eye.app/Contents/MacOS/Eye
+"$EYE" --cli tools
+"$EYE" --cli status
+"$EYE" --cli apiUsage
+```
+
+Call either transport with a JSON object. The envelope has `version: 1` and either `result` or `error`. CLI errors exit nonzero. `unavailable` means check that Eye is running and local automation is enabled. `readOnly` means writes need the separate setting. For a timed out mutation, read the current state before retrying. `apiUsage` counts calls and refused writes by operation since this app launch, without request arguments.
+
+## Pause tracking tomorrow from 18:00 to 19:00
+
+```sh
+start=$(date -v+1d -v18H -v0M -v0S +%s)
+end=$(date -v+1d -v19H -v0M -v0S +%s)
+"$EYE" --cli tracking "{\"command\":\"schedulePause\",\"pauseWindow\":{\"start\":$start,\"end\":$end}}"
+"$EYE" --cli status
+```
+
+Resolve the requested time and timezone before calling. The window is start inclusive and end exclusive in UNIX seconds. One window is saved across restarts. Scheduling again replaces it. At the end, regular power and weekly rules resume. `cancelScheduledPause` clears the window. `resume` clears the manual pause. `trackingSchedule` reads the saved rules, and `setTrackingSchedule` replaces the full object returned by it.
+
+## Safely pause tracking for an app upgrade
+
+This workflow uses the installed Eye executable as a local stdio server on the same Mac and macOS account as the running app. It does not open a port, work from a Windows or cloud client, or give the client permission to quit or replace the app. For Codex CLI, an optional project-level configuration can start with read-only schedule discovery:
+
+```toml
+[mcp_servers.eye]
+command = "/Applications/Eye.app/Contents/MacOS/Eye"
+args = ["--mcp"]
+enabled_tools = ["eye_trackingSchedule"]
+```
+
+If the upgrade needs a write, explicitly add `eye_setTrackingSchedule` to `enabled_tools` and set `default_tools_approval_mode = "prompt"` in this server entry. Codex approval is separate from Eye’s **Allow local changes** switch; neither grants the other.
+
+1. Discover the actual schemas with MCP `tools/list` or CLI `--cli tools`. With local automation enabled but writes still off, call `eye_trackingSchedule` with an empty object, or run `"$EYE" --cli trackingSchedule`. Save the complete schedule object from the result privately. Keep it separate from the versioned response envelope. If the app or tools are unavailable, stop; a timeout or a refused write does not establish a safe state.
+2. Copy that full schedule object. Change only `acAllowed` and `batteryAllowed` to `false`, preserving all other rules and values. Read once more immediately before writing; if the live rules differ from your saved baseline, stop and reconcile. Enable **Allow local changes** only for the authorized write. Pass the copy as the value of the top-level `trackingSchedule` argument to `eye_setTrackingSchedule`. For CLI, save that full wrapped JSON object as `blocked-arguments.json` and run `"$EYE" --cli setTrackingSchedule "$(cat blocked-arguments.json)"`. Do not send only the two flags: this operation replaces the full schedule.
+3. Re-read the full schedule and verify it matches the blocked copy. A helper-launched Eye instance can exit after saving both flags as `false`, before the CLI or MCP reply arrives. A lost reply is not a reason to retry. Once that instance has exited, open Eye normally; if the blocked rules were saved, it stays open without starting the camera. Verify that the full schedule matches the blocked copy before quitting normally and swapping the app. The ordinary in-app **Pause** is not equivalent: it pauses the running app but is not the helper's power eligibility rule. With both power flags off, the helper's schedule cannot start tracking on either power source. The user should quit Eye normally and perform only the supported app replacement, without changing the helper, its registration, or stored data. The quit and app-only swap are separate from CLI/MCP. Do not proceed if readback fails or if the supported replacement cannot be verified.
+4. After relaunch, restart the MCP stdio client so it starts the executable from the current build. Discover the tools again and read the schedule. Restore the exact saved schedule through the same wrapper only if the current full object still equals the blocked copy. If it differs, do not overwrite the new rules; resolve the difference first. Re-read to verify the restoration, then disable **Allow local changes** if it was off before. If the replacement fails, use the supported app recovery path; don't delete the saved rules or try to repair the helper via MCP. After any timed-out mutation, read and compare state before retrying. These checks do not make the schedule write atomic against another client; avoid concurrent edits.
+
+## Add, resize and move a Today widget
+
+```sh
+"$EYE" --cli widgets
+"$EYE" --cli editWidget '{"command":"add","section":"today","widgetID":"hydration"}'
+"$EYE" --cli editWidget '{"command":"place","section":"today","widgetID":"hydration","placement":{"width":2,"height":2,"column":0,"row":2}}'
+"$EYE" --cli widgets
+```
+
+Resolve a requested name against `catalog` in the widgets result. `add` can include a placement. `place` edits an existing card. Supply only the dimensions or coordinates that should change. The native grid resolves collisions. The returned layouts show where every card landed. Columns and rows start at zero. The grid has five columns, at most 100 rows and at most four rows per card. Fixed cards stay at two by one.
+
+Use `setWidgets` for atomic batch changes. Entries use `page:id:widthxheight:column:row`. The `today` layout includes Progress, so carry its entries forward unless changing them on purpose. Pass the previously read layout as `expectedLayout` for either write operation. On `conflict`, read again and recompute the edits.
+
+Use `tools` or MCP discovery for `focusTimer`, `displayProfiles`, `setDisplayProfile`, `displaySchedule`, `setDisplaySchedule`, and `statistics`.
