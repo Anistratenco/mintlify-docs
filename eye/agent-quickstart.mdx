@@ -1,0 +1,50 @@
+---
+title: Eye for agents
+description: Look up Eye documentation from any client, or connect to the running Mac app over CLI and MCP.
+---
+
+Use the hosted documentation to answer questions about Eye. Use the local interface when you need to read or change the state of Eye on your Mac.
+
+## Search the documentation
+
+Connect an MCP client that supports Streamable HTTP to `https://docs.geteye.app/mcp`. Call `tools/list`, then use `search_eye` with a query such as “How do I pause tracking?” Open the returned guide before giving instructions.
+
+For a terminal or an agent without MCP, fetch the [documentation index](https://docs.geteye.app/llms.txt) and follow its Markdown links.
+
+```sh
+curl -fsS https://docs.geteye.app/llms.txt
+curl -fsS https://docs.geteye.app/local-automation.md
+```
+
+## Read the running app
+
+On the same Mac and macOS account as Eye, enable **Developer Mode** under **General** and **Local automation** under **Developer**. Leave **Allow local changes** off for read access. Discover the installed build’s operations before relying on them.
+
+```sh
+EYE=/Applications/Eye.app/Contents/MacOS/Eye
+"$EYE" --cli tools
+"$EYE" --cli status
+```
+
+To use local MCP in Codex, add a stdio server with the executable path for your installation. This configuration exposes only the status tool.
+
+```toml
+[mcp_servers.eye_local]
+command = "/Applications/Eye.app/Contents/MacOS/Eye"
+args = ["--mcp"]
+enabled_tools = ["eye_status"]
+```
+
+Use `tools/list` for the installed tool schemas. For write permissions, conflict handling, scheduling, and widget examples, see [Local automation](/local-automation).
+
+## Questions and answers
+
+**Can the hosted MCP read my Mac?** It searches published docs. The local CLI and stdio server read the running app.
+
+**Can it see camera frames?** The local interface does not expose camera frames or face geometry. [Privacy and history](/privacy-and-history)
+
+**Why does the CLI say unavailable?** Open Eye in your macOS session and check **Developer → Local automation**. Then run `--cli status` again.
+
+**What should an agent do after a write times out?** Read the affected state before retrying. A timeout alone does not tell you whether the change took effect.
+
+**Can an agent sign in or buy a plan over either MCP?** Use Eye’s in-app account controls and the browser flow when available. Check the [account guide](/account-and-updates) for access and updates.
