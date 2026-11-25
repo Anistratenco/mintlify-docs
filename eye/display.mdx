@@ -4,8 +4,14 @@ description: Adjust soft screen tint and dimming by app, place, time or availabl
 icon: monitor
 ---
 
-In **Settings → Display → Screen appearance**, start with **Default**. Set **Screen tint**, **Tint strength** and **Software dimming**. Software dimming changes the displayed image while your hardware brightness stays where you set it. Use **Reset display** to clear your changes and **macOS Color Filters…** to open the corresponding system controls.
+Open **Settings → Display**. Under **Display Profiles**, choose **Default** in **Editing profile**, then set **Screen tint**, **Tint strength** and **Software dimming**. Software dimming changes the image on your screen while hardware brightness stays where you set it. Use **Reset display** to clear your changes or **macOS Color Filters…** to open the system controls.
 
-Use **Add app…** to create an override for a foreground app. The foreground app profile takes precedence over your place and bedtime profiles. You can set an app profile to keep a color-sensitive workspace neutral while applying a tint elsewhere.
+<Frame caption="Check Active Appearance at the top to see which profile Eye is using.">
+  <img src="/images/ux/display.webp" alt="Display settings showing Active Appearance, the Bedtime schedule, Saved Place and Display Profiles." />
+</Frame>
 
-Under **Saved place**, **Use current location…** saves a place on your Mac after you grant access. Eye can use that display profile within 500 metres. Under **Bedtime**, set bedtime, wake time and **Transition time**, then configure the Bedtime profile. In **Adaptive dimming**, **Dim in low light** uses eligible camera tracking readings to darken the displayed image slightly. If the display looks different from what you configured, first check which app is in front and which profiles are eligible.
+Eye uses the first matching profile, starting with **App Override**, followed by **Bedtime**, **Saved Place** and **Default**. Use **Add App Override…** to keep an app neutral when you need accurate color while tinting the rest of your workspace.
+
+Turn on **Schedule Bedtime**, set **Start**, **Wake** and **Fade duration**, then select **Edit Bedtime Appearance**. Bedtime follows your Mac’s local time. Under **Saved Place**, use **Save Current Location…** and grant location access to save a place on your Mac. Eye can apply that profile within 500 metres of the saved place.
+
+In **Adaptive dimming**, **Dim in low light** uses eligible camera readings to darken the displayed image slightly. If the display looks different than expected, check **Active Appearance** and which app is in front.
