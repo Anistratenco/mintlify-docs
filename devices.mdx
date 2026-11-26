@@ -1,122 +1,50 @@
 ---
-title: "Devices and encrypted sync"
-description: "Choose which browsers can access synced data and manage what transfers between them."
-sidebarTitle: "Devices & sync"
+title: "Devices and sessions"
+description: "Review device access and manage signed-in browser sessions."
+sidebarTitle: "Devices and sessions"
 icon: "laptop"
 ---
 
-Open your profile menu, then **Settings → Account → Security → Devices**. A signed-in browser and an approved sync device are not the same thing: signing in does not always mean this browser can read your encrypted synced data.
+Open your profile menu, then **Settings → Account → Security → Devices**. This page helps you review browser access, device requests, and signed-in sessions.
 
-<div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-3">
-  <div className="help-panel help-panel--compact">
-    <Icon icon="laptop" size={22} />
-    <h3>Request</h3>
-    <p>Begin approval from the new browser you want to use.</p>
-  </div>
-  <div className="help-panel help-panel--compact">
-    <Icon icon="message-dots" size={22} />
-    <h3>Compare</h3>
-    <p>Match the phrase on both browsers before continuing.</p>
-  </div>
-  <div className="help-panel help-panel--compact">
-    <Icon icon="shield-check" size={22} />
-    <h3>Approve</h3>
-    <p>Grant sync access only to a browser you recognize.</p>
-  </div>
-</div>
+## Review a device
 
-## Set up sync
+Check the device status and **Last seen** before changing access. A request can show **Approval pending** or a device can be **Temporarily blocked**. Use **Rename** to give a browser a name you recognize. Renaming does not change its access.
 
-If you see **Set up encrypted sync**, finish and verify your [account recovery kit](/security#save-an-account-recovery-kit) first. Return to Devices and choose **Turn on sync** when it becomes available. The browser must be approved before it can use encrypted sync.
+For a pending request, verify it came from a browser you control. The request may show a QR code, short code, matching phrase, and expiry. Use **Copy link** or **Open on an approved device** when available, then compare the phrase before continuing. Complete approval only through a confirmation control shown in the app. If none appears, do not guess; use **Can’t use another device?** when available or contact us.
 
-Do not clear your only working browser before checking that your important information is available on another approved device.
+If a request expires, choose **Try again** when available. Never approve an unfamiliar request or share its link or code with someone else.
 
-## Approve a new browser
+## Pause or remove device access
 
-1. On the new browser, open Devices. A pending browser shows an approval QR code, a link, a matching phrase, and an expiry countdown.
-2. Open that link on a browser you already trust and use for this account. You can scan the QR code or use **Copy link**.
-3. Review the device identity and compare the matching phrase on both browsers.
-4. Choose **Approve device** only if the phrase matches exactly and you recognize the request. Otherwise choose **Cancel**.
+Choose **Temporarily block** to pause a device’s access. Choose **Restore access** to reverse the block. Blocking is not a remote wipe of information already on that device.
 
-If the request expires or cannot be created, follow the displayed retry or verification instructions. Never approve a request simply because someone sends you a link.
+For another browser, open its action menu and choose **Remove**, then confirm with **Remove device**. This signs out that browser and revokes its approval; offline copies may remain.
 
-If no approved browser is available, expand **Can’t use another device?** and follow the recovery options shown for your account. Recovery needs the appropriate saved material or verification; it is not a way around account security.
+For this browser, choose **Remove this browser**, then confirm with **Remove browser**. This clears the encrypted workspace on this browser and signs it out. Save anything you need first.
 
-## Read device status
+Choose **Cancel request** to withdraw a pending device request.
 
-The current browser shows its status, last-sync time, and the number of approved devices. An approved device is allowed to sync; that status alone does not prove every change has finished transferring. Check the sync status and waiting-change count too.
+## Manage browser sessions
 
-Use **Rename** to give a browser a name you recognize, such as “Home laptop.” Renaming does not grant it additional access.
+Under **Other signed-in browsers**, use the session actions to end access:
 
-## Automatic sync
-
-The **Automatic sync** switch pauses or resumes automatic transfers. Pausing does not delete existing information. Automatic transfers run while the app is open; do not assume they continue after you close it.
-
-Open **Advanced sync controls** for the following options.
-
-### What syncs
-
-Each switch controls a supported category:
-
-| Category | What it covers |
+| Control | What it does |
 | --- | --- |
-| Preferences | Supported response preferences, shortcuts, and sidebar choices. |
-| Chats | Finished messages and conversation details. |
-| Projects | Project details and which chats belong to them. |
-| Memory | Saved memory information and its review and consent records. |
-| Health avatar | The saved health-avatar information rebuilt from reconciled memory. |
-| Files | Encrypted file information and supported documents, images, and media. |
+| **Sign out** or **End session** | Ends the selected browser session. |
+| **Sign out everywhere** | Ends every browser session, including this one. Local encrypted data is not deleted. |
 
-Turning a category off is not an instruction to delete copies that already exist. These switches are not a promise that every browser setting or every item on your computer is synchronized.
+Signing out ends a session. It does not by itself delete account data or local encrypted data.
 
-### Transfer mode
+## If a device or session is missing
 
-**Automatic** lets supported transfers run automatically while the app is open. **Manual** leaves transfers for you to start with **Sync now**. The master Automatic sync switch and transfer mode are separate controls.
-
-### Monthly upload limit
-
-Set an optional monthly upload cap. The field takes a number of **bytes**, not MB. For example, 100000000 is about 100 MB. Leave it empty for no user-set cap. This does not remove any service or plan limits.
-
-### Storage and transfer readings
-
-**On this device** refers to local sync storage; **Cloud files** refers to encrypted cloud storage. **Uploaded** and **Downloaded** show transfer usage for the reporting period. These are different measurements, not values that should always match.
-
-### Sync now
-
-Choose **Sync now** to attempt an upload of waiting changes and pull available updates. It can request a transfer even when automatic transfers are paused or set to Manual. It does not bypass device approval, connectivity, or service limits. Read any error and check the waiting count afterward.
-
-## Temporarily block another device
-
-Open that device’s action menu and choose **Temporarily block**. Use **Restore access** to reverse the block. This is different from removing the device and is not a remote wipe of information already on it.
-
-## Sign out or remove access
-
-| Action | What happens |
-| --- | --- |
-| Sign out | Ends this browser’s sign-in session. It is not the same as removing its local data. |
-| Remove this browser | After confirmation, revokes this browser’s device access, clears the active account’s local workspace here, and signs out. Save anything you need first. |
-| Remove another device | Revokes its sync access and signs it out. Offline copies may remain; this is not a guaranteed remote wipe. |
-| Cancel request | Removes a pending device approval request. |
-| Sign out everywhere | Ends every browser session, including this one. Local encrypted data is not deleted by this action. |
-
-Advanced controls may also list **Other signed-in browsers**. Ending one of those sessions removes that sign-in session; do not confuse it with deleting the account.
-
-## If sync needs attention
-
-Read the message in Devices, check your connection, and confirm this browser is approved. If recovery setup is unfinished, complete it before relying on sync. Avoid clearing local storage to fix a sync error when it may contain your only copy.
-
-For help, [contact us](https://anistratenco.com/contact) with the visible error and support reference. Do not include an approval token, recovery key, or private health information unless it is specifically needed for your request.
+Return to Devices and check the status again. If the list still looks wrong or an action fails, read the message shown in the app and [contact us](/contact) with the visible error. Do not include sign-in codes, recovery material, passwords, or private health information in public feedback.
 
 <section className="help-faq" aria-labelledby="page-questions">
 <h2 id="page-questions">Questions and answers</h2>
-<Accordion title="Does signing in mean encrypted sync is ready?">
-<div>Not necessarily. This browser must also be approved for encrypted sync. Check its status and any waiting changes.</div>
-</Accordion>
-
-<Accordion title="Does pausing sync delete my information?">
-<div>No. It pauses automatic transfers. Existing information is not deleted, and approved-device status alone does not prove every change has finished transferring.</div>
-</Accordion>
-<Accordion title="What should I do before removing a device?"><div>Make sure another trusted device or recovery method works, and confirm any information you need has finished synchronizing.</div></Accordion>
-<Accordion title="Can I pause access without removing a device?"><div>Yes. Choose Temporarily block in the device’s action menu. Restore access reverses the block. Neither action wipes information already stored on that device.</div></Accordion>
-<Accordion title="Why is a recent change missing on another device?"><div>Check whether sync is paused, whether both devices are approved, and whether the transfer reports completion. A device appearing in the list does not prove every change has arrived.</div></Accordion>
+<Accordion title="Does signing in approve a device request?"><div>Not necessarily. Check the request and use only the confirmation control shown in the app after verifying it is yours.</div></Accordion>
+<Accordion title="Does temporarily blocking a device erase its data?"><div>No. Blocking pauses access; it is not a remote wipe of information already on that device.</div></Accordion>
+<Accordion title="What happens when I sign out everywhere?"><div>All signed-in browser sessions end, including the current one. This does not by itself delete account data.</div></Accordion>
+<Accordion title="Can I rename a device to change its access?"><div>No. Renaming only helps you recognize it. Use the device access controls to block or remove access.</div></Accordion>
+<Accordion title="What should I do with an unfamiliar request?"><div>Do not approve it or share its link or code. Cancel it when that control is available, then contact us if you need help securing the account.</div></Accordion>
 </section>

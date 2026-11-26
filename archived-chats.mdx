@@ -5,7 +5,7 @@ sidebarTitle: "Archived chats"
 icon: "archive"
 ---
 
-Archive a conversation to remove it from your active chat list without deleting it. You can find and restore it later in Settings → Archived chats.
+Archive a conversation to remove it from your active chat list without deleting it. You can find it later in **Settings → Archived chats**. If you archive the chat that is currently receiving an answer, that live response stops; check the chat for any partial answer.
 
 <div className="mint-grid mint-grid-cols-1 md:mint-grid-cols-3">
   <div className="help-panel help-panel--compact">
@@ -15,7 +15,7 @@ Archive a conversation to remove it from your active chat list without deleting 
   </div>
   <div className="help-panel help-panel--compact">
     <Icon icon="clock-rotate-left" size={22} />
-    <h3>Restore</h3>
+    <h3>Unarchive</h3>
     <p>Return an archived conversation to your history.</p>
   </div>
   <div className="help-panel help-panel--compact">
@@ -39,9 +39,9 @@ The sort menu lets you arrange chats by when they were archived, updated, or cre
 
 Select a conversation to see its details and a preview of its latest messages. The preview is not the full conversation: it shows up to six messages.
 
-## Restore a chat
+## Unarchive a chat
 
-Choose the restore action beside the conversation. This takes it out of the archive so you can return to it from your chat history. Restoring is different from creating a new chat.
+Choose **Unarchive** beside the conversation. This takes it out of the archive so you can return to it from your chat history. Unarchiving is different from creating a new chat.
 
 ## Delete an archived chat
 
@@ -57,7 +57,7 @@ If a deletion fails, read the message in the app. Do not assume it completed jus
   Deleting is not archiving. Keep anything you need before removing it, and do not rely on being able to recover a chat after the Undo window closes.
 </Warning>
 
-For backups and other deletion controls, see [Data, backups, and deletion](/data).
+For the current account export and other deletion controls, see [Data export and deletion](/data).
 
 <section className="help-faq" aria-labelledby="page-questions">
 <h2 id="page-questions">Questions and answers</h2>
@@ -68,7 +68,7 @@ For backups and other deletion controls, see [Data, backups, and deletion](/data
 <Accordion title="What does the archive search look through?">
 <div>It searches chat titles and project names, not the full text of every message. Check your project filter and sorting if a conversation is hard to find.</div>
 </Accordion>
-<Accordion title="Can I return an archived chat to the sidebar?"><div>Yes. Open its actions and choose the option to restore or unarchive it. The conversation returns without creating a duplicate.</div></Accordion>
-<Accordion title="Does archiving stop work that is still running?"><div>Do not use archiving as a cancellation control. Check the conversation’s current state and cancel or stop the work through the action provided for that task.</div></Accordion>
+<Accordion title="Can I return an archived chat to the sidebar?"><div>Yes. Open its actions and choose **Unarchive**. The conversation returns without creating a duplicate.</div></Accordion>
+<Accordion title="Does archiving stop a reply that is still arriving?"><div>Yes, when you archive the chat that is currently receiving an answer, its live response stops. Check the chat for any partial answer.</div></Accordion>
 <Accordion title="Why can’t I find a conversation I just archived?"><div>Clear the search, check the selected project filter, and confirm the sort order. Archive search covers titles and project names rather than every message.</div></Accordion>
 </section>
